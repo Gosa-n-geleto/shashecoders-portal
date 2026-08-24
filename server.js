@@ -72,16 +72,16 @@ db.serialize(() => {
     )
   `);
 
-  // Clear and Re-seed 7-Week Accelerated Syllabus
+  // Clear and Re-seed 7-Week 5-Day Curriculum
   db.run("DELETE FROM classes", () => {
     const stmt = db.prepare("INSERT INTO classes (week_number, title, instructor, topic_category, materials_url) VALUES (?, ?, ?, ?, ?)");
-    stmt.run(1, "Week 1: Foundations of Asymptotic Analysis & Algorithmic Complexity (O(N), O(log N), Stack Invariants)", "Gosa Negeso & Faculty", "Core Foundations", "https://github.com/shashecoders/week1");
-    stmt.run(2, "Week 2: Pointer Arithmetic, Linear Structures & Hash Set Optimization", "Muhafiz Ahmed & Kalid Beshir", "Data Structures", "https://github.com/shashecoders/week2");
-    stmt.run(3, "Week 3: Recursive Decomposition, Divide-and-Conquer & Backtracking Strategies", "Gosa Negeso & Feyisa Balcha", "Algorithms", "https://github.com/shashecoders/week3");
-    stmt.run(4, "Week 4: Non-Linear Structures: Binary Search Trees, Heaps & Priority Queues", "Kalid Beshir & Faculty", "Trees & Graphs", "https://github.com/shashecoders/week4");
-    stmt.run(5, "Week 5: Graph Theory, BFS/DFS Traversals, Shortest Paths & Topological Sort", "Gosa Negeso & Muhafiz Ahmed", "Advanced Algorithms", "https://github.com/shashecoders/week5");
-    stmt.run(6, "Week 6: Full-Stack Web Architecture, RESTful API Systems & SQLite Persistence", "Feyisa Balcha & Muhafiz Ahmed", "Systems Engineering", "https://github.com/shashecoders/week6");
-    stmt.run(7, "Week 7: Regional Capstone Development, Algorithm Benchmarking & Municipal Demo Day", "Executive Faculty Board", "Capstone & Deployment", "https://github.com/shashecoders/week7");
+    stmt.run(1, "Week 1: Web Fundamentals & Structural Design (HTML5, Semantic UI, CSS3)", "Feyisa Balcha & Faculty", "Web Fundamentals", "#week1");
+    stmt.run(2, "Week 2: Programming Fundamentals & Computational Logic (JavaScript / Python)", "Muhafiz Ahmed & Faculty", "Programming Core", "#week2");
+    stmt.run(3, "Week 3: Linear Data Structures & Array Algorithms (Two-Pointer & Sliding Window)", "Gosa Negeso & Kalid Beshir", "Data Structures", "#week3");
+    stmt.run(4, "Week 4: Hash Tables, String Invariants & Asymptotic Complexity Analysis", "Gosa Negeso (590/600 Scorer)", "Algorithms", "#week4");
+    stmt.run(5, "Week 5: Recursion, Divide-and-Conquer & Non-Linear Trees (BST & Inversions)", "Kalid Beshir & Gosa Negeso", "Trees & Recursion", "#week5");
+    stmt.run(6, "Week 6: Full-Stack Engineering, REST APIs & SQLite Database Persistence", "Feyisa Balcha & Muhafiz Ahmed", "Systems & Databases", "#week6");
+    stmt.run(7, "Week 7: Regional Capstone Development, Algorithm Showcase & Honors Graduation", "Executive Board & Municipal Sponsors", "Capstone & Graduation", "#week7");
     stmt.finalize();
   });
 
@@ -91,19 +91,19 @@ db.serialize(() => {
       const qStmt = db.prepare("INSERT INTO quizzes (week_number, challenge_title, difficulty, prompt, starter_code, function_name, test_arg, expected_output) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
       qStmt.run(
         1,
-        "Optimal Two-Sum Hash Search",
+        "Two-Pointer Target Search (Sorted Array)",
         "Easy",
-        "Implement twoSum(nums, target) that returns indices in O(N) linear time.",
-        "function solution(nums, target) {\n  const map = new Map();\n  for (let i = 0; i < nums.length; i++) {\n    const comp = target - nums[i];\n    if (map.has(comp)) return [map.get(comp), i];\n    map.set(nums[i], i);\n  }\n  return [];\n}",
+        "Implement twoSum(numbers, target) that returns 1-based indices in O(N) time and O(1) space.",
+        "function solution(numbers, target) {\n  let left = 0, right = numbers.length - 1;\n  while (left < right) {\n    const sum = numbers[left] + numbers[right];\n    if (sum === target) return [left + 1, right + 1];\n    if (sum < target) left++;\n    else right--;\n  }\n  return [];\n}",
         "solution",
         "[[2, 7, 11, 15], 9]",
-        "[0,1]"
+        "[1,2]"
       );
       qStmt.run(
         2,
         "Array Palindrome Recursive Check",
         "Medium",
-        "Implement isPalindrome(str) to check if a sequence reads same backwards and forwards recursively.",
+        "Implement isPalindrome(str) to check if a sequence reads the same backwards and forwards recursively.",
         "function solution(str) {\n  if (str.length <= 1) return true;\n  if (str[0] !== str[str.length - 1]) return false;\n  return solution(str.slice(1, -1));\n}",
         "solution",
         "['racecar']",
@@ -323,5 +323,5 @@ app.get("/api/admin/export", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`SHASHECODERS ACADEMY 7-WEEK ACCELERATED SERVER RUNNING ON PORT ${PORT}`);
+  console.log(`SHASHECODERS ACADEMY 7-WEEK 5-DAY CURRICULUM RUNNING ON PORT ${PORT}`);
 });
