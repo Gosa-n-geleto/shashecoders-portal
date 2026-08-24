@@ -14,7 +14,7 @@ app.use(express.static(__dirname));
 
 const db = new sqlite3.Database("shashecoders.db");
 
-// Database Initialization with RBAC, Classes, & Quizzes
+// Database Initialization
 db.serialize(() => {
   // Applicants Table
   db.run(`
@@ -59,7 +59,7 @@ db.serialize(() => {
     )
   `);
 
-  // Quizzes Table
+  // Quizzes & Algorithm Benchmarks Table
   db.run(`
     CREATE TABLE IF NOT EXISTS quizzes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -67,30 +67,60 @@ db.serialize(() => {
       challenge_title TEXT NOT NULL,
       difficulty TEXT NOT NULL,
       prompt TEXT NOT NULL,
-      test_cases TEXT NOT NULL
+      starter_code TEXT NOT NULL,
+      function_name TEXT NOT NULL,
+      test_arg TEXT NOT NULL,
+      expected_output TEXT NOT NULL
     )
   `);
 
-  // Seed default curriculum if empty
+  // Seed default curriculum
   db.get("SELECT COUNT(*) as count FROM classes", (err, row) => {
     if (row && row.count === 0) {
       const stmt = db.prepare("INSERT INTO classes (week_number, title, instructor, topic_category, materials_url) VALUES (?, ?, ?, ?, ?)");
-      stmt.run(1, "Week 1: Algorithmic Complexity & Asymptotic Notation ($O(N)$, $O(\\log N)$)", "Lead Algorithms Instructor", "Algorithms", "https://github.com/shashecoders/week1");
-      stmt.run(2, "Week 2: Linear Data Structures (Arrays, Linked Lists, Hash Tables)", "Faculty Team", "Data Structures", "https://github.com/shashecoders/week2");
-      stmt.run(3, "Week 3: Recursion, Divide & Conquer, and Dynamic Arrays", "Faculty Team", "Algorithms", "https://github.com/shashecoders/week3");
-      stmt.run(4, "Week 4: Trees, BST, and Breadth-First / Depth-First Traversal", "Lead Algorithms Instructor", "Trees & Graphs", "https://github.com/shashecoders/week4");
-      stmt.run(5, "Week 5: Full-Stack Web Architecture & REST API Design", "Lead Systems Instructor", "Systems", "https://github.com/shashecoders/week5");
+      stmt.run(1, "Week 1: Computational Complexity & Big-O Notation (Time & Memory Invariants)", "Lead Algorithms Instructor", "Algorithms", "https://github.com/shashecoders/week1");
+      stmt.run(2, "Week 2: Linear Data Structures (Dynamic Arrays, Pointer Manipulation, Hash Sets)", "Faculty Team", "Data Structures", "https://github.com/shashecoders/week2");
+      stmt.run(3, "Week 3: Recursive Problem Decomposition & Divide-and-Conquer Paradigms", "Faculty Team", "Algorithms", "https://github.com/shashecoders/week3");
+      stmt.run(4, "Week 4: Non-Linear Structures (Binary Search Trees, Heaps, and Graph Traversals)", "Lead Algorithms Instructor", "Trees & Graphs", "https://github.com/shashecoders/week4");
+      stmt.run(5, "Week 5: Full-Stack Edge Systems & Resilient Offline-First Architectures", "Lead Systems Instructor", "Systems", "https://github.com/shashecoders/week5");
       stmt.finalize();
     }
   });
 
-  // Seed default quizzes if empty
+  // Seed default interactive coding challenges
   db.get("SELECT COUNT(*) as count FROM quizzes", (err, row) => {
     if (row && row.count === 0) {
-      const qStmt = db.prepare("INSERT INTO quizzes (week_number, challenge_title, difficulty, prompt, test_cases) VALUES (?, ?, ?, ?, ?)");
-      qStmt.run(1, "Two-Sum Array Index Lookup", "Easy", "Write a function twoSum(nums, target) that returns indices of the two numbers such that they add up to target.", "nums=[2,7,11,15], target=9 => [0,1]");
-      qStmt.run(2, "Invert Binary Tree", "Medium", "Given the root of a binary tree, invert the tree recursively and return its root.", "root=[4,2,7,1,3,6,9] => [4,7,2,9,6,3,1]");
-      qStmt.run(3, "Maximum Subarray Sum (Kadane's Algorithm)", "Hard", "Find the contiguous subarray with the largest sum and return its sum in O(N) time.", "nums=[-2,1,-3,4,-1,2,1,-5,4] => 6");
+      const qStmt = db.prepare("INSERT INTO quizzes (week_number, challenge_title, difficulty, prompt, starter_code, function_name, test_arg, expected_output) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+      qStmt.run(
+        1,
+        "Optimal Two-Sum Hash Search",
+        "Easy",
+        "Implement twoSum(nums, target) that returns the indices of the two elements that sum up to target in O(N) linear time.",
+        "function solution(nums, target) {\n  const map = new Map();\n  for (let i = 0; i < nums.length; i++) {\n    const comp = target - nums[i];\n    if (map.has(comp)) return [map.get(comp), i];\n    map.set(nums[i], i);\n  }\n  return [];\n}",
+        "solution",
+        "[[2, 7, 11, 15], 9]",
+        "[0,1]"
+      );
+      qStmt.run(
+        2,
+        "Array Palindrome Recursive Check",
+        "Medium",
+        "Implement isPalindrome(str) to check if a sequence reads the same backwards and forwards recursively.",
+        "function solution(str) {\n  if (str.length <= 1) return true;\n  if (str[0] !== str[str.length - 1]) return false;\n  return solution(str.slice(1, -1));\n}",
+        "solution",
+        "['racecar']",
+        "true"
+      );
+      qStmt.run(
+        3,
+        "Kadane's Linear Maximum Subarray",
+        "Hard",
+        "Implement maxSubArray(nums) to return the maximum contiguous subarray sum in O(N) time.",
+        "function solution(nums) {\n  let maxSoFar = nums[0];\n  let currMax = nums[0];\n  for (let i = 1; i < nums.length; i++) {\n    currMax = Math.max(nums[i], currMax + nums[i]);\n    maxSoFar = Math.max(maxSoFar, currMax);\n  }\n  return maxSoFar;\n}",
+        "solution",
+        "[[-2, 1, -3, 4, -1, 2, 1, -5, 4]]",
+        "6"
+      );
       qStmt.finalize();
     }
   });
@@ -143,24 +173,23 @@ app.get("/", (req, res) => {
   return res.status(404).send("index.html not found");
 });
 
-// Authentication Endpoint (Board Leader & Faculty)
+// Authentication Endpoint
 app.post("/api/auth/login", (req, res) => {
   const { passcode, role } = req.body;
-  // Security Keys (Set custom ones as needed)
   const KEYS = {
     BOARD_LEADER: "shashe2026leader",
     FACULTY: "shasheinstructor"
   };
 
   if (role === "BOARD_LEADER" && passcode === KEYS.BOARD_LEADER) {
-    return res.json({ success: true, role: "BOARD_LEADER", token: "AUTH_BOARD_ROOT_ACCESS" });
+    return res.json({ success: true, role: "BOARD_LEADER", token: "AUTH_BOARD_ROOT" });
   } else if (role === "FACULTY" && passcode === KEYS.FACULTY) {
-    return res.json({ success: true, role: "FACULTY", token: "AUTH_FACULTY_ACCESS" });
+    return res.json({ success: true, role: "FACULTY", token: "AUTH_FACULTY_ROOT" });
   }
-  return res.status(401).json({ error: "Invalid Passcode for the requested access level." });
+  return res.status(401).json({ error: "Invalid credentials for the specified role." });
 });
 
-// Register Applicant
+// Candidate Registration
 app.post("/api/register", (req, res) => {
   const body = req.body;
   if (!body.full_name || !body.email || !body.phone || !body.telegram || !body.school_name || !body.gpa) {
@@ -168,8 +197,8 @@ app.post("/api/register", (req, res) => {
   }
 
   db.get("SELECT id FROM applicants WHERE email = ? OR phone = ?", [body.email.trim(), body.phone.trim()], (err, existing) => {
-    if (err) return res.status(500).json({ error: "Lookup error." });
-    if (existing) return res.status(409).json({ error: "Applicant already registered with this email/phone." });
+    if (err) return res.status(500).json({ error: "Database lookup error." });
+    if (existing) return res.status(409).json({ error: "Applicant already registered with this email or phone." });
 
     db.get("SELECT COUNT(*) AS count FROM applicants", [], (err, countRow) => {
       const total = countRow ? countRow.count : 0;
@@ -211,7 +240,7 @@ app.post("/api/register", (req, res) => {
   });
 });
 
-// Admin Candidates Listing
+// Candidates Listing & Analytics
 app.get("/api/admin/candidates", (req, res) => {
   const search = req.query.search ? `%${req.query.search}%` : "%";
   const status = req.query.status;
@@ -223,21 +252,26 @@ app.get("/api/admin/candidates", (req, res) => {
     query += " AND status = ?";
     params.push(status);
   }
-  query += " ORDER BY merit_score DESC LIMIT 300";
+  query += " ORDER BY merit_score DESC LIMIT 400";
 
   db.all(query, params, (err, rows) => {
     if (err) return res.status(500).json({ error: "Data fetch failed." });
+
     db.get("SELECT COUNT(*) AS total FROM applicants", [], (err, totalRow) => {
       db.get("SELECT COUNT(*) AS dorms FROM applicants WHERE housing_status = 'DORM_ALLOCATED'", [], (err, dormRow) => {
         db.get("SELECT COUNT(*) AS accepted FROM applicants WHERE status = 'ACCEPTED'", [], (err, acceptedRow) => {
-          return res.json({
-            metrics: {
-              total_registered: totalRow ? totalRow.total : 0,
-              dorm_allocated: dormRow ? dormRow.dorms : 0,
-              dorm_capacity: 80,
-              accepted_cohort: acceptedRow ? acceptedRow.accepted : 0
-            },
-            candidates: rows || []
+          // School-level breakdown for analytics
+          db.all("SELECT school_name, COUNT(*) as count, ROUND(AVG(gpa), 1) as avg_gpa FROM applicants GROUP BY school_name ORDER BY count DESC LIMIT 6", [], (err, schoolStats) => {
+            return res.json({
+              metrics: {
+                total_registered: totalRow ? totalRow.total : 0,
+                dorm_allocated: dormRow ? dormRow.dorms : 0,
+                dorm_capacity: 80,
+                accepted_cohort: acceptedRow ? acceptedRow.accepted : 0
+              },
+              school_analytics: schoolStats || [],
+              candidates: rows || []
+            });
           });
         });
       });
@@ -245,7 +279,7 @@ app.get("/api/admin/candidates", (req, res) => {
   });
 });
 
-// Admin Decision Update (Board Leader Exclusive)
+// Admin Decision Update
 app.patch("/api/admin/decision", (req, res) => {
   const { id, status, housing_status } = req.body;
   if (!id) return res.status(400).json({ error: "Missing candidate ID" });
@@ -260,7 +294,7 @@ app.patch("/api/admin/decision", (req, res) => {
   );
 });
 
-// Classes & Modules API
+// Classes & Quizzes API
 app.get("/api/academy/classes", (req, res) => {
   db.all("SELECT * FROM classes ORDER BY week_number ASC", [], (err, rows) => {
     if (err) return res.status(500).json({ error: "Failed to fetch classes" });
@@ -268,7 +302,6 @@ app.get("/api/academy/classes", (req, res) => {
   });
 });
 
-// Quizzes & Algorithms Challenges API
 app.get("/api/academy/quizzes", (req, res) => {
   db.all("SELECT * FROM quizzes ORDER BY week_number ASC", [], (err, rows) => {
     if (err) return res.status(500).json({ error: "Failed to fetch quizzes" });
@@ -291,5 +324,5 @@ app.get("/api/admin/export", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`SHASHECODERS ACADEMY SYSTEM ACTIVE ON PORT ${PORT}`);
+  console.log(`SHASHECODERS ACADEMY PRO PORTAL ACTIVE ON PORT ${PORT}`);
 });
