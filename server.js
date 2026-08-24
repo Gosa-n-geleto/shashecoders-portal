@@ -2,13 +2,17 @@ const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// Serve static assets from public if available
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
 // Initialize SQLite Database
 const db = new sqlite3.Database("shashecoders.db");
@@ -45,7 +49,7 @@ db.serialize(() => {
   `);
 });
 
-// Merit Scoring Calculation
+// Merit Calculation
 function calculateMerit(data) {
   let score = 0;
   const gpa = parseFloat(data.gpa) || 0;
@@ -82,6 +86,20 @@ function calculateMerit(data) {
 
   return Math.round(score * 100) / 100;
 }
+
+// Fallback route to directly serve index.html
+app.get("/", (req, res) => {
+  const publicPath = path.join(__dirname, "public", "index.html");
+  const rootPath = path.join(__dirname, "index.html");
+
+  if (fs.existsSync(publicPath)) {
+    return res.sendFile(publicPath);
+  } else if (fs.existsSync(rootPath)) {
+    return res.sendFile(rootPath);
+  } else {
+    return res.status(404).send("index.html file not found in public/ or root directory.");
+  }
+});
 
 // POST: Candidate Submission Endpoint
 app.post("/api/register", (req, res) => {
