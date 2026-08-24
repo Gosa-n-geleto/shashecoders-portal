@@ -49,62 +49,69 @@
     </div>
   </header>
 
-  <!-- 1. EXECUTIVE DASHBOARD & INSTITUTIONAL OVERVIEW -->
-  <section id="view-overview" class="max-w-6xl mx-auto px-4 py-8 space-y-8">
+  <!-- 1. EXECUTIVE DASHBOARD & INSTITUTIONAL HERO -->
+  <section id="view-overview" class="max-w-7xl mx-auto px-4 py-6 space-y-8">
     
-    <!-- Executive KPI Bar -->
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-      <div class="p-4 bg-[#0E1526] border border-[#1E293B] rounded-lg">
-        <span class="text-[11px] text-slate-400 uppercase font-semibold">Campus Venue</span>
-        <p class="text-sm font-bold text-white mt-1">Dodola Special Boarding</p>
-      </div>
-      <div class="p-4 bg-[#0E1526] border border-[#1E293B] rounded-lg">
-        <span class="text-[11px] text-slate-400 uppercase font-semibold">Funded Capacity</span>
-        <p class="text-sm font-bold text-blue-400 mt-1">80 Residential Seats</p>
-      </div>
-      <div class="p-4 bg-[#0E1526] border border-[#1E293B] rounded-lg">
-        <span class="text-[11px] text-slate-400 uppercase font-semibold">Target Cohort</span>
-        <p class="text-sm font-bold text-amber-400 mt-1">Grades 9–12 (Oromia)</p>
-      </div>
-      <div class="p-4 bg-[#0E1526] border border-[#1E293B] rounded-lg">
-        <span class="text-[11px] text-slate-400 uppercase font-semibold">Academic Cadence</span>
-        <p class="text-sm font-bold text-emerald-400 mt-1">7 Weeks (5 Days / Wk)</p>
-      </div>
-    </div>
-
-    <!-- Strategic Brief with Dodola Campus Background -->
-    <div class="relative bg-[#0E1526] border border-[#1E293B] rounded-lg overflow-hidden shadow-2xl p-6 sm:p-10">
+    <!-- Full-Bleed Institutional Campus Hero -->
+    <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-[#1E293B] min-h-[480px] sm:min-h-[520px] flex flex-col justify-between p-6 sm:p-12 lg:p-14">
       
-      <!-- Background Campus Image -->
-      <div class="absolute inset-0 z-0 pointer-events-none">
-        <img 
-          src="/dodola(venture).jpg" 
-          alt="Dodola Boarding Campus" 
-          class="w-full h-full object-cover object-center opacity-30 filter contrast-125 brightness-75"
-          onerror="this.src='/dodola(venture).png';"
-        />
-        <div class="absolute inset-0 bg-gradient-to-r from-[#0E1526] via-[#0E1526]/90 to-[#0E1526]/40"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0E1526] via-transparent to-transparent"></div>
+      <!-- High-Luminance Campus Background Image -->
+      <img 
+        src="/dodola(venture).jpg" 
+        alt="Dodola Special Boarding Campus" 
+        class="absolute inset-0 w-full h-full object-cover object-center brightness-105 contrast-105 scale-100"
+        onerror="this.src='/dodola(venture).png';"
+      />
+      
+      <!-- Institutional Tint Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-[#090D16] via-[#090D16]/50 to-transparent z-0"></div>
+      <div class="absolute inset-0 bg-blue-950/25 mix-blend-multiply z-0"></div>
+
+      <!-- Top Tag Badge -->
+      <div class="relative z-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0E1526]/80 border border-amber-500/40 text-amber-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-md shadow-lg">
+          🎓 DODOLA IFA BORU SPECIAL BOARDING CAMPUS
+        </div>
       </div>
 
-      <!-- Foreground Content -->
-      <div class="relative z-10 max-w-3xl space-y-3">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-[#93C5FD] text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
-          🏛️ Dodola Special Boarding School Campus
-        </div>
-        <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight leading-tight">
-          ShasheCoders Academy Executive Summary
+      <!-- Center Title & Pitch -->
+      <div class="relative z-10 max-w-3xl space-y-4 my-auto py-6">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+          Nurturing Oromia's <br>
+          <span class="text-amber-400 italic">future software leaders.</span>
         </h1>
-        <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-normal">
-          An intensive 7-week residential algorithms, web systems, and competitive coding academy hosted at Dodola Special Boarding School. Students train 5 days a week (Monday to Friday) from web foundations to full-stack algorithms, culminating in a municipal Capstone Demo Day and Graduation Ceremony.
+        
+        <p class="text-base sm:text-lg text-slate-100 leading-relaxed font-normal max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+          An elite 7-week residential algorithms, systems architecture, and competitive coding academy hosted at Dodola Special Boarding School. Fully-funded residential seats empowering high-achieving scholars for regional impact.
         </p>
 
-        <div class="pt-2 flex flex-wrap items-center gap-4 text-xs text-slate-300">
-          <span class="flex items-center gap-1.5"><strong class="text-white">80</strong> Sponsored Dormitory Seats</span>
-          <span class="text-slate-600">•</span>
-          <span class="flex items-center gap-1.5"><strong class="text-amber-400">Grades 9–12</strong> Oromia Region</span>
-          <span class="text-slate-600">•</span>
-          <span class="flex items-center gap-1.5"><strong class="text-emerald-400">Full Board</strong> Lodging &amp; Meals</span>
+        <div class="pt-2 flex flex-wrap items-center gap-3.5">
+          <button onclick="navigate('apply')" class="px-6 py-3 bg-[#F59E0B] hover:bg-[#D97706] text-black font-bold text-xs uppercase tracking-wider rounded-lg shadow-xl transition-all transform hover:-translate-y-0.5">
+            Admissions &amp; Apply →
+          </button>
+          <button onclick="navigate('classes')" class="px-6 py-3 bg-[#0E1526]/80 hover:bg-[#1E293B] text-white border border-slate-400/30 font-semibold text-xs uppercase tracking-wider rounded-lg backdrop-blur-md shadow-xl transition-all">
+            Explore 7-Week Curriculum
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom KPI Metrics Row -->
+      <div class="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/15">
+        <div>
+          <span class="text-2xl sm:text-3xl font-bold text-amber-400 block font-serif">80</span>
+          <span class="text-[11px] uppercase tracking-wider text-slate-200 font-semibold">Funded Residential Seats</span>
+        </div>
+        <div>
+          <span class="text-2xl sm:text-3xl font-bold text-white block font-serif">7 Weeks</span>
+          <span class="text-[11px] uppercase tracking-wider text-slate-200 font-semibold">5 Days / Week Cadence</span>
+        </div>
+        <div>
+          <span class="text-2xl sm:text-3xl font-bold text-blue-400 block font-serif">Grades 9–12</span>
+          <span class="text-[11px] uppercase tracking-wider text-slate-200 font-semibold">Oromia Regional Eligibility</span>
+        </div>
+        <div>
+          <span class="text-2xl sm:text-3xl font-bold text-emerald-400 block font-serif">100%</span>
+          <span class="text-[11px] uppercase tracking-wider text-slate-200 font-semibold">Municipal Sponsorship</span>
         </div>
       </div>
 
