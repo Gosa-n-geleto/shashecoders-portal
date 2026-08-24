@@ -9,14 +9,14 @@
     body, input, select, textarea, button, table {
       font-family: "Times New Roman", Times, Georgia, serif !important;
     }
-    .code-font {
+    .code-font, pre, code {
       font-family: "Courier New", Courier, monospace !important;
     }
   </style>
 </head>
 <body class="bg-[#090D16] text-[#E2E8F0] min-h-screen">
 
-  <!-- Main Institutional Navigation -->
+  <!-- Main Navigation Bar -->
   <header class="border-b border-[#1E293B] bg-[#0E1526] sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
@@ -25,7 +25,7 @@
         </div>
         <div>
           <span class="text-base font-bold tracking-wide text-white block">SHASHECODERS ACADEMY</span>
-          <span class="text-[11px] text-[#93C5FD] tracking-wider uppercase block">Regional Algorithms & Residential Summer Camp</span>
+          <span class="text-[11px] text-[#93C5FD] tracking-wider uppercase block">Regional Coding, Algorithms & Residential Camp</span>
         </div>
       </div>
 
@@ -34,10 +34,10 @@
           Application Form
         </button>
         <button onclick="navigate('classes')" id="nav-classes" class="px-3 py-1.5 text-xs font-semibold rounded bg-[#1E293B] text-slate-300 hover:text-white">
-          Curriculum & Classes
+          Curriculum & Modules
         </button>
         <button onclick="navigate('quizzes')" id="nav-quizzes" class="px-3 py-1.5 text-xs font-semibold rounded bg-[#1E293B] text-slate-300 hover:text-white">
-          Algorithm Quizzes
+          Algorithm Sandbox
         </button>
         <button onclick="navigate('admin')" id="nav-admin" class="px-3 py-1.5 text-xs font-semibold rounded bg-[#B45309] text-white">
           Faculty / Board Access
@@ -51,18 +51,24 @@
     <div class="bg-[#0E1526] border border-[#1E293B] rounded-lg p-6 sm:p-10 shadow-xl">
       
       <div id="form-container">
-        <div class="border-b border-[#1E293B] pb-4 mb-6">
-          <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Intake 2026 Examination</span>
-          <h1 class="text-2xl font-bold text-white mt-1">Official Candidate Admissions Screening</h1>
-          <p class="text-xs text-slate-400 mt-1 leading-relaxed">
-            Apply for screening into the 80 government-sponsored dormitory and meal seats for the intensive 12-week algorithm curriculum.
-          </p>
+        <div class="border-b border-[#1E293B] pb-4 mb-6 flex justify-between items-start">
+          <div>
+            <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Intake 2026 Examination</span>
+            <h1 class="text-2xl font-bold text-white mt-1">Candidate Admissions Screening</h1>
+            <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+              Screening portal for the 80 municipal-sponsored residential boarding and algorithm training seats in Shashemene.
+            </p>
+          </div>
+          <span id="draft-badge" class="hidden text-[10px] text-emerald-400 font-mono bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+            ✓ Draft Autosaved
+          </span>
         </div>
 
         <div id="alert-box" class="hidden mb-4 p-3 rounded text-xs"></div>
 
-        <form id="admission-form" onsubmit="submitApplication(event)" class="space-y-6">
-          <!-- Step 1 -->
+        <form id="admission-form" onsubmit="submitApplication(event)" oninput="saveDraft()" class="space-y-6">
+          
+          <!-- Identity -->
           <div class="border-b border-[#1E293B] pb-5 space-y-4">
             <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">I. Candidate Demographics & Contacts</h2>
             <div>
@@ -94,12 +100,12 @@
               </div>
             </div>
             <div>
-              <label class="block text-xs text-slate-300 mb-1 font-semibold">Guardian Emergency Contact</label>
+              <label class="block text-xs text-slate-300 mb-1 font-semibold">Guardian Emergency Phone</label>
               <input type="tel" name="guardian_phone" required placeholder="+2519..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]">
             </div>
           </div>
 
-          <!-- Step 2 -->
+          <!-- Academic -->
           <div class="border-b border-[#1E293B] pb-5 space-y-4">
             <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">II. Academic & Examination Standing</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -123,12 +129,12 @@
               </div>
               <div>
                 <label class="block text-xs text-slate-300 mb-1 font-semibold">National Exam</label>
-                <input type="number" step="0.1" name="national_score" placeholder="590" class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white">
+                <input type="number" step="0.1" name="national_score" placeholder="590 (if taken)" class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white">
               </div>
             </div>
           </div>
 
-          <!-- Step 3 -->
+          <!-- Technical -->
           <div class="border-b border-[#1E293B] pb-5 space-y-4">
             <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">III. Technical & Algorithmic Problem Solving</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -142,7 +148,7 @@
                 </select>
               </div>
               <div>
-                <label class="block text-xs text-slate-300 mb-1 font-semibold">Languages Familiar With</label>
+                <label class="block text-xs text-slate-300 mb-1 font-semibold">Familiar Languages</label>
                 <input type="text" name="programming_langs" placeholder="Python, C++, Java" class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white">
               </div>
             </div>
@@ -160,7 +166,7 @@
             </div>
           </div>
 
-          <!-- Step 4 -->
+          <!-- Essays -->
           <div class="space-y-4">
             <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">IV. Statement of Purpose & Housing</h2>
             <div>
@@ -204,7 +210,7 @@
     </div>
   </section>
 
-  <!-- 2. CURRICULUM & CLASSES VIEW -->
+  <!-- 2. CURRICULUM VIEW -->
   <section id="view-classes" class="hidden max-w-6xl mx-auto px-4 py-8">
     <div class="space-y-6">
       <div class="border-b border-[#1E293B] pb-4">
@@ -221,16 +227,16 @@
     </div>
   </section>
 
-  <!-- 3. ALGORITHM QUIZZES VIEW -->
+  <!-- 3. INTERACTIVE ALGORITHM RUNNER VIEW -->
   <section id="view-quizzes" class="hidden max-w-6xl mx-auto px-4 py-8">
     <div class="space-y-6">
       <div class="border-b border-[#1E293B] pb-4">
-        <span class="text-xs font-bold text-[#F59E0B] uppercase tracking-wider block">Screening Challenges</span>
-        <h1 class="text-2xl font-bold text-white mt-1">Algorithm Quizzes & Assessments</h1>
-        <p class="text-xs text-slate-400 mt-1">Weekly coding benchmarks for admitted candidates.</p>
+        <span class="text-xs font-bold text-[#F59E0B] uppercase tracking-wider block">Real-Time Evaluation</span>
+        <h1 class="text-2xl font-bold text-white mt-1">In-Browser Algorithm Sandbox</h1>
+        <p class="text-xs text-slate-400 mt-1">Write your solutions and run automated test assertions in the sandbox.</p>
       </div>
 
-      <div id="quizzes-list" class="space-y-4">
+      <div id="quizzes-list" class="space-y-6">
         <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded text-center text-slate-500 text-xs">
           Loading algorithm challenges...
         </div>
@@ -238,18 +244,18 @@
     </div>
   </section>
 
-  <!-- 4. FACULTY / BOARD LEADER AUTH & DASHBOARD -->
+  <!-- 4. FACULTY / BOARD LEADER DASHBOARD -->
   <section id="view-admin" class="hidden max-w-7xl mx-auto px-4 py-8">
     
-    <!-- Login Card if unauthenticated -->
+    <!-- Login Card -->
     <div id="admin-login-card" class="max-w-md mx-auto bg-[#0E1526] border border-[#1E293B] rounded-lg p-6 shadow-xl space-y-4">
       <div class="border-b border-[#1E293B] pb-3">
         <h2 class="text-lg font-bold text-white">Faculty & Board Authentication</h2>
-        <p class="text-xs text-slate-400">Restricted portal for instructor reviews and admissions.</p>
+        <p class="text-xs text-slate-400">Restricted portal for instructor evaluations and municipal housing allocation.</p>
       </div>
       <div id="login-error" class="hidden p-2.5 rounded bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs"></div>
       <div>
-        <label class="block text-xs font-semibold text-slate-300 mb-1">Access Role</label>
+        <label class="block text-xs font-semibold text-slate-300 mb-1">Access Level</label>
         <select id="auth-role" class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white">
           <option value="BOARD_LEADER">Board Leader (Full Decision & Housing Authority)</option>
           <option value="FACULTY">Faculty Instructor (Curriculum & Evaluation)</option>
@@ -257,15 +263,15 @@
       </div>
       <div>
         <label class="block text-xs font-semibold text-slate-300 mb-1">Passcode</label>
-        <input type="password" id="auth-passcode" placeholder="Enter role security key..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white">
-        <span class="text-[10px] text-slate-500 block mt-1">Default keys: <code>shashe2026leader</code> (Leader) or <code>shasheinstructor</code> (Faculty)</span>
+        <input type="password" id="auth-passcode" placeholder="Enter security key..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white">
+        <span class="text-[10px] text-slate-500 block mt-1">Keys: <code>shashe2026leader</code> (Leader) or <code>shasheinstructor</code> (Faculty)</span>
       </div>
       <button onclick="loginAdmin()" class="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white py-2 rounded text-xs font-bold uppercase transition-colors">
         Verify Credentials
       </button>
     </div>
 
-    <!-- Active Management Dashboard -->
+    <!-- Active Dashboard -->
     <div id="admin-dashboard-panel" class="hidden space-y-6">
       
       <!-- Metrics Bar -->
@@ -303,10 +309,18 @@
         </div>
       </div>
 
+      <!-- Regional School Analytics Breakdown -->
+      <div class="bg-[#0E1526] border border-[#1E293B] rounded p-4 space-y-3">
+        <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Top Feeder High Schools & Academic Distribution</h3>
+        <div id="school-analytics-bar" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-xs">
+          <div class="p-2 bg-[#090D16] border border-[#1E293B] rounded text-slate-500">Loading school analytics...</div>
+        </div>
+      </div>
+
       <!-- Filters -->
       <div class="flex flex-col sm:flex-row gap-3">
-        <input type="text" id="admin-search" placeholder="Search candidate name, school, or telegram..." oninput="loadDashboard()" class="flex-1 px-3 py-2 bg-[#0E1526] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-blue-500">
-        <select id="admin-status" onchange="loadDashboard()" class="px-3 py-2 bg-[#0E1526] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-blue-500">
+        <input type="text" id="admin-search" placeholder="Search candidate name, school, or telegram..." oninput="loadDashboard()" class="flex-1 px-3 py-2 bg-[#0E1526] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]">
+        <select id="admin-status" onchange="loadDashboard()" class="px-3 py-2 bg-[#0E1526] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]">
           <option value="ALL">All Applicants</option>
           <option value="SCREENING_PASSED">Screening Passed (High Score)</option>
           <option value="ACCEPTED">Admitted Candidates (Top 80)</option>
@@ -327,12 +341,13 @@
                 <th class="p-3">Score</th>
                 <th class="p-3">Housing</th>
                 <th class="p-3">Essays</th>
+                <th class="p-3">Telegram Notification</th>
                 <th class="p-3">Decision</th>
               </tr>
             </thead>
             <tbody id="candidates-body" class="divide-y divide-[#1E293B]/60">
               <tr>
-                <td colspan="8" class="p-6 text-center text-slate-500">Loading candidate pool...</td>
+                <td colspan="9" class="p-6 text-center text-slate-500">Loading candidate pool...</td>
               </tr>
             </tbody>
           </table>
@@ -383,6 +398,48 @@
   <script>
     let currentCandidateList = [];
     let authenticatedRole = localStorage.getItem("sc_role") || null;
+
+    // Autosave functionality
+    function saveDraft() {
+      const form = document.getElementById('admission-form');
+      const draft = {
+        full_name: form.full_name.value,
+        gender: form.gender.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        telegram: form.telegram.value,
+        guardian_phone: form.guardian_phone.value,
+        zone: form.zone.value,
+        school_name: form.school_name.value,
+        grade_level: form.grade_level.value,
+        gpa: form.gpa.value,
+        national_score: form.national_score.value,
+        experience_level: form.experience_level.value,
+        programming_langs: form.programming_langs.value,
+        portfolio_url: form.portfolio_url.value,
+        algo_response1: form.algo_response1.value,
+        algo_response2: form.algo_response2.value,
+        statement_purpose: form.statement_purpose.value,
+        project_idea: form.project_idea.value
+      };
+      localStorage.setItem("sc_app_draft", JSON.stringify(draft));
+      document.getElementById('draft-badge').classList.remove('hidden');
+    }
+
+    function loadDraft() {
+      const saved = localStorage.getItem("sc_app_draft");
+      if (!saved) return;
+      try {
+        const draft = JSON.parse(saved);
+        const form = document.getElementById('admission-form');
+        Object.keys(draft).forEach(key => {
+          if (form[key]) form[key].value = draft[key];
+        });
+        document.getElementById('draft-badge').classList.remove('hidden');
+      } catch(e) {}
+    }
+
+    window.addEventListener("DOMContentLoaded", loadDraft);
 
     function navigate(view) {
       ['apply', 'classes', 'quizzes', 'admin'].forEach(v => {
@@ -439,6 +496,7 @@
         const result = await res.json();
         if (!res.ok) throw new Error(result.error || 'Submission failed');
 
+        localStorage.removeItem("sc_app_draft");
         document.getElementById('form-container').classList.add('hidden');
         document.getElementById('success-container').classList.remove('hidden');
         document.getElementById('res-name').innerText = result.candidate_name;
@@ -484,20 +542,51 @@
         const container = document.getElementById('quizzes-list');
 
         container.innerHTML = (data.quizzes || []).map(q => `
-          <div class="p-5 bg-[#0E1526] border border-[#1E293B] rounded space-y-2">
+          <div class="p-5 bg-[#0E1526] border border-[#1E293B] rounded space-y-3">
             <div class="flex justify-between items-center">
-              <span class="text-xs font-bold text-amber-400">Week ${q.week_number} Challenge</span>
+              <span class="text-xs font-bold text-amber-400">Week ${q.week_number} Challenge • ${q.challenge_title}</span>
               <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-[#1E293B] text-slate-300">${q.difficulty}</span>
             </div>
-            <h3 class="text-sm font-bold text-white">${q.challenge_title}</h3>
             <p class="text-xs text-slate-300">${q.prompt}</p>
-            <div class="p-2.5 bg-[#090D16] border border-[#1E293B] rounded code-font text-[11px] text-slate-400">
-              Test Case: ${q.test_cases}
+            
+            <div class="space-y-1.5">
+              <span class="text-[10px] uppercase font-mono text-slate-400">Code Editor & Implementation</span>
+              <textarea id="editor-${q.id}" rows="6" class="w-full p-3 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white code-font focus:outline-none focus:border-blue-500">${q.starter_code}</textarea>
+            </div>
+
+            <div class="flex items-center justify-between gap-2">
+              <button onclick="runCodeTest(${q.id}, '${escape(q.test_arg)}', '${escape(q.expected_output)}')" class="px-3.5 py-1.5 bg-[#2563EB] hover:bg-blue-600 text-white rounded text-xs font-bold transition-colors">
+                ▶ Run Test Case
+              </button>
+              <div id="output-${q.id}" class="text-xs code-font text-slate-400">Ready for evaluation.</div>
             </div>
           </div>
         `).join('');
       } catch (e) {
         console.error(e);
+      }
+    }
+
+    function runCodeTest(id, unescapedArg, unescapedExp) {
+      const editor = document.getElementById(`editor-${id}`);
+      const output = document.getElementById(`output-${id}`);
+      const testArg = JSON.parse(unescape(unescapedArg));
+      const expected = unescape(unescapedExp);
+
+      try {
+        const userFunc = new Function(`${editor.value}; return solution;`)();
+        const startTime = performance.now();
+        const res = userFunc(...testArg);
+        const duration = (performance.now() - startTime).toFixed(2);
+
+        const resStr = JSON.stringify(res);
+        if (resStr === expected || String(res) === expected) {
+          output.innerHTML = `<span class="text-emerald-400 font-bold">✓ Test Passed</span> (${duration}ms) • Output: <code>${resStr}</code>`;
+        } else {
+          output.innerHTML = `<span class="text-rose-400 font-bold">✗ Failed</span> • Expected <code>${expected}</code> but received <code>${resStr}</code>`;
+        }
+      } catch (err) {
+        output.innerHTML = `<span class="text-rose-400 font-bold">Runtime Error:</span> ${err.message}`;
       }
     }
 
@@ -559,8 +648,19 @@
         const passedCount = currentCandidateList.filter(c => c.merit_score >= 65).length;
         document.getElementById('m-passed').innerText = passedCount;
 
+        // Render School Analytics
+        const schoolBox = document.getElementById('school-analytics-bar');
+        if (data.school_analytics && data.school_analytics.length > 0) {
+          schoolBox.innerHTML = data.school_analytics.map(s => `
+            <div class="p-2 bg-[#090D16] border border-[#1E293B] rounded">
+              <span class="text-white font-bold block truncate" title="${s.school_name}">${s.school_name}</span>
+              <span class="text-[10px] text-slate-400 block">${s.count} Applicants • Avg ${s.avg_gpa}%</span>
+            </div>
+          `).join('');
+        }
+
         if (currentCandidateList.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="8" class="p-6 text-center text-slate-500">No candidate records found.</td></tr>';
+          tbody.innerHTML = '<tr><td colspan="9" class="p-6 text-center text-slate-500">No candidate records found.</td></tr>';
           return;
         }
 
@@ -595,6 +695,11 @@
               </button>
             </td>
             <td class="p-3">
+              <button onclick="copyTelegramInvite('${c.full_name}', '${c.app_ref}', '${c.telegram}', '${c.status}')" class="px-2 py-1 bg-[#1E293B] hover:bg-blue-600/30 text-[#93C5FD] text-[10px] font-mono rounded transition-colors">
+                📋 Copy Msg
+              </button>
+            </td>
+            <td class="p-3">
               ${isLeader ? (
                 c.status !== 'ACCEPTED' 
                   ? `<button onclick="makeDecision(${c.id}, 'ACCEPTED', '${c.needs_dorm ? 'DORM_ALLOCATED' : 'DAY_SCHOLAR'}')" class="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-2 py-1 rounded text-[11px] font-bold">Admit to 80</button>`
@@ -620,6 +725,13 @@
       document.getElementById('modal-project').innerText = candidate.project_idea || "No response provided.";
 
       document.getElementById('essay-modal').classList.remove('hidden');
+    }
+
+    function copyTelegramInvite(name, ref, tg, status) {
+      const msg = `Greetings ${name} (${tg}),\n\nYour application [${ref}] to the ShasheCoders 2026 Cohort has been processed. Current status: ${status}.\n\nAccess your algorithm screening dashboard and cohort materials here: https://shashecoders-portal.onrender.com\n\n- ShasheCoders Admissions Board`;
+      navigator.clipboard.writeText(msg).then(() => {
+        alert(`Telegram notification message for ${name} copied to clipboard!`);
+      });
     }
 
     function closeModal() {
