@@ -47,7 +47,6 @@ db.serialize(() => {
     )
   `);
 
-  // Classes Table
   db.run(`
     CREATE TABLE IF NOT EXISTS classes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -59,7 +58,6 @@ db.serialize(() => {
     )
   `);
 
-  // Quizzes Table
   db.run(`
     CREATE TABLE IF NOT EXISTS quizzes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -74,17 +72,17 @@ db.serialize(() => {
     )
   `);
 
-  // Seed default curriculum
-  db.get("SELECT COUNT(*) as count FROM classes", (err, row) => {
-    if (row && row.count === 0) {
-      const stmt = db.prepare("INSERT INTO classes (week_number, title, instructor, topic_category, materials_url) VALUES (?, ?, ?, ?, ?)");
-      stmt.run(1, "Week 1: Computational Complexity & Big-O Notation", "Lead Algorithms Instructor", "Algorithms", "https://github.com/shashecoders/week1");
-      stmt.run(2, "Week 2: Linear Data Structures (Dynamic Arrays, Pointer Manipulation, Hash Sets)", "Faculty Team", "Data Structures", "https://github.com/shashecoders/week2");
-      stmt.run(3, "Week 3: Recursive Problem Decomposition & Divide-and-Conquer Paradigms", "Faculty Team", "Algorithms", "https://github.com/shashecoders/week3");
-      stmt.run(4, "Week 4: Non-Linear Structures (Binary Search Trees, Heaps, and Graph Traversals)", "Lead Algorithms Instructor", "Trees & Graphs", "https://github.com/shashecoders/week4");
-      stmt.run(5, "Week 5: Full-Stack Edge Systems & Resilient Offline-First Architectures", "Lead Systems Instructor", "Systems", "https://github.com/shashecoders/week5");
-      stmt.finalize();
-    }
+  // Clear and Re-seed 7-Week Accelerated Syllabus
+  db.run("DELETE FROM classes", () => {
+    const stmt = db.prepare("INSERT INTO classes (week_number, title, instructor, topic_category, materials_url) VALUES (?, ?, ?, ?, ?)");
+    stmt.run(1, "Week 1: Foundations of Asymptotic Analysis & Algorithmic Complexity (O(N), O(log N), Stack Invariants)", "Gosa Negeso & Faculty", "Core Foundations", "https://github.com/shashecoders/week1");
+    stmt.run(2, "Week 2: Pointer Arithmetic, Linear Structures & Hash Set Optimization", "Muhafiz Ahmed & Kalid Beshir", "Data Structures", "https://github.com/shashecoders/week2");
+    stmt.run(3, "Week 3: Recursive Decomposition, Divide-and-Conquer & Backtracking Strategies", "Gosa Negeso & Feyisa Balcha", "Algorithms", "https://github.com/shashecoders/week3");
+    stmt.run(4, "Week 4: Non-Linear Structures: Binary Search Trees, Heaps & Priority Queues", "Kalid Beshir & Faculty", "Trees & Graphs", "https://github.com/shashecoders/week4");
+    stmt.run(5, "Week 5: Graph Theory, BFS/DFS Traversals, Shortest Paths & Topological Sort", "Gosa Negeso & Muhafiz Ahmed", "Advanced Algorithms", "https://github.com/shashecoders/week5");
+    stmt.run(6, "Week 6: Full-Stack Web Architecture, RESTful API Systems & SQLite Persistence", "Feyisa Balcha & Muhafiz Ahmed", "Systems Engineering", "https://github.com/shashecoders/week6");
+    stmt.run(7, "Week 7: Regional Capstone Development, Algorithm Benchmarking & Municipal Demo Day", "Executive Faculty Board", "Capstone & Deployment", "https://github.com/shashecoders/week7");
+    stmt.finalize();
   });
 
   // Seed default quizzes
@@ -160,7 +158,7 @@ function calculateMerit(data) {
   else if (essayLen > 100) score += 5;
 
   if (data.portfolio_url && data.portfolio_url.trim().length > 5) score += 3;
-  if (data.transcript_url && data.transcript_url.trim().length > 5) score += 2;
+  if (data.transcript_url && data.transcript_url.trim().length > 2) score += 2;
 
   return Math.round(score * 100) / 100;
 }
@@ -325,5 +323,5 @@ app.get("/api/admin/export", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`SHASHECODERS ACADEMY PRO PORTAL ACTIVE ON PORT ${PORT}`);
+  console.log(`SHASHECODERS ACADEMY 7-WEEK ACCELERATED SERVER RUNNING ON PORT ${PORT}`);
 });
