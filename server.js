@@ -16,7 +16,6 @@ const db = new sqlite3.Database("shashecoders.db");
 
 // Database Initialization
 db.serialize(() => {
-  // Applicants Table
   db.run(`
     CREATE TABLE IF NOT EXISTS applicants (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -35,6 +34,7 @@ db.serialize(() => {
       experience_level TEXT NOT NULL,
       programming_langs TEXT,
       portfolio_url TEXT,
+      transcript_url TEXT,
       algo_response1 TEXT NOT NULL,
       algo_response2 TEXT NOT NULL,
       statement_purpose TEXT NOT NULL,
@@ -47,7 +47,7 @@ db.serialize(() => {
     )
   `);
 
-  // Classes / Curriculum Table
+  // Classes Table
   db.run(`
     CREATE TABLE IF NOT EXISTS classes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -59,7 +59,7 @@ db.serialize(() => {
     )
   `);
 
-  // Quizzes & Algorithm Benchmarks Table
+  // Quizzes Table
   db.run(`
     CREATE TABLE IF NOT EXISTS quizzes (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -78,7 +78,7 @@ db.serialize(() => {
   db.get("SELECT COUNT(*) as count FROM classes", (err, row) => {
     if (row && row.count === 0) {
       const stmt = db.prepare("INSERT INTO classes (week_number, title, instructor, topic_category, materials_url) VALUES (?, ?, ?, ?, ?)");
-      stmt.run(1, "Week 1: Computational Complexity & Big-O Notation (Time & Memory Invariants)", "Lead Algorithms Instructor", "Algorithms", "https://github.com/shashecoders/week1");
+      stmt.run(1, "Week 1: Computational Complexity & Big-O Notation", "Lead Algorithms Instructor", "Algorithms", "https://github.com/shashecoders/week1");
       stmt.run(2, "Week 2: Linear Data Structures (Dynamic Arrays, Pointer Manipulation, Hash Sets)", "Faculty Team", "Data Structures", "https://github.com/shashecoders/week2");
       stmt.run(3, "Week 3: Recursive Problem Decomposition & Divide-and-Conquer Paradigms", "Faculty Team", "Algorithms", "https://github.com/shashecoders/week3");
       stmt.run(4, "Week 4: Non-Linear Structures (Binary Search Trees, Heaps, and Graph Traversals)", "Lead Algorithms Instructor", "Trees & Graphs", "https://github.com/shashecoders/week4");
@@ -87,7 +87,7 @@ db.serialize(() => {
     }
   });
 
-  // Seed default interactive coding challenges
+  // Seed default quizzes
   db.get("SELECT COUNT(*) as count FROM quizzes", (err, row) => {
     if (row && row.count === 0) {
       const qStmt = db.prepare("INSERT INTO quizzes (week_number, challenge_title, difficulty, prompt, starter_code, function_name, test_arg, expected_output) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -95,7 +95,7 @@ db.serialize(() => {
         1,
         "Optimal Two-Sum Hash Search",
         "Easy",
-        "Implement twoSum(nums, target) that returns the indices of the two elements that sum up to target in O(N) linear time.",
+        "Implement twoSum(nums, target) that returns indices in O(N) linear time.",
         "function solution(nums, target) {\n  const map = new Map();\n  for (let i = 0; i < nums.length; i++) {\n    const comp = target - nums[i];\n    if (map.has(comp)) return [map.get(comp), i];\n    map.set(nums[i], i);\n  }\n  return [];\n}",
         "solution",
         "[[2, 7, 11, 15], 9]",
@@ -105,7 +105,7 @@ db.serialize(() => {
         2,
         "Array Palindrome Recursive Check",
         "Medium",
-        "Implement isPalindrome(str) to check if a sequence reads the same backwards and forwards recursively.",
+        "Implement isPalindrome(str) to check if a sequence reads same backwards and forwards recursively.",
         "function solution(str) {\n  if (str.length <= 1) return true;\n  if (str[0] !== str[str.length - 1]) return false;\n  return solution(str.slice(1, -1));\n}",
         "solution",
         "['racecar']",
@@ -115,7 +115,7 @@ db.serialize(() => {
         3,
         "Kadane's Linear Maximum Subarray",
         "Hard",
-        "Implement maxSubArray(nums) to return the maximum contiguous subarray sum in O(N) time.",
+        "Implement maxSubArray(nums) to return maximum contiguous subarray sum in O(N) time.",
         "function solution(nums) {\n  let maxSoFar = nums[0];\n  let currMax = nums[0];\n  for (let i = 1; i < nums.length; i++) {\n    currMax = Math.max(nums[i], currMax + nums[i]);\n    maxSoFar = Math.max(maxSoFar, currMax);\n  }\n  return maxSoFar;\n}",
         "solution",
         "[[-2, 1, -3, 4, -1, 2, 1, -5, 4]]",
@@ -159,7 +159,8 @@ function calculateMerit(data) {
   if (essayLen > 300) score += 10;
   else if (essayLen > 100) score += 5;
 
-  if (data.portfolio_url && data.portfolio_url.trim().length > 5) score += 5;
+  if (data.portfolio_url && data.portfolio_url.trim().length > 5) score += 3;
+  if (data.transcript_url && data.transcript_url.trim().length > 5) score += 2;
 
   return Math.round(score * 100) / 100;
 }
@@ -210,9 +211,9 @@ app.post("/api/register", (req, res) => {
         INSERT INTO applicants (
           app_ref, full_name, gender, email, phone, telegram, guardian_phone,
           zone, school_name, grade_level, gpa, national_score, experience_level,
-          programming_langs, portfolio_url, algo_response1, algo_response2,
+          programming_langs, portfolio_url, transcript_url, algo_response1, algo_response2,
           statement_purpose, project_idea, needs_dorm, merit_score, status
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `;
 
       const params = [
@@ -222,7 +223,8 @@ app.post("/api/register", (req, res) => {
         parseInt(body.grade_level, 10) || 11, parseFloat(body.gpa) || 0,
         body.national_score ? parseFloat(body.national_score) : null,
         body.experience_level || "Beginner", body.programming_langs || "None",
-        body.portfolio_url || null, body.algo_response1 || "", body.algo_response2 || "",
+        body.portfolio_url || null, body.transcript_url || null,
+        body.algo_response1 || "", body.algo_response2 || "",
         body.statement_purpose || "", body.project_idea || "", body.needs_dorm ? 1 : 0,
         meritScore, initialStatus
       ];
@@ -260,7 +262,6 @@ app.get("/api/admin/candidates", (req, res) => {
     db.get("SELECT COUNT(*) AS total FROM applicants", [], (err, totalRow) => {
       db.get("SELECT COUNT(*) AS dorms FROM applicants WHERE housing_status = 'DORM_ALLOCATED'", [], (err, dormRow) => {
         db.get("SELECT COUNT(*) AS accepted FROM applicants WHERE status = 'ACCEPTED'", [], (err, acceptedRow) => {
-          // School-level breakdown for analytics
           db.all("SELECT school_name, COUNT(*) as count, ROUND(AVG(gpa), 1) as avg_gpa FROM applicants GROUP BY school_name ORDER BY count DESC LIMIT 6", [], (err, schoolStats) => {
             return res.json({
               metrics: {
@@ -313,9 +314,9 @@ app.get("/api/academy/quizzes", (req, res) => {
 app.get("/api/admin/export", (req, res) => {
   db.all("SELECT * FROM applicants ORDER BY merit_score DESC", [], (err, rows) => {
     if (err) return res.status(500).send("Export failed");
-    let csv = "Ref,Name,Gender,Phone,Telegram,School,Grade,GPA,NationalExam,Score,Status,Housing\n";
+    let csv = "Ref,Name,Gender,Phone,Telegram,School,Grade,GPA,NationalExam,Score,TranscriptURL,Status,Housing\n";
     (rows || []).forEach((r) => {
-      csv += `"${r.app_ref}","${r.full_name}","${r.gender}","${r.phone}","${r.telegram}","${r.school_name}",${r.grade_level},${r.gpa},${r.national_score || 0},${r.merit_score},"${r.status}","${r.housing_status}"\n`;
+      csv += `"${r.app_ref}","${r.full_name}","${r.gender}","${r.phone}","${r.telegram}","${r.school_name}",${r.grade_level},${r.gpa},${r.national_score || 0},${r.merit_score},"${r.transcript_url || ''}","${r.status}","${r.housing_status}"\n`;
     });
     res.setHeader("Content-Type", "text/csv");
     res.setHeader("Content-Disposition", "attachment; filename=ShasheCoders_Cohort_2026.csv");
