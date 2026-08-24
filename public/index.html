@@ -3,35 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShasheCoders 2026 Admissions Portal</title>
+  <title>ShasheCoders Academic Portal | Summer 2026</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    body { font-family: 'Inter', sans-serif; background-color: #070B14; }
+    h1, h2, h3, .heading-font { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'IBM Plex Mono', monospace; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
+<body class="text-slate-200 min-h-screen antialiased">
 
-  <!-- Top Navigation -->
-  <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur sticky top-0 z-50">
+  <!-- Top Navigation Header -->
+  <header class="border-b border-slate-800 bg-[#0B1120]/90 backdrop-blur sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-bold font-mono text-base">
+        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center text-white font-bold heading-font text-lg shadow-md shadow-blue-600/30">
           SC
         </div>
         <div>
-          <span class="text-sm font-bold tracking-tight block">ShasheCoders</span>
-          <span class="text-[10px] text-emerald-400 font-mono tracking-wide uppercase">Summer Camp & Admissions</span>
+          <span class="text-sm font-bold tracking-tight text-white block">SHASHECODERS ACADEMY</span>
+          <span class="text-[10px] text-blue-400 font-mono tracking-wider uppercase font-semibold">Regional Coding & Algorithms Initiative</span>
         </div>
       </div>
       <div class="flex items-center gap-2">
-        <button onclick="switchView('apply')" id="tab-apply" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition-colors">
-          Applicant Portal
+        <button onclick="switchView('apply')" id="tab-apply" class="px-3.5 py-1.5 rounded-md text-xs font-semibold bg-blue-600 text-white transition-all shadow-sm">
+          Application Form
         </button>
-        <button onclick="switchView('admin')" id="tab-admin" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-colors">
-          Instructor Dashboard
+        <button onclick="switchView('admin')" id="tab-admin" class="px-3.5 py-1.5 rounded-md text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-all">
+          Faculty Portal
         </button>
       </div>
     </div>
@@ -39,34 +41,34 @@
 
   <!-- APPLICANT REGISTRATION VIEW -->
   <main id="view-apply" class="max-w-2xl mx-auto px-4 py-8">
-    <div class="bg-slate-900 border border-slate-800/80 rounded-2xl p-6 sm:p-8 shadow-2xl">
+    <div class="bg-[#0E1626] border border-slate-800 rounded-xl p-6 sm:p-8 shadow-xl">
       
       <div id="form-container">
-        <div class="mb-6">
-          <span class="text-[11px] font-bold text-emerald-400 uppercase tracking-widest bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
-            Intake 2026 Registration
-          </span>
-          <h1 class="text-2xl font-bold mt-3 text-white">Admissions & Algorithmic Screening</h1>
+        <div class="mb-6 border-b border-slate-800 pb-4">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[11px] font-semibold mb-2">
+            Cohort 2026 Intake
+          </div>
+          <h1 class="text-2xl font-bold text-white tracking-tight">Summer Camp Candidate Registration</h1>
           <p class="text-xs text-slate-400 mt-1">
-            Top 80 qualifiers receive fully-funded regional dorm accommodations, meals, and algorithms training.
+            Official selection portal for the 80 sponsored residential boarding and training seats in Shashemene.
           </p>
         </div>
 
-        <div id="alert-box" class="hidden mb-4 p-3 rounded-xl text-xs"></div>
+        <div id="alert-box" class="hidden mb-4 p-3 rounded-lg text-xs"></div>
 
-        <form id="admission-form" onsubmit="submitApplication(event)" class="space-y-4">
+        <form id="admission-form" onsubmit="submitApplication(event)" class="space-y-5">
           
           <!-- Identity Section -->
-          <div class="border-b border-slate-800 pb-4 space-y-3">
-            <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">1. Personal & Contact</h2>
+          <div class="border-b border-slate-800/80 pb-5 space-y-3.5">
+            <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">1. Applicant Particulars</h2>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1">Full Name (including grandfather)</label>
-              <input type="text" name="full_name" required placeholder="e.g. Gemechis Tolasa Dida" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+              <label class="block text-xs font-medium text-slate-300 mb-1">Full Legal Name (including grandfather)</label>
+              <input type="text" name="full_name" required placeholder="e.g. Gemechis Tolasa Dida" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500 transition-colors">
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <label class="block text-xs font-medium text-slate-300 mb-1">Gender</label>
-                <select name="gender" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <select name="gender" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
                   <option value="MALE">Male</option>
                   <option value="FEMALE">Female</option>
                   <option value="OTHER">Other</option>
@@ -74,110 +76,110 @@
               </div>
               <div>
                 <label class="block text-xs font-medium text-slate-300 mb-1">Email Address</label>
-                <input type="email" name="email" required placeholder="student@gmail.com" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <input type="email" name="email" required placeholder="student@gmail.com" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500 transition-colors">
               </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Mobile Number</label>
-                <input type="tel" name="phone" required placeholder="+251911..." class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <label class="block text-xs font-medium text-slate-300 mb-1">Phone Number</label>
+                <input type="tel" name="phone" required placeholder="+251911..." class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500 transition-colors">
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Telegram Handle (@)</label>
-                <input type="text" name="telegram" required placeholder="@username" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <label class="block text-xs font-medium text-slate-300 mb-1">Telegram Contact (@)</label>
+                <input type="text" name="telegram" required placeholder="@username" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500 transition-colors">
               </div>
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1">Guardian / Emergency Phone</label>
-              <input type="tel" name="guardian_phone" required placeholder="+2519..." class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+              <label class="block text-xs font-medium text-slate-300 mb-1">Guardian / Parent Contact</label>
+              <input type="tel" name="guardian_phone" required placeholder="+2519..." class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500 transition-colors">
             </div>
           </div>
 
           <!-- Academic Section -->
-          <div class="border-b border-slate-800 pb-4 space-y-3">
-            <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">2. Academic Credentials</h2>
+          <div class="border-b border-slate-800/80 pb-5 space-y-3.5">
+            <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">2. Academic Track Record</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Zone / City</label>
-                <input type="text" name="zone" required placeholder="West Arsi / Shashemene" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <label class="block text-xs font-medium text-slate-300 mb-1">Zone / Sub-City</label>
+                <input type="text" name="zone" required placeholder="West Arsi / Shashemene" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">High School Name</label>
-                <input type="text" name="school_name" required placeholder="Dodola Special Boarding / Secondary" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <label class="block text-xs font-medium text-slate-300 mb-1">Secondary School Name</label>
+                <input type="text" name="school_name" required placeholder="Special Boarding / Comprehensive High School" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
               </div>
             </div>
             <div class="grid grid-cols-3 gap-3">
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Grade Level</label>
-                <input type="number" name="grade_level" value="11" min="9" max="13" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <label class="block text-xs font-medium text-slate-300 mb-1">Grade</label>
+                <input type="number" name="grade_level" value="11" min="9" max="13" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Grade Average (%)</label>
-                <input type="number" step="0.1" name="gpa" required placeholder="95.5" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <label class="block text-xs font-medium text-slate-300 mb-1">GPA (%)</label>
+                <input type="number" step="0.1" name="gpa" required placeholder="95.5" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">National Exam Score</label>
-                <input type="number" step="0.1" name="national_score" placeholder="590 (if taken)" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <label class="block text-xs font-medium text-slate-300 mb-1">National Exam</label>
+                <input type="number" step="0.1" name="national_score" placeholder="590 (if taken)" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
               </div>
             </div>
           </div>
 
-          <!-- Technical & Algorithmic Screening -->
-          <div class="border-b border-slate-800 pb-4 space-y-3">
-            <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">3. Technical Assessment</h2>
+          <!-- Technical Assessment -->
+          <div class="border-b border-slate-800/80 pb-5 space-y-3.5">
+            <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">3. Technical Background & Problem Solving</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Coding Experience</label>
-                <select name="experience_level" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
-                  <option value="Beginner">Beginner (HTML/Basic Python)</option>
-                  <option value="Intermediate">Intermediate (OOP, Basic Algorithms)</option>
-                  <option value="Advanced">Advanced (Data Structures / Competitive)</option>
+                <label class="block text-xs font-medium text-slate-300 mb-1">Experience Level</label>
+                <select name="experience_level" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
+                  <option value="Beginner">Beginner (Basic Syntax / Scripts)</option>
+                  <option value="Intermediate">Intermediate (Data Structures / OOP)</option>
+                  <option value="Advanced">Advanced (Competitive Programming / Apps)</option>
                   <option value="None">None / Motivated Beginner</option>
                 </select>
               </div>
               <div>
-                <label class="block text-xs font-medium text-slate-300 mb-1">Programming Languages</label>
-                <input type="text" name="programming_langs" placeholder="Python, C++, Java" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+                <label class="block text-xs font-medium text-slate-300 mb-1">Familiar Languages</label>
+                <input type="text" name="programming_langs" placeholder="Python, C++, Java, etc." class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
               </div>
             </div>
             <div>
-              <label class="block text-xs font-medium text-slate-300 mb-1">GitHub / Project Link (Optional)</label>
-              <input type="url" name="portfolio_url" placeholder="https://github.com/username" class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500">
+              <label class="block text-xs font-medium text-slate-300 mb-1">Project Portfolio or GitHub (Optional)</label>
+              <input type="url" name="portfolio_url" placeholder="https://github.com/yourhandle" class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
             </div>
             <div>
               <label class="block text-xs font-medium text-slate-300 mb-1">
-                Challenge 1: How do you find two numbers in a list that add up to a target sum without using nested loops?
+                Technical Challenge 1: Find two numbers in an unsorted list that sum to a target without nested loops.
               </label>
-              <textarea name="algo_response1" required rows="2" placeholder="Explain the data structure or algorithm (e.g. Hash Map / Two-Pointer)..." class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white font-mono focus:outline-none focus:border-emerald-500"></textarea>
+              <textarea name="algo_response1" required rows="2" placeholder="Detail your approach and data structures (e.g. Hash Map)..." class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white font-mono focus:outline-none focus:border-blue-500"></textarea>
             </div>
             <div>
               <label class="block text-xs font-medium text-slate-300 mb-1">
-                Challenge 2: Outline an algorithm to reverse or search an array/tree recursively.
+                Technical Challenge 2: Outline an algorithm to reverse or search an array/tree recursively.
               </label>
-              <textarea name="algo_response2" required rows="2" placeholder="Write pseudocode or explain the base and recursive cases..." class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white font-mono focus:outline-none focus:border-emerald-500"></textarea>
+              <textarea name="algo_response2" required rows="2" placeholder="Detail base case, recursion step, and complexity..." class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white font-mono focus:outline-none focus:border-blue-500"></textarea>
             </div>
           </div>
 
-          <!-- Intent & Logistics -->
-          <div class="space-y-3">
-            <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">4. Intent & Housing Request</h2>
+          <!-- Purpose & Logistics -->
+          <div class="space-y-3.5">
+            <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider font-mono">4. Goals & Dormitory Allocation</h2>
             <div>
               <label class="block text-xs font-medium text-slate-300 mb-1">Why do you want to join ShasheCoders?</label>
-              <textarea name="statement_purpose" required rows="2" placeholder="Describe your software goals and drive..." class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
+              <textarea name="statement_purpose" required rows="2" placeholder="Describe your drive and personal goals..." class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500"></textarea>
             </div>
             <div>
               <label class="block text-xs font-medium text-slate-300 mb-1">What regional or community problem do you plan to solve with code?</label>
-              <textarea name="project_idea" required rows="2" placeholder="e.g., Agricultural grain pricing tracker, health access, offline school tools..." class="w-full px-3.5 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500"></textarea>
+              <textarea name="project_idea" required rows="2" placeholder="e.g. Agricultural supply chain tracking, local logistics, health access..." class="w-full px-3.5 py-2 bg-[#070B14] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500"></textarea>
             </div>
-            <div class="flex items-center gap-2 p-3 bg-slate-950 border border-slate-800 rounded-lg">
-              <input type="checkbox" name="needs_dorm" id="dorm" checked class="w-4 h-4 rounded text-emerald-600">
+            <div class="flex items-center gap-2.5 p-3 bg-[#070B14] border border-slate-800 rounded-lg">
+              <input type="checkbox" name="needs_dorm" id="dorm" checked class="w-4 h-4 rounded text-blue-600 bg-slate-900 border-slate-700 focus:ring-blue-500">
               <label for="dorm" class="text-xs text-slate-300 cursor-pointer">
-                I request <strong class="text-white">Government-Funded Dormitory & Meals</strong> in Shashemene (Top 80 capacity).
+                Request <strong class="text-white">Municipal-Sponsored Residential Dormitory & Meals</strong> in Shashemene.
               </label>
             </div>
           </div>
 
-          <button type="submit" id="submit-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 font-bold py-3 rounded-xl text-xs text-white tracking-wider uppercase transition-colors shadow-lg shadow-emerald-600/20">
+          <button type="submit" id="submit-btn" class="w-full bg-blue-600 hover:bg-blue-500 font-bold py-3 rounded-lg text-xs text-white tracking-wider uppercase transition-all shadow-md shadow-blue-600/20">
             Submit Application
           </button>
         </form>
@@ -185,80 +187,81 @@
 
       <!-- Success Card -->
       <div id="success-container" class="hidden text-center py-6">
-        <div class="w-16 h-16 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+        <div class="w-14 h-14 bg-blue-500/10 border border-blue-500/30 text-blue-400 rounded-xl flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
           ✓
         </div>
-        <h2 class="text-xl font-bold text-white">Application Successfully Filed</h2>
+        <h2 class="text-xl font-bold text-white heading-font">Application Received</h2>
         <p class="text-xs text-slate-400 mt-2">
-          Your profile has been processed by the admissions logic engine.
+          Your file has been indexed for the ShasheCoders admissions board review.
         </p>
-        <div class="my-6 p-4 bg-slate-950 border border-slate-800 rounded-xl text-left font-mono space-y-2 text-xs">
-          <div class="flex justify-between"><span class="text-slate-500">Applicant:</span><span id="res-name" class="text-white font-bold"></span></div>
-          <div class="flex justify-between"><span class="text-slate-500">Reference ID:</span><span id="res-ref" class="text-emerald-400 font-bold"></span></div>
-          <div class="flex justify-between"><span class="text-slate-500">Calculated Merit Index:</span><span id="res-score" class="text-cyan-400 font-bold"></span></div>
+        <div class="my-6 p-4 bg-[#070B14] border border-slate-800 rounded-lg text-left font-mono space-y-2 text-xs">
+          <div class="flex justify-between"><span class="text-slate-500">Candidate:</span><span id="res-name" class="text-white font-bold"></span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Application Reference:</span><span id="res-ref" class="text-blue-400 font-bold"></span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Preliminary Academic Score:</span><span id="res-score" class="text-amber-400 font-bold"></span></div>
         </div>
         <button onclick="window.location.reload()" class="bg-slate-800 text-xs px-4 py-2 rounded-lg text-slate-300 hover:text-white">
-          Submit Another Application
+          Submit Another Entry
         </button>
       </div>
 
     </div>
   </main>
 
-  <!-- INSTRUCTOR DASHBOARD VIEW -->
+  <!-- FACULTY DASHBOARD VIEW -->
   <main id="view-admin" class="hidden max-w-6xl mx-auto px-4 py-8">
     <div class="space-y-6">
       
-      <!-- Metrics Bar -->
+      <!-- Metrics Summary -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl">
+        <div class="p-4 bg-[#0E1626] border border-slate-800 rounded-xl">
           <span class="text-[11px] text-slate-400 uppercase font-mono">Total Registrations</span>
-          <p id="m-total" class="text-2xl font-bold font-mono text-emerald-400 mt-1">0</p>
+          <p id="m-total" class="text-2xl font-bold font-mono text-white mt-1">0</p>
         </div>
-        <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl">
-          <span class="text-[11px] text-slate-400 uppercase font-mono">Dorm Allocations</span>
-          <p id="m-dorm" class="text-2xl font-bold font-mono text-cyan-400 mt-1">0 / 80</p>
+        <div class="p-4 bg-[#0E1626] border border-slate-800 rounded-xl">
+          <span class="text-[11px] text-slate-400 uppercase font-mono">Dorm Occupancy</span>
+          <p id="m-dorm" class="text-2xl font-bold font-mono text-blue-400 mt-1">0 / 80</p>
         </div>
-        <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl">
+        <div class="p-4 bg-[#0E1626] border border-slate-800 rounded-xl">
           <span class="text-[11px] text-slate-400 uppercase font-mono">Accepted Cohort</span>
-          <p id="m-accepted" class="text-2xl font-bold font-mono text-teal-400 mt-1">0</p>
+          <p id="m-accepted" class="text-2xl font-bold font-mono text-amber-400 mt-1">0</p>
         </div>
-        <div class="p-4 bg-slate-900 border border-slate-800 rounded-xl flex items-center justify-center">
-          <a href="/api/admin/export" class="w-full text-center py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg text-xs font-semibold font-mono transition-colors">
-            ↓ Export CSV
+        <div class="p-4 bg-[#0E1626] border border-slate-800 rounded-xl flex items-center justify-center">
+          <a href="/api/admin/export" class="w-full text-center py-2.5 px-3 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/20 rounded-lg text-xs font-semibold font-mono transition-colors">
+            ↓ Download CSV
           </a>
         </div>
       </div>
 
-      <!-- Filter Controls -->
+      <!-- Filters -->
       <div class="flex flex-col sm:flex-row gap-3">
-        <input type="text" id="admin-search" placeholder="Search applicant, school, or telegram..." oninput="loadDashboard()" class="flex-1 px-3.5 py-2 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500">
-        <select id="admin-status" onchange="loadDashboard()" class="px-3.5 py-2 bg-slate-900 border border-slate-800 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500">
-          <option value="ALL">All Applications</option>
-          <option value="SCREENING_PASSED">Screening Passed (High Merit)</option>
-          <option value="ACCEPTED">Accepted to Cohort</option>
+        <input type="text" id="admin-search" placeholder="Search candidate, school, or telegram..." oninput="loadDashboard()" class="flex-1 px-3.5 py-2 bg-[#0E1626] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
+        <select id="admin-status" onchange="loadDashboard()" class="px-3.5 py-2 bg-[#0E1626] border border-slate-800 rounded-lg text-xs text-white focus:outline-none focus:border-blue-500">
+          <option value="ALL">All Applicants</option>
+          <option value="SCREENING_PASSED">Screening Passed (High Score)</option>
+          <option value="ACCEPTED">Accepted Candidates</option>
           <option value="PENDING">Pending Review</option>
         </select>
       </div>
 
-      <!-- Applicant Table -->
-      <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl">
+      <!-- Table -->
+      <div class="bg-[#0E1626] border border-slate-800 rounded-xl overflow-hidden shadow-xl">
         <div class="overflow-x-auto">
           <table class="w-full text-left text-xs border-collapse">
             <thead>
-              <tr class="border-b border-slate-800 bg-slate-950/80 text-slate-400 font-mono">
-                <th class="p-3.5">Ref / Rank</th>
+              <tr class="border-b border-slate-800 bg-[#070B14] text-slate-400 font-mono">
+                <th class="p-3.5">Ref</th>
                 <th class="p-3.5">Candidate & School</th>
                 <th class="p-3.5">Telegram</th>
                 <th class="p-3.5">Academics</th>
-                <th class="p-3.5">Merit Index</th>
+                <th class="p-3.5">Score</th>
                 <th class="p-3.5">Housing</th>
+                <th class="p-3.5">Review</th>
                 <th class="p-3.5">Decision</th>
               </tr>
             </thead>
             <tbody id="candidates-body" class="divide-y divide-slate-800/60">
               <tr>
-                <td colspan="7" class="p-6 text-center text-slate-500">Loading candidates...</td>
+                <td colspan="8" class="p-6 text-center text-slate-500">Loading candidate registry...</td>
               </tr>
             </tbody>
           </table>
@@ -268,18 +271,61 @@
     </div>
   </main>
 
+  <!-- MODAL FOR ESSAYS -->
+  <div id="essay-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[#0E1626] border border-slate-800 rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 space-y-4 shadow-2xl">
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <div>
+          <h3 id="modal-candidate-name" class="text-base font-bold text-white heading-font"></h3>
+          <span id="modal-app-ref" class="text-xs font-mono text-blue-400"></span>
+        </div>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-white text-lg font-bold px-2 py-1">✕</button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div class="p-3 bg-[#070B14] rounded-lg border border-slate-800">
+          <span class="text-blue-400 font-mono font-bold block mb-1">Challenge 1: Two Sum Approach</span>
+          <p id="modal-algo1" class="text-slate-300 font-mono whitespace-pre-wrap"></p>
+        </div>
+
+        <div class="p-3 bg-[#070B14] rounded-lg border border-slate-800">
+          <span class="text-blue-400 font-mono font-bold block mb-1">Challenge 2: Recursion Approach</span>
+          <p id="modal-algo2" class="text-slate-300 font-mono whitespace-pre-wrap"></p>
+        </div>
+
+        <div class="p-3 bg-[#070B14] rounded-lg border border-slate-800">
+          <span class="text-amber-400 font-bold block mb-1">Why ShasheCoders Statement</span>
+          <p id="modal-sop" class="text-slate-300 whitespace-pre-wrap leading-relaxed"></p>
+        </div>
+
+        <div class="p-3 bg-[#070B14] rounded-lg border border-slate-800">
+          <span class="text-amber-400 font-bold block mb-1">Community Project Vision</span>
+          <p id="modal-project" class="text-slate-300 whitespace-pre-wrap leading-relaxed"></p>
+        </div>
+      </div>
+
+      <div class="pt-2 text-right">
+        <button onclick="closeModal()" class="bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded-lg text-xs font-semibold text-slate-200">
+          Close Review
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    let currentCandidateList = [];
+
     function switchView(view) {
       if (view === 'apply') {
         document.getElementById('view-apply').classList.remove('hidden');
         document.getElementById('view-admin').classList.add('hidden');
-        document.getElementById('tab-apply').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition-colors';
-        document.getElementById('tab-admin').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-colors';
+        document.getElementById('tab-apply').className = 'px-3.5 py-1.5 rounded-md text-xs font-semibold bg-blue-600 text-white transition-all shadow-sm';
+        document.getElementById('tab-admin').className = 'px-3.5 py-1.5 rounded-md text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-all';
       } else {
         document.getElementById('view-apply').classList.add('hidden');
         document.getElementById('view-admin').classList.remove('hidden');
-        document.getElementById('tab-admin').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition-colors';
-        document.getElementById('tab-apply').className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white transition-colors';
+        document.getElementById('tab-admin').className = 'px-3.5 py-1.5 rounded-md text-xs font-semibold bg-blue-600 text-white transition-all shadow-sm';
+        document.getElementById('tab-apply').className = 'px-3.5 py-1.5 rounded-md text-xs font-semibold bg-slate-800/80 text-slate-300 hover:text-white transition-all';
         loadDashboard();
       }
     }
@@ -292,7 +338,7 @@
       
       alertBox.classList.add('hidden');
       btn.disabled = true;
-      btn.innerText = 'Calculating & Submitting...';
+      btn.innerText = 'Evaluating & Submitting...';
 
       const data = {
         full_name: form.full_name.value,
@@ -333,7 +379,7 @@
         document.getElementById('res-score').innerText = result.merit_score + ' / 100';
       } catch (err) {
         alertBox.innerText = err.message;
-        alertBox.className = 'mb-4 p-3 rounded-xl text-xs bg-rose-500/10 border border-rose-500/30 text-rose-300';
+        alertBox.className = 'mb-4 p-3 rounded-lg text-xs bg-rose-500/10 border border-rose-500/30 text-rose-300';
         alertBox.classList.remove('hidden');
       } finally {
         btn.disabled = false;
@@ -349,18 +395,19 @@
       try {
         const res = await fetch(`/api/admin/candidates?search=${encodeURIComponent(search)}&status=${encodeURIComponent(status)}`);
         const data = await res.json();
+        currentCandidateList = data.candidates || [];
 
         document.getElementById('m-total').innerText = data.metrics.total_registered;
         document.getElementById('m-dorm').innerText = `${data.metrics.dorm_allocated} / 80`;
         document.getElementById('m-accepted').innerText = data.metrics.accepted_cohort;
 
-        if (data.candidates.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="7" class="p-6 text-center text-slate-500">No applicants found.</td></tr>';
+        if (currentCandidateList.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="8" class="p-6 text-center text-slate-500">No applicants found.</td></tr>';
           return;
         }
 
-        tbody.innerHTML = data.candidates.map((c, i) => `
-          <tr class="hover:bg-slate-800/40">
+        tbody.innerHTML = currentCandidateList.map((c, i) => `
+          <tr class="hover:bg-[#070B14]/40">
             <td class="p-3.5 font-mono text-slate-300">
               #${i + 1}
               <div class="text-[10px] text-slate-500">${c.app_ref}</div>
@@ -369,22 +416,27 @@
               <div class="font-bold text-white">${c.full_name}</div>
               <div class="text-slate-400 text-[10px]">${c.school_name}</div>
             </td>
-            <td class="p-3.5 font-mono text-emerald-400">${c.telegram}</td>
+            <td class="p-3.5 font-mono text-blue-400">${c.telegram}</td>
             <td class="p-3.5 font-mono">
               <span class="text-white">${c.gpa}%</span>
               ${c.national_score ? `<span class="text-slate-500 text-[10px] block">NAT: ${c.national_score}</span>` : ''}
             </td>
-            <td class="p-3.5 font-mono font-bold text-cyan-400">${c.merit_score}</td>
+            <td class="p-3.5 font-mono font-bold text-amber-400">${c.merit_score}</td>
             <td class="p-3.5">
               ${c.housing_status === 'DORM_ALLOCATED' 
-                ? '<span class="bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded text-[10px] font-bold">DORM ALLOCATED</span>'
+                ? '<span class="bg-blue-500/20 text-blue-300 px-2 py-0.5 rounded text-[10px] font-bold">DORM ALLOCATED</span>'
                 : c.needs_dorm 
                   ? '<span class="text-amber-400/80 text-[10px]">Needs Dorm</span>' 
-                  : '<span class="text-slate-600 text-[10px]">Day Scholar</span>'}
+                  : '<span class="text-slate-500 text-[10px]">Day Scholar</span>'}
+            </td>
+            <td class="p-3.5">
+              <button onclick="viewCandidateEssays(${c.id})" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-blue-300 text-[10px] font-semibold rounded border border-slate-700 transition-colors">
+                Review Essay
+              </button>
             </td>
             <td class="p-3.5">
               ${c.status !== 'ACCEPTED' 
-                ? `<button onclick="makeDecision(${c.id}, 'ACCEPTED', '${c.needs_dorm ? 'DORM_ALLOCATED' : 'DAY_SCHOLAR'}')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded text-[10px] font-bold">Admit to 80</button>`
+                ? `<button onclick="makeDecision(${c.id}, 'ACCEPTED', '${c.needs_dorm ? 'DORM_ALLOCATED' : 'DAY_SCHOLAR'}')" class="bg-blue-600 hover:bg-blue-500 text-white px-2.5 py-1 rounded text-[10px] font-bold">Admit to 80</button>`
                 : `<button onclick="makeDecision(${c.id}, 'SCREENING_PASSED', 'PENDING')" class="bg-slate-800 text-slate-400 px-2.5 py-1 rounded text-[10px]">Revoke</button>`}
             </td>
           </tr>
@@ -392,6 +444,24 @@
       } catch (err) {
         console.error(err);
       }
+    }
+
+    function viewCandidateEssays(id) {
+      const candidate = currentCandidateList.find(c => c.id === id);
+      if (!candidate) return;
+
+      document.getElementById('modal-candidate-name').innerText = candidate.full_name;
+      document.getElementById('modal-app-ref').innerText = `${candidate.app_ref} • ${candidate.school_name}`;
+      document.getElementById('modal-algo1').innerText = candidate.algo_response1 || "No response provided.";
+      document.getElementById('modal-algo2').innerText = candidate.algo_response2 || "No response provided.";
+      document.getElementById('modal-sop').innerText = candidate.statement_purpose || "No response provided.";
+      document.getElementById('modal-project').innerText = candidate.project_idea || "No response provided.";
+
+      document.getElementById('essay-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('essay-modal').classList.add('hidden');
     }
 
     async function makeDecision(id, status, housing_status) {
