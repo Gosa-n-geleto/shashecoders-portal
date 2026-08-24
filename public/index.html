@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShasheCoders Academy & Admissions Portal | 2026</title>
+  <title>ShasheCoders Academy & Admissions Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body, input, select, textarea, button, table {
@@ -16,12 +16,13 @@
 </head>
 <body class="bg-[#090D16] text-[#E2E8F0] min-h-screen">
 
-  <!-- Main Navigation Bar -->
+  <!-- Main Navigation Bar with Uploaded Logo -->
   <header class="border-b border-[#1E293B] bg-[#0E1526] sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 border border-[#3B82F6] bg-[#1E3A8A]/40 rounded flex items-center justify-center text-white font-bold text-lg">
-          SC
+        <!-- Exact Uploaded Logo -->
+        <div class="w-12 h-12 border border-[#3B82F6]/60 bg-[#1E3A8A]/30 rounded-lg overflow-hidden flex items-center justify-center text-white font-bold text-lg shadow-md">
+          <img src="/Screenshot 2026-08-24 180213.png" alt="ShasheCoders Logo" class="w-full h-full object-cover" onerror="this.src='/logo.png';">
         </div>
         <div>
           <span class="text-base font-bold tracking-wide text-white block">SHASHECODERS REGIONAL INITIATIVE</span>
@@ -75,7 +76,7 @@
     <!-- Strategic Brief -->
     <div class="bg-[#0E1526] border border-[#1E293B] rounded-lg p-6 sm:p-8 shadow-xl">
       <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-blue-500/10 border border-blue-500/20 text-[#60A5FA] text-xs font-semibold uppercase tracking-wider mb-3">
-        Executive Overview • 2026 Academic Cycle
+        Executive Overview • Regional Initiative
       </div>
       <h1 class="text-3xl font-bold text-white tracking-tight">ShasheCoders Academy Executive Summary</h1>
       <p class="text-sm text-slate-300 mt-2 max-w-3xl leading-relaxed">
@@ -83,7 +84,7 @@
       </p>
     </div>
 
-    <!-- Governance & Faculty Board -->
+    <!-- Governance & Faculty Board with Uploaded Photos -->
     <div class="space-y-4">
       <div class="border-b border-[#1E293B] pb-2">
         <h2 class="text-xl font-bold text-white">Institutional Leadership & Faculty Board</h2>
@@ -91,41 +92,68 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="p-5 bg-[#0E1526] border border-[#3B82F6]/50 rounded-lg space-y-2 relative overflow-hidden">
+        
+        <!-- Founder (Gosa) -->
+        <div class="p-5 bg-[#0E1526] border border-[#3B82F6]/50 rounded-lg space-y-3 relative overflow-hidden flex flex-col justify-between">
           <div class="absolute top-0 right-0 bg-[#2563EB] text-[10px] uppercase font-bold px-2 py-0.5 text-white">Founder</div>
-          <h3 class="text-base font-bold text-white mt-1">Gosa Negeso Geleto</h3>
-          <span class="text-xs text-blue-400 block font-semibold">Founder & Lead Algorithms Instructor</span>
-          <p class="text-xs text-slate-300 leading-snug">
-            National examination top achiever (590/600 national scorer). Head curriculum designer specializing in discrete algorithms, complexity, and systems.
-          </p>
+          <div>
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-[#3B82F6] mb-3 bg-[#1E3A8A]/40 flex items-center justify-center">
+              <img src="/gosa.png" alt="Gosa Negeso" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/gosa.jpg';">
+            </div>
+            <h3 class="text-base font-bold text-white">Gosa Negeso Geleto</h3>
+            <span class="text-xs text-blue-400 block font-semibold mb-2">Founder & Lead Algorithms Instructor</span>
+            <p class="text-xs text-slate-300 leading-snug">
+              National examination top achiever (590/600 national scorer). Head curriculum designer specializing in discrete algorithms, complexity, and systems.
+            </p>
+          </div>
         </div>
 
-        <div class="p-5 bg-[#0E1526] border border-[#1E293B] rounded-lg space-y-2">
-          <div class="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Co-Founder & Executive</div>
-          <h3 class="text-base font-bold text-white">Muhafiz Ahmed</h3>
-          <span class="text-xs text-slate-300 block font-semibold">Co-Leader & Co-Curriculum Architect</span>
-          <p class="text-xs text-slate-400 leading-snug">
-            Leading academic curriculum restructuring, core programming pedagogy, and institutional operations.
-          </p>
+        <!-- Co-Leader (Muhafiz) -->
+        <div class="p-5 bg-[#0E1526] border border-[#1E293B] rounded-lg space-y-3 flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-amber-500/50 mb-3 bg-[#1E293B] flex items-center justify-center">
+              <span class="text-amber-400 font-bold text-base">MA</span>
+            </div>
+            <div class="text-[10px] uppercase font-bold text-amber-400 tracking-wider">Co-Founder & Executive</div>
+            <h3 class="text-base font-bold text-white">Muhafiz Ahmed</h3>
+            <span class="text-xs text-slate-300 block font-semibold mb-2">Co-Leader & Co-Curriculum Architect</span>
+            <p class="text-xs text-slate-400 leading-snug">
+              Leading academic curriculum restructuring, core programming pedagogy, and institutional operations.
+            </p>
+          </div>
         </div>
 
-        <div class="p-5 bg-[#0E1526] border border-[#1E293B] rounded-lg space-y-2">
-          <div class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Faculty Expert</div>
-          <h3 class="text-base font-bold text-white">Kalid Beshir</h3>
-          <span class="text-xs text-slate-300 block font-semibold">Senior Algorithm & Mathematics Faculty</span>
-          <p class="text-xs text-slate-400 leading-snug">
-            Academic excellence specialist leading competitive problem-solving seminars, mathematical recursion, and tree invariants.
-          </p>
+        <!-- Faculty 1 (Kalid) with Uploaded Photo -->
+        <div class="p-5 bg-[#0E1526] border border-[#1E293B] rounded-lg space-y-3 flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-slate-600 mb-3 bg-[#1E293B] flex items-center justify-center">
+              <img src="/Screenshot 2026-08-24 180639.png" alt="Kalid Beshir" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div style="display:none;" class="w-full h-full items-center justify-center text-slate-300 font-bold text-sm bg-slate-800">KB</div>
+            </div>
+            <div class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Faculty Expert</div>
+            <h3 class="text-base font-bold text-white">Kalid Beshir</h3>
+            <span class="text-xs text-slate-300 block font-semibold mb-2">Senior Algorithm & Mathematics Faculty</span>
+            <p class="text-xs text-slate-400 leading-snug">
+              Academic excellence specialist leading competitive problem-solving seminars, mathematical recursion, and tree invariants.
+            </p>
+          </div>
         </div>
 
-        <div class="p-5 bg-[#0E1526] border border-[#1E293B] rounded-lg space-y-2">
-          <div class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Faculty Expert</div>
-          <h3 class="text-base font-bold text-white">Feyisa Balcha</h3>
-          <span class="text-xs text-slate-300 block font-semibold">Software Systems & Infrastructure Faculty</span>
-          <p class="text-xs text-slate-400 leading-snug">
-            Full-stack edge architectures, database performance, REST APIs, and practical systems development mentor.
-          </p>
+        <!-- Faculty 2 (Feyisa) -->
+        <div class="p-5 bg-[#0E1526] border border-[#1E293B] rounded-lg space-y-3 flex flex-col justify-between">
+          <div>
+            <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-slate-600 mb-3 bg-[#1E293B] flex items-center justify-center">
+              <span class="text-slate-300 font-bold text-base">FB</span>
+            </div>
+            <div class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Faculty Expert</div>
+            <h3 class="text-base font-bold text-white">Feyisa Balcha</h3>
+            <span class="text-xs text-slate-300 block font-semibold mb-2">Software Systems & Infrastructure Faculty</span>
+            <p class="text-xs text-slate-400 leading-snug">
+              Full-stack edge architectures, database performance, REST APIs, and practical systems development mentor.
+            </p>
+          </div>
         </div>
+
       </div>
     </div>
 
@@ -183,7 +211,7 @@
       <div id="form-container">
         <div class="border-b border-[#1E293B] pb-4 mb-6 flex justify-between items-start">
           <div>
-            <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Intake 2026 Examination</span>
+            <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Intake Examination</span>
             <h1 class="text-2xl font-bold text-white mt-1">Candidate Admissions Screening</h1>
             <p class="text-xs text-slate-400 mt-1 leading-relaxed">
               Screening portal for the 80 municipal-sponsored residential boarding seats at Dodola Campus.
@@ -556,7 +584,6 @@
     let currentCandidateList = [];
     let authenticatedRole = localStorage.getItem("sc_role") || null;
 
-    // Full 7-Week Daily Syllabus Registry (Monday to Friday)
     const SYLLABUS_DB = {
       1: {
         title: "Week 1: Web Fundamentals & Structural Design (HTML5, Semantic UI, CSS3)",
@@ -1120,7 +1147,7 @@
     }
 
     function copyTelegramInvite(name, ref, tg, status) {
-      const msg = `Greetings ${name} (${tg}),\n\nYour application [${ref}] to the ShasheCoders 2026 Cohort has been processed. Current status: ${status}.\n\nAccess your algorithm screening dashboard and cohort materials here: https://shashecoders-portal.onrender.com\n\n- ShasheCoders Admissions Board`;
+      const msg = `Greetings ${name} (${tg}),\n\nYour application [${ref}] to the ShasheCoders Cohort has been processed. Current status: ${status}.\n\nAccess your algorithm screening dashboard and cohort materials here: https://shashecoders-portal.onrender.com\n\n- ShasheCoders Admissions Board`;
       navigator.clipboard.writeText(msg).then(() => {
         alert(`Telegram notification message for ${name} copied to clipboard!`);
       });
