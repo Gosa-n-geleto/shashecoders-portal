@@ -8,27 +8,20 @@
   <meta name="google-site-verification" content="1GTeXLRWbTrtG-hxxjmEKcxbqKOfkJRX9TCVPUAtU7g" />
 
   <!-- Primary Google Search Engine SEO Tags -->
-  <title>ShasheCoders Academy | Residential Summer Camp & Algorithms Initiative</title>
-  <meta name="title" content="ShasheCoders Academy | Residential Summer Camp & Algorithms Initiative">
-  <meta name="description" content="Official portal of the ShasheCoders Regional Initiative — an elite 7-week residential algorithms, computer science, and systems academy hosted at Dodola Special Boarding Campus in Oromia, Ethiopia. Providing 80 fully-funded seats.">
-  <meta name="keywords" content="Shashe Coders, ShasheCoders, Shashemene Coders, Dodola Ifa Boru, Oromia coding camp, Ethiopian algorithms academy, Gosa Negeso, Muhafiz Ahmed, Kalid Beshir, Dr Dida Midekso, Dodola Special Boarding School, competitive programming Ethiopia">
+  <title>About Us & Admissions | ShasheCoders Academy</title>
+  <meta name="title" content="About Us & Admissions | ShasheCoders Academy">
+  <meta name="description" content="Learn about ShasheCoders Academy's mission, vision, and leadership. An elite 7-week residential computer science and algorithms program at Dodola Special Boarding Campus in Oromia, Ethiopia.">
+  <meta name="keywords" content="Shashe Coders, ShasheCoders, About ShasheCoders, Mission, Vision, Dodola Ifa Boru, Oromia coding camp, algorithms academy, Gosa Negeso, Muhafiz Ahmed, Kalid Beshir, Dr Dida Midekso">
   <meta name="author" content="ShasheCoders Initiative & Dodola Ifa Boru Special Boarding School">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://shashecoders.ifaboru-dodola.org">
 
-  <!-- Open Graph / Facebook / Telegram Sharing -->
+  <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shashecoders.ifaboru-dodola.org">
-  <meta property="og:title" content="ShasheCoders Regional Initiative • Residential Algorithms Academy">
-  <meta property="og:description" content="Forging Oromia's Next Software Engineers & Innovators. Elite 7-week intensive residential algorithms and systems academy at Dodola Campus.">
+  <meta property="og:title" content="About ShasheCoders Regional Initiative • Mission & Vision">
+  <meta property="og:description" content="Cultivating the next generation of Ethiopian tech leaders through intensive residential algorithms training and software craftsmanship.">
   <meta property="og:image" content="https://shashecoders.ifaboru-dodola.org/shasheco.jpg">
-
-  <!-- Twitter Meta Tags -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://shashecoders.ifaboru-dodola.org">
-  <meta property="twitter:title" content="ShasheCoders Regional Initiative • 2026 Academic Cohort">
-  <meta property="twitter:description" content="Forging Oromia's Next Software Engineers & Innovators at Dodola Special Boarding Campus.">
-  <meta property="twitter:image" content="https://shashecoders.ifaboru-dodola.org/shasheco.jpg">
 
   <!-- Tailwind & Typography -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -60,8 +53,8 @@
         <button onclick="navigate('overview')" id="nav-overview" class="px-3 py-1.5 text-xs font-semibold rounded bg-[#2563EB] text-white">
           Dashboard
         </button>
-        <button onclick="navigate('faculty')" id="nav-faculty" class="px-3 py-1.5 text-xs font-semibold rounded bg-[#1E293B] text-slate-300 hover:text-white">
-          Founders &amp; Faculty
+        <button onclick="navigate('about')" id="nav-about" class="px-3 py-1.5 text-xs font-semibold rounded bg-[#1E293B] text-slate-300 hover:text-white">
+          About Us
         </button>
         <button onclick="navigate('apply')" id="nav-apply" class="px-3 py-1.5 text-xs font-semibold rounded bg-[#1E293B] text-slate-300 hover:text-white">
           Admissions Form
@@ -85,7 +78,7 @@
     <!-- 1. EXECUTIVE DASHBOARD -->
     <section id="view-overview" class="max-w-7xl mx-auto px-4 py-6 space-y-8">
       
-      <!-- Full-Width Coders Hero -->
+      <!-- Full-Width Hero -->
       <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-blue-900/50 min-h-[540px] sm:min-h-[600px] flex flex-col justify-between p-6 sm:p-12 lg:p-14">
         <img 
           src="/shasheco.jpg" 
@@ -117,8 +110,8 @@
             <button onclick="navigate('apply')" class="px-7 py-3.5 bg-[#F59E0B] hover:bg-[#D97706] text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg shadow-2xl transition-all transform hover:-translate-y-0.5">
               Apply for 2026 Cohort →
             </button>
-            <button onclick="navigate('faculty')" class="px-7 py-3.5 bg-[#0E1526]/90 hover:bg-[#1E293B] text-white border border-slate-300/40 font-semibold text-xs uppercase tracking-wider rounded-lg backdrop-blur-md shadow-2xl transition-all">
-              Meet Founding Faculty
+            <button onclick="navigate('about')" class="px-7 py-3.5 bg-[#0E1526]/90 hover:bg-[#1E293B] text-white border border-slate-300/40 font-semibold text-xs uppercase tracking-wider rounded-lg backdrop-blur-md shadow-2xl transition-all">
+              Learn About Us
             </button>
           </div>
         </div>
@@ -174,113 +167,157 @@
 
     </section>
 
-    <!-- 2. DEDICATED FOUNDERS & FOUNDING FACULTY SECTION -->
-    <section id="view-faculty" class="hidden max-w-7xl mx-auto px-4 py-8 space-y-8">
+    <!-- 2. ABOUT US SECTION (MISSION, VISION & LEADERSHIP TICKETS) -->
+    <section id="view-about" class="hidden max-w-7xl mx-auto px-4 py-8 space-y-10">
       
       <div class="border-b border-[#1E293B] pb-4">
-        <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Leadership &amp; Academic Governance</span>
-        <h1 class="text-3xl font-bold text-white mt-1">Founders &amp; Founding Faculty</h1>
+        <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Institutional Profile &amp; Governance</span>
+        <h1 class="text-3xl font-bold text-white mt-1">About ShasheCoders Academy</h1>
         <p class="text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed">
-          The leadership team brings complementary expertise in computer science education, systems engineering, pure mathematics, academic research, and scalable digital platforms. Click on any portrait to view high-resolution photography.
+          Founded in 2026, ShasheCoders is a regional academic initiative hosted at Dodola Special Boarding School. We bridge the educational resource divide across Oromia by training motivated young minds in computational thinking, software engineering, and community-driven technology solutions.
         </p>
       </div>
 
-      <!-- Founding Team Profiles Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Mission, Vision & Strategic Goals Tickets (3-Column Grid) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <!-- Profile 1: Dr. Dida Midekso -->
-        <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-emerald-500/50 transition-all shadow-lg group">
-          <div onclick="openPhotoModal('Dr. Dida Midekso', 'Co-Founder & Expert Faculty Advisor', '/dida.jpg', 'DM')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-emerald-500/60 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
-            <span class="text-emerald-400 font-bold text-2xl">DM</span>
-            <div class="absolute inset-0 bg-emerald-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
+        <!-- Ticket 1: Our Mission -->
+        <div class="p-6 bg-[#0E1526] border-t-4 border-t-blue-500 border border-[#1E293B] rounded-xl space-y-3 shadow-lg relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">🎯</span>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-blue-400 font-bold bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">Ticket 01</span>
           </div>
-          <div class="space-y-2 flex-1">
-            <div class="flex items-center justify-between flex-wrap gap-2">
-              <h2 class="text-lg font-bold text-white">Dr. Dida Midekso</h2>
-              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                Co-Founder &amp; Advisor
-              </span>
-            </div>
-            <span class="text-xs font-semibold text-[#93C5FD] block">Co-Founder &amp; Expert Faculty Advisor</span>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              An Associate Professor at Addis Ababa University and a prominent academic in computer science and technology education in Ethiopia. He brings extensive academic experience, mentorship, and institutional leadership to the initiative.
-            </p>
-          </div>
+          <h2 class="text-lg font-bold text-white">Our Mission</h2>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            To identify, nurture, and empower high-potential high school students across Oromia by providing world-class, zero-cost residential education in algorithmic problem solving, software engineering, and systems development.
+          </p>
         </div>
 
-        <!-- Profile 2: Muhafiz Ahmed -->
-        <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-amber-500/50 transition-all shadow-lg group">
-          <div onclick="openPhotoModal('Muhafiz Ahmed', 'Co-Founder & Technology Lead', '/muhafiz.jpg', 'MA')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-amber-500/60 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
-            <span class="text-amber-400 font-bold text-2xl">MA</span>
-            <div class="absolute inset-0 bg-amber-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
+        <!-- Ticket 2: Our Vision -->
+        <div class="p-6 bg-[#0E1526] border-t-4 border-t-amber-500 border border-[#1E293B] rounded-xl space-y-3 shadow-lg relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">🔭</span>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-amber-400 font-bold bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Ticket 02</span>
           </div>
-          <div class="space-y-2 flex-1">
-            <div class="flex items-center justify-between flex-wrap gap-2">
-              <h2 class="text-lg font-bold text-white">Muhafiz Ahmed</h2>
-              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">
-                Co-Founder &amp; Tech Lead
-              </span>
-            </div>
-            <span class="text-xs font-semibold text-[#93C5FD] block">Co-Founder &amp; Technology Lead</span>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              Addis Ababa Science and Technology (AASTU) graduate and experienced technology enthusiast. He is the founder of the Robe Gabaya platform, which has reached hundreds of thousands of users, and has demonstrated strong expertise in technology, innovation, and digital platforms.
-            </p>
-          </div>
+          <h2 class="text-lg font-bold text-white">Our Vision</h2>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            To establish a premier tech incubator and research pipeline in Ethiopia, transforming the Rift Valley and Oromia into a vibrant center for software innovation, technical research, and civic problem-solving.
+          </p>
         </div>
 
-        <!-- Profile 3: Gosa Negeso -->
-        <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-blue-500/50 transition-all shadow-lg group">
-          <div onclick="openPhotoModal('Gosa Negeso', 'Co-Founder & Coding/Research Lead', '/gosaakoo.jpg')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-[#3B82F6] flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
-            <img src="/gosaakoo.jpg" alt="Gosa Negeso" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/gosa.jpg';">
-            <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
+        <!-- Ticket 3: Strategic Goals -->
+        <div class="p-6 bg-[#0E1526] border-t-4 border-t-emerald-500 border border-[#1E293B] rounded-xl space-y-3 shadow-lg relative overflow-hidden">
+          <div class="flex items-center justify-between">
+            <span class="text-2xl">🚀</span>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 font-bold bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Ticket 03</span>
           </div>
-          <div class="space-y-2 flex-1">
-            <div class="flex items-center justify-between flex-wrap gap-2">
-              <h2 class="text-lg font-bold text-white">Gosa Negeso</h2>
-              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-500/10 text-[#60A5FA] border border-blue-500/20">
-                Co-Founder &amp; Research Lead
-              </span>
-            </div>
-            <span class="text-xs font-semibold text-amber-400 block">Co-Founder &amp; Coding/Research Lead</span>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              A national academic high achiever and coding enthusiast with strong experience in programming and research. He is also a Dodola Ifa Boru scholar alumnus and has been actively involved in developing educational and technology-focused initiatives both at regional and national levels.
-            </p>
-          </div>
-        </div>
-
-        <!-- Profile 4: Kalid Beshir -->
-        <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-blue-400/40 transition-all shadow-lg group">
-          <div onclick="openPhotoModal('Kalid Beshir', 'Senior Faculty and Mathematics Lead', '/Screenshot 2026-08-24 180639.png', 'KB')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-slate-600 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
-            <img src="/Screenshot 2026-08-24 180639.png" alt="Kalid Beshir" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div style="display:none;" class="w-full h-full items-center justify-center text-slate-300 font-bold text-xl bg-slate-800">KB</div>
-            <div class="absolute inset-0 bg-slate-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
-          </div>
-          <div class="space-y-2 flex-1">
-            <div class="flex items-center justify-between flex-wrap gap-2">
-              <h2 class="text-lg font-bold text-white">Kalid Beshir</h2>
-              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-700/50 text-slate-300 border border-slate-600">
-                Senior Faculty Lead
-              </span>
-            </div>
-            <span class="text-xs font-semibold text-amber-400 block">Faculty and Mathematics Lead</span>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              A Harvard University student and one of Ethiopia’s leading young mathematicians. He has distinguished himself through exceptional performance in mathematics and national academic competitions and brings strong mathematical and analytical expertise to SHASHE Coders.
-            </p>
-          </div>
+          <h2 class="text-lg font-bold text-white">Strategic Goals</h2>
+          <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
+            <li><strong>80 Residential Scholars:</strong> 100% funded housing, meals, and compute power.</li>
+            <li><strong>Production Output:</strong> Ship 10+ real-world civic software applications each cycle.</li>
+            <li><strong>Global Readiness:</strong> Prepare candidates for national and international tech careers.</li>
+          </ul>
         </div>
 
       </div>
 
-      <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl text-center space-y-2">
-        <h3 class="text-base font-bold text-white">United by Excellence &amp; Regional Impact</h3>
-        <p class="text-xs text-slate-400 max-w-2xl mx-auto leading-relaxed">
-          From algorithmic foundations and competitive mathematical proofs to production-grade distributed architectures and academic research, the team directs every stage of the 7-week residential syllabus.
-        </p>
+      <!-- Founding Leadership & Faculty Section -->
+      <div class="space-y-6 pt-4">
+        <div class="border-b border-[#1E293B] pb-3">
+          <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Academic Leadership</span>
+          <h2 class="text-2xl font-bold text-white mt-1">Founders &amp; Founding Faculty</h2>
+          <p class="text-xs text-slate-400 mt-1">The multidisciplinary board directing curriculum architecture, research mentorship, and candidate evaluations.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Profile 1: Dr. Dida Midekso -->
+          <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-emerald-500/50 transition-all shadow-lg group">
+            <div onclick="openPhotoModal('Dr. Dida Midekso', 'Co-Founder & Expert Faculty Advisor', '/dida.jpg', 'DM')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-emerald-500/60 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
+              <span class="text-emerald-400 font-bold text-2xl">DM</span>
+              <div class="absolute inset-0 bg-emerald-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
+            </div>
+            <div class="space-y-2 flex-1">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <h3 class="text-base font-bold text-white">Dr. Dida Midekso</h3>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  Co-Founder &amp; Advisor
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-[#93C5FD] block">Associate Professor &amp; Expert Faculty Advisor</span>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Associate Professor at Addis Ababa University and senior researcher in computer science and technology education in Ethiopia. Brings extensive academic mentorship, systems design, and institutional governance to the academy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Profile 2: Muhafiz Ahmed -->
+          <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-amber-500/50 transition-all shadow-lg group">
+            <div onclick="openPhotoModal('Muhafiz Ahmed', 'Co-Founder & Technology Lead', '/muhafiz.jpg', 'MA')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-amber-500/60 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
+              <span class="text-amber-400 font-bold text-2xl">MA</span>
+              <div class="absolute inset-0 bg-amber-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
+            </div>
+            <div class="space-y-2 flex-1">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <h3 class="text-base font-bold text-white">Muhafiz Ahmed</h3>
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                  Co-Founder &amp; Tech Lead
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-[#93C5FD] block">Software Architect &amp; Technology Lead</span>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Addis Ababa Science and Technology (AASTU) graduate and founder of Robe Gabaya, serving hundreds of thousands of users. Leads full-stack curriculum delivery, database architectures, and production cloud operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Profile 3: Gosa Negeso -->
+          <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-blue-500/50 transition-all shadow-lg group">
+            <div onclick="openPhotoModal('Gosa Negeso', 'Co-Founder & Coding/Research Lead', '/gosaakoo.jpg')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-[#3B82F6] flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
+              <img src="/gosaakoo.jpg" alt="Gosa Negeso" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/gosa.jpg';">
+              <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
+            </div>
+            <div class="space-y-2 flex-1">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <h3 class="text-base font-bold text-white">Gosa Negeso</h3>
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-500/10 text-[#60A5FA] border border-blue-500/20">
+                  Co-Founder &amp; Research Lead
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-amber-400 block">Dodola Ifa Boru Alumnus &amp; Algorithms Lead</span>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                National high achiever, software developer, and researcher specializing in Edge AI and computational logic. Directs the admissions screening model, algorithmic problem sets, and academic operations.
+              </p>
+            </div>
+          </div>
+
+          <!-- Profile 4: Kalid Beshir -->
+          <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-blue-400/40 transition-all shadow-lg group">
+            <div onclick="openPhotoModal('Kalid Beshir', 'Senior Faculty and Mathematics Lead', '/Screenshot 2026-08-24 180639.png', 'KB')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-slate-600 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
+              <img src="/Screenshot 2026-08-24 180639.png" alt="Kalid Beshir" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div style="display:none;" class="w-full h-full items-center justify-center text-slate-300 font-bold text-xl bg-slate-800">KB</div>
+              <div class="absolute inset-0 bg-slate-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
+            </div>
+            <div class="space-y-2 flex-1">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <h3 class="text-base font-bold text-white">Kalid Beshir</h3>
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-700/50 text-slate-300 border border-slate-600">
+                  Senior Faculty Lead
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-amber-400 block">Harvard Scholar &amp; Mathematics Lead</span>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Harvard University scholar and national mathematics competition standout. Oversees discrete mathematics modules, recursive complexity analysis, and mathematical proofs for algorithms.
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </section>
 
-    <!-- 3. APPLICANT REGISTRATION VIEW -->
+    <!-- 3. APPLICANT REGISTRATION VIEW (Optional Transcript & No Prior Experience Barrier) -->
     <section id="view-apply" class="hidden max-w-4xl mx-auto px-4 py-8 space-y-8">
       
       <!-- Admission Criteria Card -->
@@ -388,7 +425,7 @@
                 </div>
               </div>
 
-              <!-- Transcript Upload -->
+              <!-- Transcript Upload (Optional) -->
               <div class="p-3.5 bg-[#090D16] border border-[#1E293B] rounded space-y-2">
                 <label class="block text-xs text-slate-300 font-semibold">Academic Transcript or National Exam Certificate (PDF / Image)</label>
                 <div class="flex items-center gap-3">
@@ -455,7 +492,7 @@
       </div>
     </section>
 
-    <!-- 4. CURRICULUM VIEW -->
+    <!-- 4. CURRICULUM VIEW (7 WEEKS) -->
     <section id="view-classes" class="hidden max-w-6xl mx-auto px-4 py-8">
       <div class="space-y-6">
         <div class="border-b border-[#1E293B] pb-4">
@@ -631,7 +668,7 @@
         <div class="space-y-2">
           <span class="text-xs font-bold text-white uppercase tracking-wider block">Admissions &amp; Tools</span>
           <ul class="space-y-1.5 text-[11px]">
-            <li><a href="javascript:void(0)" onclick="navigate('faculty')" class="hover:text-amber-400 transition-colors">Founders &amp; Faculty</a></li>
+            <li><a href="javascript:void(0)" onclick="navigate('about')" class="hover:text-amber-400 transition-colors">About Us &amp; Mission</a></li>
             <li><a href="javascript:void(0)" onclick="navigate('apply')" class="hover:text-blue-400 transition-colors">Candidate Application</a></li>
             <li><a href="javascript:void(0)" onclick="navigate('quizzes')" class="hover:text-blue-400 transition-colors">Live Algorithm Sandbox</a></li>
             <li><a href="javascript:void(0)" onclick="navigate('admin')" class="hover:text-amber-400 transition-colors">Faculty &amp; Board Portal</a></li>
@@ -725,7 +762,7 @@
     </div>
   </div>
 
-  <!-- INTERACTIVE LECTURE SYLLABUS MODAL (ALL 7 WEEKS) -->
+  <!-- INTERACTIVE LECTURE SYLLABUS MODAL -->
   <div id="syllabus-modal" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
     <div class="bg-[#0E1526] border border-[#1E293B] rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 shadow-2xl">
       <div class="flex justify-between items-start border-b border-[#1E293B] pb-4">
@@ -990,7 +1027,7 @@
     }
 
     function navigate(view) {
-      ['overview', 'faculty', 'apply', 'classes', 'quizzes', 'admin'].forEach(v => {
+      ['overview', 'about', 'apply', 'classes', 'quizzes', 'admin'].forEach(v => {
         const el = document.getElementById(`view-${v}`);
         const btn = document.getElementById(`nav-${v}`);
         if (el) el.classList.add('hidden');
