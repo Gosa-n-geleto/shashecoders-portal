@@ -1,14 +1,14 @@
 {
   "name": "shashecoders-portal",
   "version": "1.0.0",
-  "description": "ShasheCoders Admissions Portal",
+  "description": "ShasheCoders Academy Admissions & Evaluation Portal",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "sqlite3": "^5.1.7",
-    "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "pg": "^8.12.0",
+    "sqlite3": "^5.1.7"
   }
 }
