@@ -52,77 +52,69 @@
   <!-- Main Body Content -->
   <main class="flex-1">
 
-    <!-- 1. EXECUTIVE DASHBOARD & CRISP HERO -->
+    <!-- 1. EXECUTIVE DASHBOARD & EXPANSIVE FULL-BLEED HERO -->
     <section id="view-overview" class="max-w-7xl mx-auto px-4 py-6 space-y-8">
       
-      <!-- Balanced Hero Container -->
-      <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-[#1E293B] bg-[#0E1526] p-6 sm:p-10 lg:p-12">
-        <div class="absolute -top-32 -left-32 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Full-Width High-Resolution Coders Hero -->
+      <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border border-blue-900/50 min-h-[540px] sm:min-h-[600px] flex flex-col justify-between p-6 sm:p-12 lg:p-14">
+        
+        <!-- Full Canvas Background Image -->
+        <img 
+          src="/shasheco.jpg" 
+          alt="ShasheCoders Academy Cohort" 
+          class="absolute inset-0 w-full h-full object-cover object-center brightness-105 contrast-105"
+          onerror="this.onerror=null; this.src='/shasheco.png';"
+        />
+        
+        <!-- Deep Cinematic Shadow & Gradient Tint -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#090D16] via-[#090D16]/40 to-transparent z-0"></div>
+        <div class="absolute inset-0 bg-blue-950/20 mix-blend-multiply z-0"></div>
 
-        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- Left Column: Executive Mission -->
-          <div class="lg:col-span-7 space-y-5">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/30 text-[#93C5FD] text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
-              🚀 2026 ACADEMIC CYCLE • RESIDENTIAL ALGORITHMS CAMP
-            </div>
-
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.2]">
-              Forging Oromia's Next <br>
-              <span class="text-amber-400 italic">Software Engineers & Innovators.</span>
-            </h1>
-
-            <p class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl font-normal">
-              An elite 7-week intensive residential algorithms, web systems, and competitive problem-solving academy hosted at the Dodola Special Boarding Campus. Providing 80 fully-funded residential seats with full room, board, and continuous algorithmic mentorship.
-            </p>
-
-            <div class="pt-2 flex flex-wrap items-center gap-3.5">
-              <button onclick="navigate('apply')" class="px-6 py-3 bg-[#F59E0B] hover:bg-[#D97706] text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg shadow-xl transition-all transform hover:-translate-y-0.5">
-                Apply for 2026 Cohort →
-              </button>
-              <button onclick="navigate('classes')" class="px-6 py-3 bg-[#1E293B] hover:bg-slate-800 text-white border border-slate-700 font-semibold text-xs uppercase tracking-wider rounded-lg shadow-md transition-all">
-                Inspect 7-Week Roadmap
-              </button>
-            </div>
+        <!-- Top Tag Badge -->
+        <div class="relative z-10">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#0E1526]/85 border border-amber-500/50 text-amber-400 text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-xl">
+            🚀 2026 ACADEMIC CYCLE • RESIDENTIAL ALGORITHMS CAMP
           </div>
-
-          <!-- Right Column: Framed Campus Image -->
-          <div class="lg:col-span-5">
-            <div class="relative rounded-xl overflow-hidden border-2 border-[#1E293B] shadow-2xl bg-[#090D16] group">
-              <img 
-                src="/dodola(venture).jpg" 
-                alt="Dodola Special Boarding Campus" 
-                class="w-full h-72 sm:h-80 object-cover object-center filter brightness-100 contrast-105 group-hover:scale-105 transition-transform duration-700"
-                onerror="this.src='/dodola(venture).png';"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#090D16] via-transparent to-transparent opacity-80"></div>
-              <div class="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-[#0E1526]/90 border border-slate-700/80 backdrop-blur-md">
-                <span class="text-white font-bold text-xs block">Dodola Ifa Boru Special Boarding School</span>
-                <span class="text-[11px] text-blue-400 block">Host Residential Campus & Compute Laboratory Hub</span>
-              </div>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Metrics Grid -->
-        <div class="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 mt-8 border-t border-[#1E293B]">
-          <div class="p-3 bg-[#090D16]/60 border border-[#1E293B] rounded-lg">
-            <span class="text-2xl sm:text-3xl font-bold text-amber-400 block font-serif">80</span>
-            <span class="text-[11px] uppercase tracking-wider text-slate-300 font-semibold">Residential Boarding Seats</span>
+        <!-- Center Headline & Action Block -->
+        <div class="relative z-10 max-w-3xl space-y-4 my-auto py-8">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.15] drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
+            Forging Oromia's Next <br>
+            <span class="text-amber-400 italic">Software Engineers & Innovators.</span>
+          </h1>
+          
+          <p class="text-base sm:text-lg text-slate-100 leading-relaxed font-medium max-w-2xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            An elite 7-week intensive residential algorithms, web systems, and competitive problem-solving academy hosted at the Dodola Special Boarding Campus. Providing 80 fully-funded residential seats with complete room, board, and continuous algorithmic mentorship.
+          </p>
+
+          <div class="pt-3 flex flex-wrap items-center gap-4">
+            <button onclick="navigate('apply')" class="px-7 py-3.5 bg-[#F59E0B] hover:bg-[#D97706] text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg shadow-2xl transition-all transform hover:-translate-y-0.5">
+              Apply for 2026 Cohort →
+            </button>
+            <button onclick="navigate('classes')" class="px-7 py-3.5 bg-[#0E1526]/90 hover:bg-[#1E293B] text-white border border-slate-300/40 font-semibold text-xs uppercase tracking-wider rounded-lg backdrop-blur-md shadow-2xl transition-all">
+              Inspect 7-Week Roadmap
+            </button>
           </div>
-          <div class="p-3 bg-[#090D16]/60 border border-[#1E293B] rounded-lg">
-            <span class="text-2xl sm:text-3xl font-bold text-white block font-serif">7 Weeks</span>
-            <span class="text-[11px] uppercase tracking-wider text-slate-300 font-semibold">5 Days / Week Cadence</span>
+        </div>
+
+        <!-- Bottom KPI Metrics Row -->
+        <div class="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-white/20 backdrop-blur-xs">
+          <div>
+            <span class="text-3xl sm:text-4xl font-bold text-amber-400 block font-serif drop-shadow-md">80</span>
+            <span class="text-[11px] uppercase tracking-wider text-slate-100 font-bold drop-shadow">Residential Boarding Seats</span>
           </div>
-          <div class="p-3 bg-[#090D16]/60 border border-[#1E293B] rounded-lg">
-            <span class="text-2xl sm:text-3xl font-bold text-blue-400 block font-serif">Grades 9–12</span>
-            <span class="text-[11px] uppercase tracking-wider text-slate-300 font-semibold">Oromia Regional Eligibility</span>
+          <div>
+            <span class="text-3xl sm:text-4xl font-bold text-white block font-serif drop-shadow-md">7 Weeks</span>
+            <span class="text-[11px] uppercase tracking-wider text-slate-100 font-bold drop-shadow">5 Days / Week Cadence</span>
           </div>
-          <div class="p-3 bg-[#090D16]/60 border border-[#1E293B] rounded-lg">
-            <span class="text-2xl sm:text-3xl font-bold text-emerald-400 block font-serif">100%</span>
-            <span class="text-[11px] uppercase tracking-wider text-slate-300 font-semibold">Fully Funded Municipal Grant</span>
+          <div>
+            <span class="text-3xl sm:text-4xl font-bold text-blue-400 block font-serif drop-shadow-md">Grades 9–12</span>
+            <span class="text-[11px] uppercase tracking-wider text-slate-100 font-bold drop-shadow">Oromia Regional Eligibility</span>
+          </div>
+          <div>
+            <span class="text-3xl sm:text-4xl font-bold text-emerald-400 block font-serif drop-shadow-md">100%</span>
+            <span class="text-[11px] uppercase tracking-wider text-slate-100 font-bold drop-shadow">Municipal Sponsorship</span>
           </div>
         </div>
 
