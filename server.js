@@ -1,6 +1,7 @@
 const express = require('express');
-const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const { Pool } = require('pg');
+const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -8,17 +9,56 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Database setup
-const db = new sqlite3.Database('./admissions.db', (err) => {
-  if (err) console.error('DB Error:', err.message);
-  else console.log('Connected to admissions SQLite database.');
-});
+// Database Abstraction: Supports Managed PostgreSQL on Render or Local SQLite fallback
+const isPostgres = Boolean(process.env.DATABASE_URL);
+let pgPool = null;
+let sqliteDb = null;
 
-db.serialize(() => {
-  db.run(`
+if (isPostgres) {
+  pgPool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
+  });
+  console.log('Connected to Render Managed PostgreSQL database.');
+} else {
+  sqliteDb = new sqlite3.Database('./admissions.db', (err) => {
+    if (err) console.error('SQLite connection error:', err.message);
+    else console.log('Connected to local SQLite database.');
+  });
+}
+
+// Universal Query Helper
+async function runQuery(text, params = []) {
+  if (isPostgres) {
+    // Convert SQLite positional '?' placeholders to PostgreSQL '$1, $2, ...'
+    let paramIndex = 1;
+    const pgText = text.replace(/\?/g, () => `$${paramIndex++}`);
+    const res = await pgPool.query(pgText, params);
+    return { rows: res.rows, rowCount: res.rowCount };
+  } else {
+    return new Promise((resolve, reject) => {
+      const isSelect = text.trim().toUpperCase().startsWith('SELECT');
+      if (isSelect) {
+        sqliteDb.all(text, params, (err, rows) => {
+          if (err) reject(err);
+          else resolve({ rows, rowCount: rows.length });
+        });
+      } else {
+        sqliteDb.run(text, params, function(err) {
+          if (err) reject(err);
+          else resolve({ rows: [], rowCount: this.changes, lastID: this.lastID });
+        });
+      }
+    });
+  }
+}
+
+// Database Initialization
+async function initDB() {
+  const createTableSQL = `
     CREATE TABLE IF NOT EXISTS candidates (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      app_ref TEXT UNIQUE,
+      id ${isPostgres ? 'SERIAL PRIMARY KEY' : 'INTEGER PRIMARY KEY AUTOINCREMENT'},
+      app_ref TEXT UNIQUE NOT NULL,
       full_name TEXT NOT NULL,
       gender TEXT,
       email TEXT NOT NULL,
@@ -35,16 +75,23 @@ db.serialize(() => {
       algo_response2 TEXT,
       statement_purpose TEXT,
       project_idea TEXT,
-      needs_dorm INTEGER,
-      merit_score INTEGER,
+      needs_dorm INTEGER DEFAULT 1,
+      merit_score INTEGER DEFAULT 0,
       status TEXT DEFAULT 'PENDING',
       housing_status TEXT DEFAULT 'PENDING',
-      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-    )
-  `);
-});
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+  `;
+  try {
+    await runQuery(createTableSQL);
+    console.log('Candidate table initialized successfully.');
+  } catch (err) {
+    console.error('Database initialization failed:', err);
+  }
+}
+initDB();
 
-// Rebalanced Merit Score Calculation (Without Experience Barrier)
+// 100-Point Merit Score Calculation
 function calculateMeritScore(data) {
   let score = 0;
 
@@ -52,34 +99,31 @@ function calculateMeritScore(data) {
   const gpa = parseFloat(data.gpa) || 0;
   score += Math.min(40, (gpa / 100) * 40);
 
-  // 2. National Examination Score (Max 20 pts)
+  // 2. National Exam (Max 20 pts)
   const nat = parseFloat(data.national_score);
   if (!isNaN(nat) && nat > 0) {
     score += Math.min(20, (nat / 600) * 20);
   } else {
-    // Extrapolate fairly from GPA if applicant hasn't taken national exam yet
     score += Math.min(20, (gpa / 100) * 20);
   }
 
-  // 3. Algorithmic & Logical Problem-Solving Screening (Max 25 pts)
+  // 3. Algorithmic Screening (Max 25 pts)
   const a1 = (data.algo_response1 || '').toLowerCase();
   const a2 = (data.algo_response2 || '').toLowerCase();
 
-  // Challenge 1: Two-sum logic (12.5 pts)
   if (a1.includes('hash') || a1.includes('map') || a1.includes('dict') || a1.includes('o(n)') || a1.includes('pointer') || a1.includes('lookup')) {
     score += 12.5;
   } else if (a1.length > 20) {
     score += 6;
   }
 
-  // Challenge 2: Recursive logic (12.5 pts)
   if (a2.includes('base case') || a2.includes('recursive') || a2.includes('stack') || a2.includes('subproblem') || a2.includes('tree') || a2.includes('return')) {
     score += 12.5;
   } else if (a2.length > 20) {
     score += 6;
   }
 
-  // 4. Statement of Purpose & Regional Vision (Max 15 pts)
+  // 4. Statement of Purpose (Max 15 pts)
   const sopLen = (data.statement_purpose || '').trim().length;
   const projLen = (data.project_idea || '').trim().length;
   if (sopLen > 40) score += 7.5;
@@ -90,8 +134,8 @@ function calculateMeritScore(data) {
   return Math.min(100, Math.round(score));
 }
 
-// Register Candidate
-app.post('/api/register', (req, res) => {
+// Candidate Registration API
+app.post('/api/register', async (req, res) => {
   const data = req.body;
   if (!data.full_name || !data.email || !data.phone || !data.telegram || !data.school_name) {
     return res.status(400).json({ error: 'Missing required admission fields.' });
@@ -102,7 +146,7 @@ app.post('/api/register', (req, res) => {
   const app_ref = `SC-2026-${Math.floor(1000 + Math.random() * 9000)}`;
   const needs_dorm = data.needs_dorm ? 1 : 0;
 
-  const sql = `
+  const insertSQL = `
     INSERT INTO candidates (
       app_ref, full_name, gender, email, phone, telegram, guardian_phone,
       zone, school_name, grade_level, gpa, national_score, transcript_url,
@@ -112,7 +156,7 @@ app.post('/api/register', (req, res) => {
   `;
 
   const params = [
-    app_ref, data.full_name, data.gender, data.email, data.phone, data.telegram,
+    app_ref, data.full_name, data.gender || 'OTHER', data.email, data.phone, data.telegram,
     data.guardian_phone || '', data.zone || '', data.school_name,
     parseInt(data.grade_level) || 11, parseFloat(data.gpa) || 0,
     parseFloat(data.national_score) || null, data.transcript_url || '',
@@ -121,8 +165,8 @@ app.post('/api/register', (req, res) => {
     needs_dorm, merit_score, status
   ];
 
-  db.run(sql, params, function(err) {
-    if (err) return res.status(500).json({ error: 'Failed to record candidate.' });
+  try {
+    await runQuery(insertSQL, params);
     res.json({
       success: true,
       app_ref,
@@ -130,10 +174,13 @@ app.post('/api/register', (req, res) => {
       merit_score,
       status
     });
-  });
+  } catch (err) {
+    console.error('Registration query error:', err);
+    res.status(500).json({ error: 'Failed to record candidate application.' });
+  }
 });
 
-// Admin Passcode Auth
+// Admin Passcode Authentication
 app.post('/api/auth/login', (req, res) => {
   const { role, passcode } = req.body;
   if (role === 'BOARD_LEADER' && passcode === 'shashe2026leader') {
@@ -145,8 +192,8 @@ app.post('/api/auth/login', (req, res) => {
   res.status(401).json({ error: 'Invalid credentials for the specified role.' });
 });
 
-// Candidate Registry & Analytics
-app.get('/api/admin/candidates', (req, res) => {
+// Candidate Registry & Real-Time Analytics
+app.get('/api/admin/candidates', async (req, res) => {
   const { search = '', status = 'ALL' } = req.query;
 
   let query = `SELECT * FROM candidates WHERE 1=1`;
@@ -158,87 +205,84 @@ app.get('/api/admin/candidates', (req, res) => {
   }
 
   if (search.trim()) {
-    query += ` AND (full_name LIKE ? OR school_name LIKE ? OR telegram LIKE ? OR app_ref LIKE ?)`;
+    query += ` AND (full_name ILIKE ? OR school_name ILIKE ? OR telegram ILIKE ? OR app_ref ILIKE ?)`;
     const s = `%${search.trim()}%`;
     params.push(s, s, s, s);
   }
 
   query += ` ORDER BY merit_score DESC, id ASC`;
 
-  db.all(query, params, (err, rows) => {
-    if (err) return res.status(500).json({ error: 'Database read error' });
+  try {
+    const candidateResult = await runQuery(query, params);
 
-    db.get(`
+    const metricsSQL = `
       SELECT 
-        COUNT(*) as total_registered,
-        SUM(CASE WHEN housing_status = 'DORM_ALLOCATED' THEN 1 ELSE 0 END) as dorm_allocated,
-        SUM(CASE WHEN status = 'ACCEPTED' THEN 1 ELSE 0 END) as accepted_cohort,
-        SUM(CASE WHEN status = 'REJECTED' THEN 1 ELSE 0 END) as rejected_cohort
+        COUNT(*)::int as total_registered,
+        SUM(CASE WHEN housing_status = 'DORM_ALLOCATED' THEN 1 ELSE 0 END)::int as dorm_allocated,
+        SUM(CASE WHEN status = 'ACCEPTED' THEN 1 ELSE 0 END)::int as accepted_cohort,
+        SUM(CASE WHEN status = 'REJECTED' THEN 1 ELSE 0 END)::int as rejected_cohort
       FROM candidates
-    `, [], (err, metrics) => {
-      
-      db.all(`
-        SELECT school_name, COUNT(*) as count, ROUND(AVG(gpa), 1) as avg_gpa
-        FROM candidates
-        GROUP BY school_name
-        ORDER BY count DESC
-        LIMIT 6
-      `, [], (err, schoolAnalytics) => {
-        res.json({
-          candidates: rows,
-          metrics: metrics || { total_registered: 0, dorm_allocated: 0, accepted_cohort: 0, rejected_cohort: 0 },
-          school_analytics: schoolAnalytics || []
-        });
-      });
+    `;
+    const metricsResult = await runQuery(metricsSQL);
+
+    const schoolSQL = `
+      SELECT school_name, COUNT(*)::int as count, ROUND(AVG(gpa)::numeric, 1) as avg_gpa
+      FROM candidates
+      GROUP BY school_name
+      ORDER BY count DESC
+      LIMIT 6
+    `;
+    const schoolResult = await runQuery(schoolSQL);
+
+    res.json({
+      candidates: candidateResult.rows,
+      metrics: metricsResult.rows[0] || { total_registered: 0, dorm_allocated: 0, accepted_cohort: 0, rejected_cohort: 0 },
+      school_analytics: schoolResult.rows || []
     });
-  });
+  } catch (err) {
+    console.error('Fetch error:', err);
+    res.status(500).json({ error: 'Database read error' });
+  }
 });
 
-// Admit / Reject Decision Endpoint with Automated Notification Handler
-app.patch('/api/admin/decision', (req, res) => {
+// Admin Admit / Reject Decision Endpoint
+app.patch('/api/admin/decision', async (req, res) => {
   const { id, status, housing_status } = req.body;
   if (!id || !status) return res.status(400).json({ error: 'Missing decision parameters.' });
 
-  db.get(`SELECT * FROM candidates WHERE id = ?`, [id], (err, candidate) => {
-    if (err || !candidate) return res.status(404).json({ error: 'Candidate not found.' });
+  try {
+    const candidateCheck = await runQuery(`SELECT * FROM candidates WHERE id = ?`, [id]);
+    const candidate = candidateCheck.rows[0];
+    if (!candidate) return res.status(404).json({ error: 'Candidate not found.' });
 
-    db.run(
+    await runQuery(
       `UPDATE candidates SET status = ?, housing_status = ? WHERE id = ?`,
-      [status, housing_status || 'PENDING', id],
-      function(err) {
-        if (err) return res.status(500).json({ error: 'Decision update failed.' });
-
-        // Dispatch decision log & build notification payload
-        const notification = {
-          candidate_name: candidate.full_name,
-          telegram: candidate.telegram,
-          email: candidate.email,
-          status,
-          housing_status: housing_status || 'PENDING',
-          app_ref: candidate.app_ref
-        };
-
-        console.log(`[DECISION NOTIFICATION DISPATCHED] To: ${candidate.email} & ${candidate.telegram} | Status: ${status}`);
-
-        res.json({ 
-          success: true, 
-          message: `Decision updated to ${status}. Notification dispatched.`,
-          notification
-        });
-      }
+      [status, housing_status || 'PENDING', id]
     );
-  });
+
+    console.log(`[DECISION RECORDED] Candidate: ${candidate.full_name} (${candidate.app_ref}) -> ${status}`);
+
+    res.json({ 
+      success: true, 
+      message: `Decision updated to ${status}.`
+    });
+  } catch (err) {
+    console.error('Decision error:', err);
+    res.status(500).json({ error: 'Decision update failed.' });
+  }
 });
 
-// CSV Export
-app.get('/api/admin/export', (req, res) => {
-  db.all(`SELECT app_ref, full_name, gender, email, phone, telegram, school_name, grade_level, gpa, national_score, merit_score, status, housing_status FROM candidates ORDER BY merit_score DESC`, [], (err, rows) => {
-    if (err) return res.status(500).send('Export failed');
+// CSV Export Endpoint
+app.get('/api/admin/export', async (req, res) => {
+  try {
+    const result = await runQuery(
+      `SELECT app_ref, full_name, gender, email, phone, telegram, school_name, grade_level, gpa, national_score, merit_score, status, housing_status FROM candidates ORDER BY merit_score DESC`
+    );
 
     const headers = ['Ref Code', 'Full Name', 'Gender', 'Email', 'Phone', 'Telegram', 'School', 'Grade', 'GPA', 'National Exam', 'Merit Score', 'Status', 'Housing'];
     const csvRows = [headers.join(',')];
 
-    rows.forEach(r => {
+    result.rows.forEach(r => {
       csvRows.push([
         `"${r.app_ref}"`,
         `"${r.full_name}"`,
@@ -259,10 +303,12 @@ app.get('/api/admin/export', (req, res) => {
     res.setHeader('Content-Type', 'text/csv');
     res.setHeader('Content-Disposition', 'attachment; filename="shashecoders_candidates_2026.csv"');
     res.send(csvRows.join('\n'));
-  });
+  } catch (err) {
+    res.status(500).send('Export failed');
+  }
 });
 
-// Mock classes and quizzes
+// Academy Curriculum Modules
 app.get('/api/academy/classes', (req, res) => {
   res.json({
     classes: [
@@ -271,12 +317,13 @@ app.get('/api/academy/classes', (req, res) => {
       { week_number: 3, topic_category: 'Linear Structures', title: 'Array Invariants, Two-Pointer & Sliding Window', instructor: 'Gosa Negeso & Kalid Beshir' },
       { week_number: 4, topic_category: 'Hash Tables', title: 'Hash Maps, Frequency Tables & Big-O Asymptotics', instructor: 'Gosa Negeso & Dr. Dida Midekso' },
       { week_number: 5, topic_category: 'Recursion & Trees', title: 'Recursive Call Stacks & Binary Search Trees', instructor: 'Kalid Beshir & Gosa Negeso' },
-      { week_number: 6, topic_category: 'Full-Stack Systems', title: 'RESTful APIs, SQLite Databases & Cloud Deployments', instructor: 'Muhafiz Ahmed & Dr. Dida Midekso' },
+      { week_number: 6, topic_category: 'Full-Stack Systems', title: 'RESTful APIs, PostgreSQL Databases & Cloud Deployments', instructor: 'Muhafiz Ahmed & Dr. Dida Midekso' },
       { week_number: 7, topic_category: 'Capstone & Honors', title: 'Municipal Software Showcase & Official Graduation', instructor: 'Founding Faculty Board' }
     ]
   });
 });
 
+// Code Sandbox Diagnostic Quizzes
 app.get('/api/academy/quizzes', (req, res) => {
   res.json({
     quizzes: [
