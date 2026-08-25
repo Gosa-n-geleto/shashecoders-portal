@@ -150,7 +150,6 @@
     <!-- 2. DEDICATED FOUNDERS & FOUNDING FACULTY SECTION -->
     <section id="view-faculty" class="hidden max-w-7xl mx-auto px-4 py-8 space-y-8">
       
-      <!-- Section Header -->
       <div class="border-b border-[#1E293B] pb-4">
         <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Leadership &amp; Academic Governance</span>
         <h1 class="text-3xl font-bold text-white mt-1">Founders &amp; Founding Faculty</h1>
@@ -245,7 +244,6 @@
 
       </div>
 
-      <!-- Collaborative Foundation Note -->
       <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl text-center space-y-2">
         <h3 class="text-base font-bold text-white">United by Excellence &amp; Regional Impact</h3>
         <p class="text-xs text-slate-400 max-w-2xl mx-auto leading-relaxed">
@@ -255,7 +253,7 @@
 
     </section>
 
-    <!-- 3. APPLICANT REGISTRATION VIEW -->
+    <!-- 3. APPLICANT REGISTRATION VIEW (No Prior Experience Barrier & Optional Transcripts) -->
     <section id="view-apply" class="hidden max-w-4xl mx-auto px-4 py-8 space-y-8">
       
       <!-- Admission Criteria & Thresholds Card -->
@@ -281,7 +279,7 @@
               <span class="text-xs font-bold text-[#60A5FA] uppercase tracking-wider block">Intake Examination</span>
               <h1 class="text-2xl font-bold text-white mt-1">Candidate Admissions Screening</h1>
               <p class="text-xs text-slate-400 mt-1 leading-relaxed">
-                Official screening portal for the 80 municipal-sponsored residential boarding seats at Dodola Campus.
+                Official screening portal for the 80 municipal-sponsored residential boarding seats at Dodola Campus. Designed to identify promising young problem solvers regardless of prior coding experience.
               </p>
             </div>
             <span id="draft-badge" class="hidden text-[10px] text-emerald-400 font-mono bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
@@ -292,6 +290,8 @@
           <div id="alert-box" class="hidden mb-4 p-3 rounded text-xs"></div>
 
           <form id="admission-form" onsubmit="submitApplication(event)" oninput="saveDraft()" class="space-y-6">
+            
+            <!-- Section I: Demographics -->
             <div class="border-b border-[#1E293B] pb-5 space-y-4">
               <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">I. Candidate Demographics &amp; Contacts</h2>
               <div>
@@ -328,6 +328,7 @@
               </div>
             </div>
 
+            <!-- Section II: Academic Standing -->
             <div class="border-b border-[#1E293B] pb-5 space-y-4">
               <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">II. Academic &amp; Regional Standing (Oromia)</h2>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -360,56 +361,40 @@
                 </div>
               </div>
 
+              <!-- Transcript Upload (Optional submission enabled) -->
               <div class="p-3.5 bg-[#090D16] border border-[#1E293B] rounded space-y-2">
                 <label class="block text-xs text-slate-300 font-semibold">Academic Transcript or National Exam Certificate (PDF / Image)</label>
                 <div class="flex items-center gap-3">
                   <input type="file" id="transcript-file" accept="image/*,application/pdf" class="text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-[#1E293B] file:text-blue-400 hover:file:bg-[#2563EB] hover:file:text-white transition-colors cursor-pointer">
                   <input type="hidden" name="transcript_url" id="transcript_url">
-                  <span id="upload-status" class="text-[11px] code-font text-slate-500">No file chosen</span>
+                  <span id="upload-status" class="text-[11px] code-font text-slate-500">Attach document (if available)</span>
                 </div>
               </div>
             </div>
 
+            <!-- Section III: Logical Problem Solving (No experience asked) -->
             <div class="border-b border-[#1E293B] pb-5 space-y-4">
-              <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">III. Technical &amp; Algorithmic Problem Solving</h2>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs text-slate-300 mb-1 font-semibold">Current Programming Experience</label>
-                  <select name="experience_level" class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]">
-                    <option value="Beginner">Beginner (Basic Scripts / Python)</option>
-                    <option value="Intermediate">Intermediate (Data Structures / OOP)</option>
-                    <option value="Advanced">Advanced (Competitive Programming)</option>
-                    <option value="None">None / Motivated Beginner</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-xs text-slate-300 mb-1 font-semibold">Familiar Languages</label>
-                  <input type="text" name="programming_langs" placeholder="Python, C++, Java" class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white">
-                </div>
+              <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">III. Analytical &amp; Logical Problem Solving</h2>
+              <div>
+                <label class="block text-xs text-slate-300 mb-1 font-semibold">Challenge 1: Two Sum in linear time without checking every pair twice</label>
+                <textarea name="algo_response1" required rows="2" placeholder="Explain your logic (e.g., using a lookup table/map or pointers)..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white code-font focus:outline-none focus:border-[#3B82F6]"></textarea>
               </div>
               <div>
-                <label class="block text-xs text-slate-300 mb-1 font-semibold">Project or GitHub URL (Optional)</label>
-                <input type="url" name="portfolio_url" placeholder="https://github.com/..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white">
-              </div>
-              <div>
-                <label class="block text-xs text-slate-300 mb-1 font-semibold">Challenge 1: Two Sum in O(N) linear time without nested loops</label>
-                <textarea name="algo_response1" required rows="2" placeholder="Explain using Hash Map or two-pointer logic..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white code-font focus:outline-none focus:border-[#3B82F6]"></textarea>
-              </div>
-              <div>
-                <label class="block text-xs text-slate-300 mb-1 font-semibold">Challenge 2: Recursive search or traversal algorithm</label>
-                <textarea name="algo_response2" required rows="2" placeholder="Detail base case, recursion step, and stack complexity..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white code-font focus:outline-none focus:border-[#3B82F6]"></textarea>
+                <label class="block text-xs text-slate-300 mb-1 font-semibold">Challenge 2: Recursive problem breakdown</label>
+                <textarea name="algo_response2" required rows="2" placeholder="Explain how you would define the base case and step-by-step recursive breakdown..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white code-font focus:outline-none focus:border-[#3B82F6]"></textarea>
               </div>
             </div>
 
+            <!-- Section IV: Statement of Purpose & Housing -->
             <div class="space-y-4">
               <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">IV. Statement of Purpose &amp; Housing</h2>
               <div>
                 <label class="block text-xs text-slate-300 mb-1 font-semibold">Why do you want to join ShasheCoders?</label>
-                <textarea name="statement_purpose" required rows="2" placeholder="Describe your software ambitions and work ethic..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]"></textarea>
+                <textarea name="statement_purpose" required rows="2" placeholder="Describe your analytical passion, curiosity, and drive to learn..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]"></textarea>
               </div>
               <div>
-                <label class="block text-xs text-slate-300 mb-1 font-semibold">What regional problem will you solve with software?</label>
-                <textarea name="project_idea" required rows="2" placeholder="e.g. Agricultural supply dispatch, rural health triage..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]"></textarea>
+                <label class="block text-xs text-slate-300 mb-1 font-semibold">What regional problem in Oromia will you solve with technology?</label>
+                <textarea name="project_idea" required rows="2" placeholder="e.g. Agricultural distribution, health management, educational access..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]"></textarea>
               </div>
               <div class="flex items-center gap-2 p-3 bg-[#090D16] border border-[#1E293B] rounded">
                 <input type="checkbox" name="needs_dorm" id="dorm" checked class="w-4 h-4 text-blue-600 rounded">
@@ -477,7 +462,7 @@
       </div>
     </section>
 
-    <!-- 6. FACULTY / BOARD DASHBOARD -->
+    <!-- 6. FACULTY / BOARD DASHBOARD WITH ADMIT AND REJECT BUTTONS -->
     <section id="view-admin" class="hidden max-w-7xl mx-auto px-4 py-8">
       <div id="admin-login-card" class="max-w-md mx-auto bg-[#0E1526] border border-[#1E293B] rounded-lg p-6 shadow-xl space-y-4">
         <div class="border-b border-[#1E293B] pb-3">
@@ -529,11 +514,11 @@
           </div>
           <div class="p-4 bg-[#0E1526] border border-[#1E293B] rounded">
             <span class="text-[11px] text-slate-400 uppercase font-semibold">Admitted Cohort</span>
-            <p id="m-accepted" class="text-2xl font-bold text-amber-400 mt-1">0</p>
+            <p id="m-accepted" class="text-2xl font-bold text-emerald-400 mt-1">0</p>
           </div>
           <div class="p-4 bg-[#0E1526] border border-[#1E293B] rounded">
-            <span class="text-[11px] text-slate-400 uppercase font-semibold">Screening Passed</span>
-            <p id="m-passed" class="text-2xl font-bold text-emerald-400 mt-1">0</p>
+            <span class="text-[11px] text-slate-400 uppercase font-semibold">Rejected Candidates</span>
+            <p id="m-rejected" class="text-2xl font-bold text-rose-400 mt-1">0</p>
           </div>
         </div>
 
@@ -548,8 +533,9 @@
           <input type="text" id="admin-search" placeholder="Search candidate name, school, or telegram..." oninput="loadDashboard()" class="flex-1 px-3 py-2 bg-[#0E1526] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]">
           <select id="admin-status" onchange="loadDashboard()" class="px-3 py-2 bg-[#0E1526] border border-[#1E293B] rounded text-xs text-white focus:outline-none focus:border-[#3B82F6]">
             <option value="ALL">All Applicants</option>
-            <option value="SCREENING_PASSED">Screening Passed (High Score)</option>
             <option value="ACCEPTED">Admitted Candidates (Top 80)</option>
+            <option value="REJECTED">Rejected Candidates</option>
+            <option value="SCREENING_PASSED">Screening Passed (High Score)</option>
             <option value="PENDING">Pending Review</option>
           </select>
         </div>
@@ -560,15 +546,15 @@
               <thead>
                 <tr class="border-b border-[#1E293B] bg-[#090D16] text-slate-400">
                   <th class="p-3">Ref</th>
-                  <th class="p-3">Candidate &amp; High School</th>
-                  <th class="p-3">Telegram</th>
+                  <th class="p-3">Candidate &amp; School</th>
+                  <th class="p-3">Telegram / Email</th>
                   <th class="p-3">GPA / Exam</th>
                   <th class="p-3">Score</th>
                   <th class="p-3">Transcript</th>
                   <th class="p-3">Housing</th>
+                  <th class="p-3">Status</th>
                   <th class="p-3">Essays</th>
-                  <th class="p-3">Telegram Notification</th>
-                  <th class="p-3">Decision</th>
+                  <th class="p-3 text-center">Board Decision &amp; Notify</th>
                 </tr>
               </thead>
               <tbody id="candidates-body" class="divide-y divide-[#1E293B]/60">
@@ -589,7 +575,6 @@
     <div class="max-w-7xl mx-auto px-4 py-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-10 border-b border-[#1E293B]">
         
-        <!-- Column 1: Academy Seal & Mission -->
         <div class="lg:col-span-2 space-y-3">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 border border-[#3B82F6]/60 bg-[#1E3A8A]/30 rounded flex items-center justify-center text-white font-bold text-sm">
@@ -605,7 +590,6 @@
           </div>
         </div>
 
-        <!-- Column 2: Academic Curriculum Shortcuts -->
         <div class="space-y-2">
           <span class="text-xs font-bold text-white uppercase tracking-wider block">Curriculum</span>
           <ul class="space-y-1.5 text-[11px]">
@@ -617,7 +601,6 @@
           </ul>
         </div>
 
-        <!-- Column 3: Admissions & Portal Navigation -->
         <div class="space-y-2">
           <span class="text-xs font-bold text-white uppercase tracking-wider block">Admissions &amp; Tools</span>
           <ul class="space-y-1.5 text-[11px]">
@@ -628,7 +611,6 @@
           </ul>
         </div>
 
-        <!-- Column 4: Civic Sponsors & Governance Partners -->
         <div class="space-y-2">
           <span class="text-xs font-bold text-white uppercase tracking-wider block">Municipal Partners</span>
           <ul class="space-y-1.5 text-[11px] text-slate-400">
@@ -641,7 +623,6 @@
 
       </div>
 
-      <!-- Bottom Sub-Footer -->
       <div class="pt-6 flex flex-wrap items-center justify-between gap-4 text-[11px] text-slate-500">
         <div>
           © 2026 <strong>ShasheCoders Academy Regional Initiative</strong>. All rights reserved.
@@ -954,9 +935,6 @@
         grade_level: form.grade_level.value,
         gpa: form.gpa.value,
         national_score: form.national_score.value,
-        experience_level: form.experience_level.value,
-        programming_langs: form.programming_langs.value,
-        portfolio_url: form.portfolio_url.value,
         transcript_url: form.transcript_url.value,
         algo_response1: form.algo_response1.value,
         algo_response2: form.algo_response2.value,
@@ -1026,9 +1004,6 @@
         grade_level: form.grade_level.value,
         gpa: form.gpa.value,
         national_score: form.national_score.value,
-        experience_level: form.experience_level.value,
-        programming_langs: form.programming_langs.value,
-        portfolio_url: form.portfolio_url.value,
         transcript_url: form.transcript_url.value,
         algo_response1: form.algo_response1.value,
         algo_response2: form.algo_response2.value,
@@ -1259,9 +1234,7 @@
         document.getElementById('m-total').innerText = data.metrics.total_registered;
         document.getElementById('m-dorm').innerText = `${data.metrics.dorm_allocated} / 80`;
         document.getElementById('m-accepted').innerText = data.metrics.accepted_cohort;
-
-        const passedCount = currentCandidateList.filter(c => c.merit_score >= 65).length;
-        document.getElementById('m-passed').innerText = passedCount;
+        document.getElementById('m-rejected').innerText = data.metrics.rejected_cohort || 0;
 
         const schoolBox = document.getElementById('school-analytics-bar');
         if (data.school_analytics && data.school_analytics.length > 0) {
@@ -1288,9 +1261,12 @@
             </td>
             <td class="p-3">
               <div class="font-bold text-white">${c.full_name}</div>
-              <div class="text-slate-400 text-[11px]">${c.school_name}</div>
+              <div class="text-slate-400 text-[11px]">${c.school_name} (Gr. ${c.grade_level})</div>
             </td>
-            <td class="p-3 code-font text-blue-400">${c.telegram}</td>
+            <td class="p-3 code-font">
+              <div class="text-blue-400 font-bold">${c.telegram}</div>
+              <div class="text-[10px] text-slate-500">${c.email}</div>
+            </td>
             <td class="p-3 code-font">
               <span class="text-white">${c.gpa}%</span>
               ${c.national_score ? `<span class="text-slate-500 text-[10px] block">NAT: ${c.national_score}</span>` : ''}
@@ -1299,31 +1275,38 @@
             <td class="p-3">
               ${c.transcript_url 
                 ? `<a href="${c.transcript_url}" target="_blank" class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 hover:underline">📄 View PDF</a>` 
-                : `<span class="text-[10px] text-slate-600">Pending</span>`}
+                : `<span class="text-[10px] text-slate-500 italic">Not attached</span>`}
             </td>
             <td class="p-3">
               ${c.housing_status === 'DORM_ALLOCATED' 
                 ? '<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-300">DORM ALLOCATED</span>'
                 : c.needs_dorm 
-                  ? '<span class="text-amber-400 text-[11px]">Needs Dorm</span>' 
+                  ? '<span class="text-amber-400 text-[11px]">Requested</span>' 
                   : '<span class="text-slate-500 text-[11px]">Day Scholar</span>'}
+            </td>
+            <td class="p-3">
+              ${c.status === 'ACCEPTED' 
+                ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">ADMITTED</span>'
+                : c.status === 'REJECTED'
+                  ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">REJECTED</span>'
+                  : '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/20 text-blue-300">IN REVIEW</span>'}
             </td>
             <td class="p-3">
               <button onclick="viewCandidateEssays(${c.id})" class="px-2 py-1 bg-[#1E293B] hover:bg-slate-700 text-blue-300 text-[11px] rounded transition-colors">
                 Review
               </button>
             </td>
-            <td class="p-3">
-              <button onclick="copyTelegramInvite('${c.full_name}', '${c.app_ref}', '${c.telegram}', '${c.status}')" class="px-2 py-1 bg-[#1E293B] hover:bg-blue-600/30 text-[#93C5FD] text-[10px] font-mono rounded transition-colors">
-                📋 Copy Msg
-              </button>
-            </td>
-            <td class="p-3">
-              ${isLeader ? (
-                c.status !== 'ACCEPTED' 
-                  ? `<button onclick="makeDecision(${c.id}, 'ACCEPTED', '${c.needs_dorm ? 'DORM_ALLOCATED' : 'DAY_SCHOLAR'}')" class="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-2 py-1 rounded text-[11px] font-bold">Admit to 80</button>`
-                  : `<button onclick="makeDecision(${c.id}, 'SCREENING_PASSED', 'PENDING')" class="bg-[#1E293B] text-slate-400 px-2 py-1 rounded text-[11px]">Revoke</button>`
-              ) : `<span class="text-[11px] text-slate-500 italic">Leader only</span>`}
+            <td class="p-3 text-center">
+              ${isLeader ? `
+                <div class="flex items-center justify-center gap-1.5">
+                  <button onclick="makeDecision(${c.id}, 'ACCEPTED', '${c.needs_dorm ? 'DORM_ALLOCATED' : 'DAY_SCHOLAR'}', '${c.full_name}', '${c.app_ref}', '${c.telegram}', '${c.email}')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-2.5 py-1 rounded text-[11px] font-bold transition-all">
+                    ✓ Admit
+                  </button>
+                  <button onclick="makeDecision(${c.id}, 'REJECTED', 'NONE', '${c.full_name}', '${c.app_ref}', '${c.telegram}', '${c.email}')" class="bg-rose-600 hover:bg-rose-500 text-white px-2.5 py-1 rounded text-[11px] font-bold transition-all">
+                    ✕ Reject
+                  </button>
+                </div>
+              ` : `<span class="text-[11px] text-slate-500 italic">Leader auth required</span>`}
             </td>
           </tr>
         `).join('');
@@ -1346,18 +1329,14 @@
       document.getElementById('essay-modal').classList.remove('hidden');
     }
 
-    function copyTelegramInvite(name, ref, tg, status) {
-      const msg = `Greetings ${name} (${tg}),\n\nYour application [${ref}] to the ShasheCoders Cohort has been processed. Current status: ${status}.\n\nAccess your algorithm screening dashboard and cohort materials here: https://shashecoders-portal.onrender.com\n\n- ShasheCoders Admissions Board`;
-      navigator.clipboard.writeText(msg).then(() => {
-        alert(`Telegram notification message for ${name} copied to clipboard!`);
-      });
-    }
-
     function closeModal() {
       document.getElementById('essay-modal').classList.add('hidden');
     }
 
-    async function makeDecision(id, status, housing_status) {
+    async function makeDecision(id, status, housing_status, name, ref, tg, email) {
+      const confirmAction = confirm(`Are you sure you want to mark ${name} [${ref}] as ${status}? This will trigger the decision dispatch.`);
+      if (!confirmAction) return;
+
       try {
         const res = await fetch('/api/admin/decision', {
           method: 'PATCH',
@@ -1366,6 +1345,19 @@
         });
         const result = await res.json();
         if (!res.ok) throw new Error(result.error);
+
+        // Instant Notification Message Generator
+        let notifyMsg = "";
+        if (status === 'ACCEPTED') {
+          notifyMsg = `🎉 CONGRATULATIONS ${name} (${tg})!\n\nWe are pleased to inform you that your application [${ref}] to the ShasheCoders Regional Algorithms Academy 2026 Cohort has been ACCEPTED with Housing Status: ${housing_status}.\n\nAccess your onboarding curriculum and laboratory sandbox: https://shashecoders-portal.onrender.com\n\n- ShasheCoders Admissions Committee`;
+        } else {
+          notifyMsg = `Dear ${name} (${tg}),\n\nThank you for applying to the ShasheCoders Regional Algorithms Academy [${ref}]. Due to limited residential capacity, we are unable to offer you a seat for this cohort. We encourage you to continue developing your mathematical and coding skills.\n\n- ShasheCoders Admissions Committee`;
+        }
+
+        // Copy notification to clipboard for direct Telegram relay
+        navigator.clipboard.writeText(notifyMsg);
+        alert(`Status updated to ${status} for ${name}!\n\nNotification message has also been copied to your clipboard for instant Telegram/Email dispatch:\n\n` + notifyMsg);
+
         loadDashboard();
       } catch (err) {
         alert(err.message);
