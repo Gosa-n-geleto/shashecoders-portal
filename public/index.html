@@ -105,10 +105,10 @@
         <div class="absolute inset-0 bg-gradient-to-t from-[#060911]/95 via-[#070C18]/30 to-transparent pointer-events-none"></div>
         <div class="absolute inset-0 bg-blue-950/10 mix-blend-multiply pointer-events-none"></div>
 
-        <!-- Upper Banner Clear Spacer (Leaves Sky and School Name Fully Unobstructed) -->
+        <!-- Upper Banner Clear Spacer -->
         <div class="w-full h-44 sm:h-52 lg:h-64 pointer-events-none"></div>
 
-        <!-- Center Content with Status Pill Directly Above Title -->
+        <!-- Center Content with Status Pill -->
         <div class="relative z-10 max-w-4xl px-6 sm:px-10 lg:px-16 space-y-4 my-auto py-4">
           
           <div>
@@ -173,7 +173,7 @@
         </p>
       </div>
 
-      <!-- Mission, Vision & Strategic Goals (Horizontal Touch Swipe on Mobile) -->
+      <!-- Mission, Vision & Strategic Goals -->
       <div>
         <div class="flex items-center justify-between mb-3">
           <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Mission, Vision &amp; Strategic Goals</span>
@@ -310,21 +310,21 @@
         </div>
       </div>
 
-      <!-- Founders & School Administration Showcase -->
+      <!-- Upgraded Showcase Card: Founders Instruction & Municipal Administration Supervision -->
       <div class="space-y-6 pt-4">
         <div class="border-b border-[#1E293B] pb-3">
-          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">Institutional Partnership &amp; Governance</span>
-          <h2 class="text-2xl font-bold text-white mt-1">Founders &amp; School Administration</h2>
-          <p class="text-xs text-slate-400 mt-1">Strategic alignment between academy leadership and Dodola Special Boarding School administration to support regional scholars.</p>
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">Municipal Sponsorship &amp; Classroom Governance</span>
+          <h2 class="text-2xl font-bold text-white mt-1">Classroom Instruction &amp; Municipal Supervision</h2>
+          <p class="text-xs text-slate-400 mt-1">Founders Gosa Negeso and Kalid Beshir delivering algorithmic instruction alongside Shashemene and Dodola city leaders supervising classroom learning as official program sponsors.</p>
         </div>
 
         <div class="bg-[#0E1526]/95 border border-[#1E293B] rounded-2xl overflow-hidden shadow-2xl">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 sm:p-8 items-center">
             
-            <div onclick="openPhotoModal('Founding Leadership & School Administration', 'Strategic Governance Meeting • Dodola Campus Library', '/foundersvsadmins.jpg')" class="lg:col-span-7 rounded-xl overflow-hidden border border-[#1E293B] bg-[#090D16] cursor-pointer group relative shadow-inner">
+            <div onclick="openPhotoModal('Classroom Instruction & Municipal Supervision', 'Founders Gosa Negeso & Kalid Beshir with Shashemene City Administration & Dodola Town Administration Sponsors', '/foundersvsadmins.jpg')" class="lg:col-span-7 rounded-xl overflow-hidden border border-[#1E293B] bg-[#090D16] cursor-pointer group relative shadow-inner">
               <img 
                 src="/foundersvsadmins.jpg" 
-                alt="Founders and School Administrators" 
+                alt="Founders Gosa and Kalid with Shashemene and Dodola Municipal Administrators" 
                 class="w-full h-auto max-h-[380px] object-cover group-hover:scale-105 transition-transform duration-500"
                 onerror="this.src='/shasheco.jpg';"
               />
@@ -335,22 +335,22 @@
 
             <div class="lg:col-span-5 space-y-4">
               <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                Coordinated Governance
+                Active Classroom Sponsorship
               </span>
               <h3 class="text-xl font-bold text-white leading-snug">
-                Dedicated Campus Infrastructure &amp; Regional Support
+                Academic Rigor Meets Civic Sponsorship
               </h3>
               <p class="text-xs text-slate-300 leading-relaxed">
-                Our founders work in close coordination with institutional leaders to secure modern compute laboratories, residential dormitories, and dining provisions at Dodola Special Boarding School, ensuring students focus entirely on intensive algorithmic learning.
+                Founders <strong>Gosa Negeso</strong> and <strong>Kalid Beshir</strong> lead daily computer science lectures and algorithm workshops while representatives from the <strong>Shashemene City Administration</strong> and <strong>Dodola Town Administration</strong> actively supervise the learning environment. As primary funding sponsors, municipal leaders directly verify classroom outcomes, compute resources, and residential accommodations.
               </p>
               <div class="pt-2 border-t border-[#1E293B]/80 grid grid-cols-2 gap-3 text-xs">
                 <div class="p-3 bg-[#090D16] rounded-lg border border-[#1E293B]">
-                  <strong class="text-amber-400 block mb-0.5">80 Scholars</strong>
-                  <span class="text-[11px] text-slate-400">Zero-Cost Residential</span>
+                  <strong class="text-amber-400 block mb-0.5">Municipal Oversight</strong>
+                  <span class="text-[11px] text-slate-400">Direct Civic Supervision</span>
                 </div>
                 <div class="p-3 bg-[#090D16] rounded-lg border border-[#1E293B]">
-                  <strong class="text-emerald-400 block mb-0.5">Full Boarding</strong>
-                  <span class="text-[11px] text-slate-400">Housing &amp; Meals Covered</span>
+                  <strong class="text-emerald-400 block mb-0.5">Funded Intake</strong>
+                  <span class="text-[11px] text-slate-400">Zero Cost to Students</span>
                 </div>
               </div>
             </div>
@@ -626,9 +626,8 @@
         <div>
           <label class="block text-xs font-semibold text-slate-300 mb-1">Passcode</label>
           <input type="password" id="auth-passcode" placeholder="Enter security key..." class="w-full px-3 py-2 bg-[#090D16] border border-[#1E293B] rounded-lg text-xs text-white">
-          <span class="text-[10px] text-slate-500 block mt-1">Keys: <code>shashe2026leader</code> (Leader) or <code>shasheinstructor</code> (Faculty)</span>
         </div>
-        <button onclick="loginAdmin()" class="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white py-2.5 rounded-lg text-xs font-bold uppercase transition-colors">
+        <button onclick="loginAdmin()" class="w-full bg-[#2563EB] hover:bg-[#1D4ED8] text-white py-2.5 rounded-lg text-xs font-bold uppercase transition-colors shadow-lg">
           Verify Credentials
         </button>
       </div>
@@ -782,10 +781,10 @@
     </div>
   </footer>
 
-  <!-- FULL UNTRUNCATED PHOTO PREVIEW MODAL -->
-  <div id="photo-modal" class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-md" onclick="closePhotoModal()">
-    <div class="bg-[#0E1526] border border-[#1E293B] rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-hidden shadow-2xl space-y-4 p-5 sm:p-6 flex flex-col justify-between" onclick="event.stopPropagation()">
-      <div class="flex justify-between items-start border-b border-[#1E293B] pb-3">
+  <!-- FULL UNTRUNCATED PHOTO PREVIEW MODAL (RESPONSIVE & UNCROPPED ON PC & MOBILE) -->
+  <div id="photo-modal" class="hidden fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 sm:p-6 backdrop-blur-md" onclick="closePhotoModal()">
+    <div class="bg-[#0E1526] border border-[#1E293B] rounded-2xl max-w-fit w-auto max-h-[92vh] overflow-hidden shadow-2xl space-y-4 p-5 sm:p-6 flex flex-col justify-between" onclick="event.stopPropagation()">
+      <div class="flex justify-between items-start border-b border-[#1E293B] pb-3 gap-6">
         <div>
           <h3 id="photo-modal-name" class="text-lg font-bold text-white"></h3>
           <span id="photo-modal-title" class="text-xs text-blue-400"></span>
@@ -793,9 +792,10 @@
         <button onclick="closePhotoModal()" class="text-slate-400 hover:text-white text-2xl font-bold px-2 leading-none">✕</button>
       </div>
       
-      <div class="w-full flex-1 min-h-[300px] max-h-[65vh] rounded-xl overflow-hidden bg-[#090D16] border border-[#1E293B] flex items-center justify-center shadow-inner p-2">
-        <img id="photo-modal-img" src="" alt="Portrait" class="max-w-full max-h-full object-contain mx-auto hidden">
-        <div id="photo-modal-placeholder" class="text-5xl font-bold text-slate-400 hidden"></div>
+      <!-- Modal Canvas without fixed cropping dimensions -->
+      <div class="flex-1 flex items-center justify-center rounded-xl overflow-hidden bg-[#090D16] border border-[#1E293B] shadow-inner p-2">
+        <img id="photo-modal-img" src="" alt="Portrait" class="max-h-[68vh] w-auto max-w-[88vw] object-contain mx-auto hidden rounded-lg">
+        <div id="photo-modal-placeholder" class="text-5xl font-bold text-slate-400 hidden p-12"></div>
       </div>
 
       <div class="pt-2 text-right">
@@ -932,7 +932,7 @@
           { day: "Tue", topic: "Conditionals & Boolean Algebra", theory: "Logical operators (AND, OR, NOT), truth tables, and branching.", practice: "Building an Ethiopian grade assessment and national score evaluator." },
           { day: "Wed", topic: "Iteration & Controlled Loops", theory: "While loops, for loops, break/continue invariants, and accumulator patterns.", practice: "Prime number detection and Fibonacci sequence generator." },
           { day: "Thu", topic: "Functions & Scope Lexicons", theory: "Parameters, return values, pure functions, and variable shadowing.", practice: "Refactoring scripts into clean, reusable modular units." },
-          { day: "Fri", topic: "DOM Manipulation & Events", theory: "Selecting elements, event listeners (click, net/submit).", practice: "Creating an interactive in-browser algorithmic calculator." }
+          { day: "Fri", topic: "DOM Manipulation & Events", theory: "Selecting elements, event listeners (click, input, submit).", practice: "Creating an interactive in-browser algorithmic calculator." }
         ],
         outcomes: [
           "Think procedurally and break down word problems into conditional branches.",
