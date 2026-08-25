@@ -3,7 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShasheCoders Academy & Admissions Portal</title>
+
+  <!-- Primary Google Search Engine SEO Tags -->
+  <title>ShasheCoders Academy | Residential Summer Camp & Algorithms Initiative</title>
+  <meta name="title" content="ShasheCoders Academy | Residential Summer Camp & Algorithms Initiative">
+  <meta name="description" content="Official portal of the ShasheCoders Regional Initiative — an elite 7-week residential algorithms, computer science, and systems academy hosted at Dodola Special Boarding Campus in Oromia, Ethiopia. Providing 80 fully-funded seats.">
+  <meta name="keywords" content="Shashe Coders, ShasheCoders, Shashemene Coders, Dodola Ifa Boru, Oromia coding camp, Ethiopian algorithms academy, Gosa Negeso, Muhafiz Ahmed, Kalid Beshir, Dr Dida Midekso, Dodola Special Boarding School, competitive programming Ethiopia">
+  <meta name="author" content="ShasheCoders Initiative & Dodola Ifa Boru Special Boarding School">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://shashecoders.ifaboru-dodola.org">
+
+  <!-- Open Graph / Facebook / Telegram Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shashecoders.ifaboru-dodola.org">
+  <meta property="og:title" content="ShasheCoders Regional Initiative • Residential Algorithms Academy">
+  <meta property="og:description" content="Forging Oromia's Next Software Engineers & Innovators. Elite 7-week intensive residential algorithms and systems academy at Dodola Campus.">
+  <meta property="og:image" content="https://shashecoders.ifaboru-dodola.org/shasheco.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://shashecoders.ifaboru-dodola.org">
+  <meta property="twitter:title" content="ShasheCoders Regional Initiative • 2026 Academic Cohort">
+  <meta property="twitter:description" content="Forging Oromia's Next Software Engineers & Innovators at Dodola Special Boarding Campus.">
+  <meta property="twitter:image" content="https://shashecoders.ifaboru-dodola.org/shasheco.jpg">
+
+  <!-- Tailwind & Typography -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body, input, select, textarea, button, table {
@@ -158,7 +182,7 @@
         </p>
       </div>
 
-      <!-- Founding Team Profiles Grid (Ordered: Dr. Dida -> Muhafiz -> Gosa -> Kalid) -->
+      <!-- Founding Team Profiles Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- Profile 1: Dr. Dida Midekso -->
@@ -221,7 +245,7 @@
           </div>
         </div>
 
-        <!-- Profile 4: Kalid Beshir (Faculty, Non-Founder) -->
+        <!-- Profile 4: Kalid Beshir -->
         <div class="p-6 bg-[#0E1526] border border-[#1E293B] rounded-xl flex flex-col sm:flex-row gap-5 items-start hover:border-blue-400/40 transition-all shadow-lg group">
           <div onclick="openPhotoModal('Kalid Beshir', 'Senior Faculty and Mathematics Lead', '/Screenshot 2026-08-24 180639.png', 'KB')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-slate-600 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
             <img src="/Screenshot 2026-08-24 180639.png" alt="Kalid Beshir" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -253,10 +277,10 @@
 
     </section>
 
-    <!-- 3. APPLICANT REGISTRATION VIEW (No Prior Experience Barrier & Optional Transcripts) -->
+    <!-- 3. APPLICANT REGISTRATION VIEW -->
     <section id="view-apply" class="hidden max-w-4xl mx-auto px-4 py-8 space-y-8">
       
-      <!-- Admission Criteria & Thresholds Card -->
+      <!-- Admission Criteria Card -->
       <div class="bg-[#0E1526] border border-amber-500/40 rounded-xl p-6 sm:p-8 space-y-4 shadow-xl">
         <div class="flex items-center gap-2">
           <span class="text-lg">📋</span>
@@ -361,7 +385,7 @@
                 </div>
               </div>
 
-              <!-- Transcript Upload (Optional submission enabled) -->
+              <!-- Transcript Upload -->
               <div class="p-3.5 bg-[#090D16] border border-[#1E293B] rounded space-y-2">
                 <label class="block text-xs text-slate-300 font-semibold">Academic Transcript or National Exam Certificate (PDF / Image)</label>
                 <div class="flex items-center gap-3">
@@ -372,7 +396,7 @@
               </div>
             </div>
 
-            <!-- Section III: Logical Problem Solving (No experience asked) -->
+            <!-- Section III: Logical Problem Solving -->
             <div class="border-b border-[#1E293B] pb-5 space-y-4">
               <h2 class="text-xs font-bold text-slate-300 uppercase tracking-wider">III. Analytical &amp; Logical Problem Solving</h2>
               <div>
@@ -428,7 +452,7 @@
       </div>
     </section>
 
-    <!-- 4. CURRICULUM VIEW (7 WEEKS / 5-DAY STRUCTURE) -->
+    <!-- 4. CURRICULUM VIEW -->
     <section id="view-classes" class="hidden max-w-6xl mx-auto px-4 py-8">
       <div class="space-y-6">
         <div class="border-b border-[#1E293B] pb-4">
@@ -462,7 +486,7 @@
       </div>
     </section>
 
-    <!-- 6. FACULTY / BOARD DASHBOARD WITH ADMIT AND REJECT BUTTONS -->
+    <!-- 6. FACULTY / BOARD DASHBOARD -->
     <section id="view-admin" class="hidden max-w-7xl mx-auto px-4 py-8">
       <div id="admin-login-card" class="max-w-md mx-auto bg-[#0E1526] border border-[#1E293B] rounded-lg p-6 shadow-xl space-y-4">
         <div class="border-b border-[#1E293B] pb-3">
@@ -1346,15 +1370,13 @@
         const result = await res.json();
         if (!res.ok) throw new Error(result.error);
 
-        // Instant Notification Message Generator
         let notifyMsg = "";
         if (status === 'ACCEPTED') {
-          notifyMsg = `🎉 CONGRATULATIONS ${name} (${tg})!\n\nWe are pleased to inform you that your application [${ref}] to the ShasheCoders Regional Algorithms Academy 2026 Cohort has been ACCEPTED with Housing Status: ${housing_status}.\n\nAccess your onboarding curriculum and laboratory sandbox: https://shashecoders-portal.onrender.com\n\n- ShasheCoders Admissions Committee`;
+          notifyMsg = `🎉 CONGRATULATIONS ${name} (${tg})!\n\nWe are pleased to inform you that your application [${ref}] to the ShasheCoders Regional Algorithms Academy 2026 Cohort has been ACCEPTED with Housing Status: ${housing_status}.\n\nAccess your onboarding curriculum and laboratory sandbox: https://shashecoders.ifaboru-dodola.org\n\n- ShasheCoders Admissions Committee`;
         } else {
           notifyMsg = `Dear ${name} (${tg}),\n\nThank you for applying to the ShasheCoders Regional Algorithms Academy [${ref}]. Due to limited residential capacity, we are unable to offer you a seat for this cohort. We encourage you to continue developing your mathematical and coding skills.\n\n- ShasheCoders Admissions Committee`;
         }
 
-        // Copy notification to clipboard for direct Telegram relay
         navigator.clipboard.writeText(notifyMsg);
         alert(`Status updated to ${status} for ${name}!\n\nNotification message has also been copied to your clipboard for instant Telegram/Email dispatch:\n\n` + notifyMsg);
 
