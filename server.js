@@ -30,7 +30,6 @@ if (isPostgres) {
 // Universal Query Helper
 async function runQuery(text, params = []) {
   if (isPostgres) {
-    // Convert SQLite positional '?' placeholders to PostgreSQL '$1, $2, ...'
     let paramIndex = 1;
     const pgText = text.replace(/\?/g, () => `$${paramIndex++}`);
     const res = await pgPool.query(pgText, params);
@@ -95,11 +94,9 @@ initDB();
 function calculateMeritScore(data) {
   let score = 0;
 
-  // 1. High School GPA (Max 40 pts)
   const gpa = parseFloat(data.gpa) || 0;
   score += Math.min(40, (gpa / 100) * 40);
 
-  // 2. National Exam (Max 20 pts)
   const nat = parseFloat(data.national_score);
   if (!isNaN(nat) && nat > 0) {
     score += Math.min(20, (nat / 600) * 20);
@@ -107,7 +104,6 @@ function calculateMeritScore(data) {
     score += Math.min(20, (gpa / 100) * 20);
   }
 
-  // 3. Algorithmic Screening (Max 25 pts)
   const a1 = (data.algo_response1 || '').toLowerCase();
   const a2 = (data.algo_response2 || '').toLowerCase();
 
@@ -123,7 +119,6 @@ function calculateMeritScore(data) {
     score += 6;
   }
 
-  // 4. Statement of Purpose (Max 15 pts)
   const sopLen = (data.statement_purpose || '').trim().length;
   const projLen = (data.project_idea || '').trim().length;
   if (sopLen > 40) score += 7.5;
@@ -245,7 +240,7 @@ app.get('/api/admin/candidates', async (req, res) => {
   }
 });
 
-// Admin Admit / Reject Decision Endpoint
+// Admin Decision Endpoint
 app.patch('/api/admin/decision', async (req, res) => {
   const { id, status, housing_status } = req.body;
   if (!id || !status) return res.status(400).json({ error: 'Missing decision parameters.' });
@@ -259,8 +254,6 @@ app.patch('/api/admin/decision', async (req, res) => {
       `UPDATE candidates SET status = ?, housing_status = ? WHERE id = ?`,
       [status, housing_status || 'PENDING', id]
     );
-
-    console.log(`[DECISION RECORDED] Candidate: ${candidate.full_name} (${candidate.app_ref}) -> ${status}`);
 
     res.json({ 
       success: true, 
@@ -308,7 +301,7 @@ app.get('/api/admin/export', async (req, res) => {
   }
 });
 
-// Academy Curriculum Modules
+// Academy Modules
 app.get('/api/academy/classes', (req, res) => {
   res.json({
     classes: [
