@@ -93,7 +93,7 @@
       
       <div class="relative w-full min-h-[660px] sm:min-h-[740px] lg:min-h-[820px] flex flex-col justify-between overflow-hidden shadow-2xl">
         
-        <!-- Campus Image Aligned to Top (Sky & Banner Completely Visible) -->
+        <!-- Campus Image Aligned to Top -->
         <img 
           src="/dodo11.jpg" 
           alt="Dodola Special Boarding School Scholars" 
@@ -214,7 +214,7 @@
         </div>
       </div>
 
-      <!-- Founding Leadership & Faculty Section (drdida.jpg integrated) -->
+      <!-- Founding Leadership & Faculty Section -->
       <div class="space-y-4">
         <div class="border-b border-[#1E293B] pb-3 flex justify-between items-end">
           <div>
@@ -228,7 +228,7 @@
           
           <!-- Profile 1: Dr. Dida Midekso -->
           <div class="snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 bg-[#0E1526]/90 border border-[#1E293B] rounded-2xl flex flex-col sm:flex-row gap-5 items-start hover:border-emerald-500/50 transition-all shadow-lg group backdrop-blur-sm">
-            <div onclick="openPhotoModal('Dr. Dida Midekso', 'Co-Founder & Expert Faculty Advisor', '/drdida.jpg')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-emerald-500/60 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
+            <div onclick="openPhotoModal('Dr. Dida Midekso', 'Co-Founder & Senior Faculty Advisor', '/drdida.jpg')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-emerald-500/60 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
               <img src="/drdida.jpg" alt="Dr. Dida Midekso" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/dida.jpg';">
               <div class="absolute inset-0 bg-emerald-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
             </div>
@@ -239,14 +239,34 @@
                   Co-Founder &amp; Advisor
                 </span>
               </div>
-              <span class="text-xs font-semibold text-[#93C5FD] block">Associate Professor &amp; Expert Faculty Advisor</span>
+              <span class="text-xs font-semibold text-[#93C5FD] block">Associate Professor &amp; Senior Faculty Advisor</span>
               <p class="text-xs text-slate-300 leading-relaxed">
-                Associate Professor at Addis Ababa University and senior researcher in computer science and technology education in Ethiopia. Brings extensive academic mentorship, systems design, and institutional governance to the academy.
+                Associate Professor of Computer Science at Addis Ababa University and senior researcher in Ethiopian technology education. Leads institutional governance, research architectures, and academic advisory.
               </p>
             </div>
           </div>
 
-          <!-- Profile 2: Muhafiz Ahmed -->
+          <!-- Profile 2: Gosa Negeso (Leading Coding & Competitive Algorithms Lead) -->
+          <div class="snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 bg-[#0E1526]/90 border border-[#1E293B] rounded-2xl flex flex-col sm:flex-row gap-5 items-start hover:border-blue-500/50 transition-all shadow-lg group backdrop-blur-sm">
+            <div onclick="openPhotoModal('Gosa Negeso', 'Co-Founder & Lead Coding / Competitive Algorithms Architect', '/gosaakoo.jpg')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-[#3B82F6] flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
+              <img src="/gosaakoo.jpg" alt="Gosa Negeso" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/gosa.jpg';">
+              <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
+            </div>
+            <div class="space-y-2 flex-1">
+              <div class="flex items-center justify-between flex-wrap gap-2">
+                <h3 class="text-base font-bold text-white">Gosa Negeso</h3>
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-500/10 text-[#60A5FA] border border-blue-500/20">
+                  Co-Founder &amp; Coding Lead
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-amber-400 block">Lead Coding &amp; Competitive Algorithms Architect</span>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Primary coding instructor and competitive algorithms lead. Finalist in the International Computer Science Competition (ICSC) and National 1st Place Champion in the Purple Comet! Math Meet. Architect of the intake evaluation engine, Edge AI modules, and practical coding curriculum.
+              </p>
+            </div>
+          </div>
+
+          <!-- Profile 3: Muhafiz Ahmed -->
           <div class="snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 bg-[#0E1526]/90 border border-[#1E293B] rounded-2xl flex flex-col sm:flex-row gap-5 items-start hover:border-amber-500/50 transition-all shadow-lg group backdrop-blur-sm">
             <div onclick="openPhotoModal('Muhafiz Ahmed', 'Co-Founder & Technology Lead', '/muhafiz.jpg', 'MA')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-amber-500/60 flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
               <span class="text-amber-400 font-bold text-2xl">MA</span>
@@ -259,29 +279,9 @@
                   Co-Founder &amp; Tech Lead
                 </span>
               </div>
-              <span class="text-xs font-semibold text-[#93C5FD] block">Software Architect &amp; Technology Lead</span>
+              <span class="text-xs font-semibold text-[#93C5FD] block">Software Architect &amp; Cloud Infrastructure Lead</span>
               <p class="text-xs text-slate-300 leading-relaxed">
-                Addis Ababa Science and Technology (AASTU) graduate and founder of Robe Gabaya, serving hundreds of thousands of users. Leads full-stack curriculum delivery, database architectures, and production cloud operations.
-              </p>
-            </div>
-          </div>
-
-          <!-- Profile 3: Gosa Negeso -->
-          <div class="snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 bg-[#0E1526]/90 border border-[#1E293B] rounded-2xl flex flex-col sm:flex-row gap-5 items-start hover:border-blue-500/50 transition-all shadow-lg group backdrop-blur-sm">
-            <div onclick="openPhotoModal('Gosa Negeso', 'Co-Founder & Coding/Research Lead', '/gosaakoo.jpg')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-[#3B82F6] flex-shrink-0 bg-[#090D16] flex items-center justify-center cursor-pointer relative group-hover:scale-105 transition-transform">
-              <img src="/gosaakoo.jpg" alt="Gosa Negeso" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/gosa.jpg';">
-              <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
-            </div>
-            <div class="space-y-2 flex-1">
-              <div class="flex items-center justify-between flex-wrap gap-2">
-                <h3 class="text-base font-bold text-white">Gosa Negeso</h3>
-                <span class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-500/10 text-[#60A5FA] border border-blue-500/20">
-                  Co-Founder &amp; Research Lead
-                </span>
-              </div>
-              <span class="text-xs font-semibold text-amber-400 block">Dodola Ifa Boru Alumnus &amp; Algorithms Lead</span>
-              <p class="text-xs text-slate-300 leading-relaxed">
-                National high achiever, software developer, and researcher specializing in Edge AI and computational logic. Directs the admissions screening model, algorithmic problem sets, and academic operations.
+                AASTU graduate and founder of Robe Gabaya. Directs full-stack curriculum systems, relational database architecture, and production cloud operations.
               </p>
             </div>
           </div>
@@ -302,7 +302,7 @@
               </div>
               <span class="text-xs font-semibold text-amber-400 block">Harvard Scholar &amp; Mathematics Lead</span>
               <p class="text-xs text-slate-300 leading-relaxed">
-                Harvard University scholar and national mathematics competition standout. Oversees discrete mathematics modules, recursive complexity analysis, and mathematical proofs for algorithms.
+                Harvard University scholar and mathematics competition standout. Oversees discrete mathematics modules, recursive complexity proofs, and theoretical problem breakdowns.
               </p>
             </div>
           </div>
@@ -310,7 +310,7 @@
         </div>
       </div>
 
-      <!-- Showcase Card 1: Hands-On Algorithms Laboratories (duringlabs.jpg) -->
+      <!-- Showcase Card 1: Hands-On Algorithms Laboratories -->
       <div class="space-y-6 pt-4">
         <div class="border-b border-[#1E293B] pb-3">
           <span class="text-xs font-bold text-blue-400 uppercase tracking-wider block">Practical Engineering &amp; Computational Labs</span>
@@ -359,7 +359,7 @@
         </div>
       </div>
 
-      <!-- Showcase Card 2: Founders Instruction & Municipal Administration Supervision (foundersvsadmins.jpg) -->
+      <!-- Showcase Card 2: Founders Instruction & Municipal Administration Supervision -->
       <div class="space-y-6 pt-4">
         <div class="border-b border-[#1E293B] pb-3">
           <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">Municipal Sponsorship &amp; Classroom Governance</span>
@@ -956,7 +956,7 @@
     const SYLLABUS_DB = {
       1: {
         title: "Week 1: Web Fundamentals & Structural Design (HTML5, Semantic UI, CSS3)",
-        instructor: "Lead Instructors: Founding Faculty",
+        instructor: "Lead Instructors: Gosa Negeso & Founding Faculty",
         objective: "Introduce high school scholars to the fundamental architecture of the World Wide Web, document object modeling, and building accessible user interfaces.",
         schedule: [
           { day: "Mon", topic: "Internet Architecture & HTTP", theory: "Clients, servers, DNS lookups, and HTTP Request/Response cycles.", practice: "Setting up local development environments and browsers." },
@@ -973,7 +973,7 @@
       },
       2: {
         title: "Week 2: Programming Fundamentals & Computational Logic",
-        instructor: "Lead Instructors: Muhafiz Ahmed & Gosa Negeso",
+        instructor: "Lead Instructors: Gosa Negeso & Muhafiz Ahmed",
         objective: "Bridge visual markup to dynamic logic using JavaScript/Python fundamentals, variables, control flow, loops, and functional modularity.",
         schedule: [
           { day: "Mon", topic: "Variables & Memory Types", theory: "Primitives (Numbers, Strings, Booleans), mutability vs immutability.", practice: "Writing computational scripts to evaluate formulaic calculations." },
@@ -1024,7 +1024,7 @@
       },
       5: {
         title: "Week 5: Recursion, Divide-and-Conquer & Tree Structures",
-        instructor: "Lead Instructors: Kalid Beshir & Gosa Negeso",
+        instructor: "Lead Instructors: Gosa Negeso & Kalid Beshir",
         objective: "Understand recursive call stacks, recurrence relations, and hierarchical tree structures including Binary Search Trees.",
         schedule: [
           { day: "Mon", topic: "Recursive Mechanics & Call Stack", theory: "Base condition termination, stack frames, stack overflow limits.", practice: "Recursive string reversal, Factorial, and Fibonacci depth tracer." },
@@ -1041,7 +1041,7 @@
       },
       6: {
         title: "Week 6: Full-Stack Engineering, REST APIs & Databases",
-        instructor: "Lead Instructors: Muhafiz Ahmed & Dr. Dida Midekso",
+        instructor: "Lead Instructors: Muhafiz Ahmed & Gosa Negeso",
         objective: "Combine frontend engineering and algorithmic processing into production-ready web servers backed by relational databases.",
         schedule: [
           { day: "Mon", topic: "Node.js & Express Backend Architecture", theory: "Event loop, non-blocking I/O, server ports, and HTTP listener.", practice: "Creating an Express server and defining basic API routes." },
