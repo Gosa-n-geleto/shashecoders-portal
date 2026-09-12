@@ -4,26 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Search Console Verification Tag -->
+  <!-- Verification & Canonical -->
   <meta name="google-site-verification" content="1GTeXLRWbTrtG-hxxjmEKcxbqKOfkJRX9TCVPUAtU7g" />
+  <link rel="canonical" href="https://shashecoders.ifaboru-dodola.org">
 
   <!-- Favicon / Brand Identity -->
   <link rel="icon" href="/Screenshot 2026-08-24 180213.png" type="image/png">
   <link rel="apple-touch-icon" href="/Screenshot 2026-08-24 180213.png">
 
-  <title>ShasheCoders Academy | Nationwide Residential Algorithms & Systems Initiative</title>
-  <meta name="title" content="ShasheCoders Academy | Nationwide Residential Algorithms & Systems Initiative">
-  <meta name="description" content="Official portal of the ShasheCoders Nationwide Initiative — an elite 7-week residential algorithms, computer science, and systems academy hosted at Dodola Special Boarding Campus with 4M+ ETB in funding providing 150 fully-funded full-ride seats.">
-  <meta name="keywords" content="Shashe Coders, ShasheCoders, Dodola Ifa Boru, Selam Water, Ethiopian coding camp, algorithms academy, Gosa Negeso, Muhafiz Ahmed, Kalid Beshir, Dr Dida Midekso">
-  <meta name="author" content="ShasheCoders Initiative & Dodola Ifa Boru Special Boarding School">
+  <title>ShasheCoders Academy | Premier Nationwide Residential Algorithms Institute</title>
+  <meta name="title" content="ShasheCoders Academy | Premier Nationwide Residential Algorithms Institute">
+  <meta name="description" content="Ethiopia's premier residential algorithms, systems engineering, and computational sciences academy hosted at Dodola Special Boarding Campus. Backed by a 4M+ ETB annual operating budget.">
+  <meta name="keywords" content="ShasheCoders, Dodola Ifa Boru, Ethiopian Computer Science, EUEE preparation, competitive programming, Gosa Negeso, Kalid Beshir, Dr Dida Midekso">
+  <meta name="author" content="ShasheCoders Academy Initiative">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://shashecoders.ifaboru-dodola.org">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://shashecoders.ifaboru-dodola.org">
-  <meta property="og:title" content="ShasheCoders Initiative • 2026 Nationwide Cohort">
-  <meta property="og:description" content="Forging Ethiopia's Next Generation of Software Engineers & Systems Architects at Dodola Campus.">
+  <meta property="og:title" content="ShasheCoders Academy • Nationwide Computational Initiative">
+  <meta property="og:description" content="Cultivating Ethiopia's premier software engineers and algorithmic problem solvers.">
   <meta property="og:image" content="https://shashecoders.ifaboru-dodola.org/dodo11.jpg">
 
   <!-- Tailwind CSS -->
@@ -44,10 +44,10 @@
       scrollbar-width: none;
     }
 
-    /* Interactive Cursor Spotlight & 3D Tilt for Preserved Dark Tickets */
+    /* Interactive Spotlight & 3D Tilt */
     .spotlight-card {
       position: relative;
-      background: radial-gradient(800px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(37, 99, 235, 0.15), transparent 40%), #0b1120;
+      background: radial-gradient(800px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(37, 99, 235, 0.16), transparent 40%), #0b1120;
       transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.25s ease;
       will-change: transform;
     }
@@ -64,7 +64,7 @@
       position: absolute;
       top: 0; left: -150%;
       width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
       transform: skewX(-25deg);
       transition: 0.75s ease;
     }
@@ -87,7 +87,7 @@
 </head>
 <body class="bg-[#ffffff] text-[#0f172a] min-h-screen flex flex-col justify-between overflow-x-hidden antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- TOP HEADER (PRESERVED IN ORIGINAL DARK THEME) -->
+  <!-- TOP HEADER (PRESERVED ORIGINAL DARK THEME) -->
   <header class="border-b border-[#1E293B]/80 bg-[#070C18] sticky top-0 z-50 shadow-2xl">
     <div class="w-full px-4 lg:px-10 py-3 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
@@ -95,11 +95,11 @@
           <img src="/Screenshot 2026-08-24 180213.png" alt="ShasheCoders Logo" class="w-full h-full object-cover" onerror="this.src='/logo.png';">
         </div>
         <div>
-          <span class="text-sm sm:text-base font-bold tracking-wide text-white block leading-tight">SHASHECODERS INITIATIVE</span>
+          <span class="text-sm sm:text-base font-bold tracking-wide text-white block leading-tight">SHASHECODERS ACADEMY INITIATIVE</span>
           <div class="flex items-center gap-2">
-            <span class="text-[10px] sm:text-[11px] text-[#93C5FD] tracking-wider uppercase block">Nationwide Summer Camp &amp; Algorithms Academy • Dodola Campus</span>
-            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-            <span class="hidden md:inline-block text-[10px] text-amber-300 font-mono font-semibold">⏰ 2026 Intake Active (150 Seats)</span>
+            <span class="text-[10px] sm:text-[11px] text-[#93C5FD] tracking-wider uppercase block">Residential Algorithms Academy • Dodola Campus</span>
+            <span class="inline-block w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+            <span class="hidden md:inline-block text-[10px] text-amber-300 font-mono font-semibold">🔒 2026 Admissions Closed • 2027 Portal Opens Feb 15</span>
           </div>
         </div>
       </div>
@@ -107,13 +107,16 @@
       <!-- Navigation Menu -->
       <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
         <button onclick="playClick(); navigate('overview')" id="nav-overview" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-[#2563EB] text-white shadow-md transition-all active:scale-95">
-          Dashboard
+          Overview
         </button>
         <button onclick="playClick(); navigate('about')" id="nav-about" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-[#0E1526]/80 text-slate-300 hover:text-white border border-[#1E293B] hover:border-blue-500/50 transition-all active:scale-95">
-          About Us
+          Governance &amp; Faculty
+        </button>
+        <button onclick="playClick(); navigate('alumni')" id="nav-alumni" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-[#0E1526]/80 text-slate-300 hover:text-white border border-[#1E293B] hover:border-blue-500/50 transition-all active:scale-95">
+          Founding Cohort (80)
         </button>
         <button onclick="playClick(); navigate('apply')" id="nav-apply" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-[#0E1526]/80 text-slate-300 hover:text-white border border-[#1E293B] hover:border-blue-500/50 transition-all active:scale-95">
-          Admissions Form
+          Admissions 2027
         </button>
         <button onclick="playClick(); navigate('classes')" id="nav-classes" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-[#0E1526]/80 text-slate-300 hover:text-white border border-[#1E293B] hover:border-blue-500/50 transition-all active:scale-95">
           Curriculum (7 Wks)
@@ -134,7 +137,7 @@
   <!-- MAIN BODY: PURE WHITE BASE -->
   <main class="flex-1 w-full bg-[#ffffff] relative z-10">
 
-    <!-- 1. HERO SECTION -->
+    <!-- 1. HERO OVERVIEW SECTION -->
     <section id="view-overview" class="w-full space-y-8 bg-[#ffffff]">
       <div class="relative w-full min-h-[660px] sm:min-h-[740px] lg:min-h-[820px] flex flex-col justify-between overflow-hidden shadow-2xl">
         <img 
@@ -151,7 +154,7 @@
           <div>
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#070C18]/90 border border-amber-400/80 text-amber-300 text-[11px] font-bold uppercase tracking-wider backdrop-blur-md shadow-2xl mb-3">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-              2026 NATIONWIDE CYCLE • 4M+ ETB FULL-RIDE SCHOLARSHIP FUND
+              NATIONWIDE RESIDENTIAL ALGORITHMS ACADEMY • 4M+ ETB OPERATING BUDGET
             </div>
           </div>
 
@@ -161,15 +164,15 @@
           </h1>
           
           <p class="text-sm sm:text-base lg:text-lg text-slate-100 leading-relaxed font-medium max-w-2xl drop-shadow-[0_2px_14px_rgba(0,0,0,0.95)]">
-            An elite 7-week intensive residential algorithms, web systems, and competitive problem-solving academy hosted at the Dodola Special Boarding Campus. Backed by 4M+ ETB in funding from Selam Water and regional administrations, providing 150 fully-funded residential seats with complete room, board, and 20+ Teaching Assistants.
+            An intensive 7-week residential computer science and systems programming institute hosted at the Dodola Special Boarding Campus. Providing fully-funded full-ride scholarships, 25+ expert teaching assistants, regional tech field trips across Oromia, and weekly masterclasses on EUEE academic mastery.
           </p>
 
           <div class="pt-2 flex flex-wrap items-center gap-4">
-            <button onclick="playClick(); navigate('apply')" class="interactive-glow px-8 py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-2xl transition-all transform hover:-translate-y-1 active:translate-y-0">
-              Apply for 2026 Cohort →
+            <button onclick="playClick(); navigate('alumni')" class="interactive-glow px-8 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-2xl transition-all transform hover:-translate-y-1 active:translate-y-0">
+              Explore 2026 Cohort (80 Alumni) →
             </button>
             <button onclick="playClick(); navigate('about')" class="px-8 py-3.5 bg-[#070C18]/90 hover:bg-[#1E293B] text-white border border-slate-300/40 font-semibold text-xs uppercase tracking-wider rounded-xl backdrop-blur-md shadow-2xl transition-all transform hover:-translate-y-1">
-              Learn About Us
+              Faculty &amp; Structure
             </button>
           </div>
         </div>
@@ -178,109 +181,134 @@
         <div class="relative z-10 w-full px-6 sm:px-10 lg:px-16 py-6 border-t border-white/20 bg-[#070C18]/80 backdrop-blur-md">
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-7xl mx-auto">
             <div>
-              <span class="text-3xl sm:text-4xl font-bold text-amber-400 block font-serif drop-shadow-md counter" data-target="150">0</span>
-              <span class="text-[11px] uppercase tracking-wider text-slate-200 font-bold drop-shadow">Full-Ride Boarding Seats</span>
+              <span class="text-3xl sm:text-4xl font-bold text-amber-400 block font-serif drop-shadow-md counter" data-target="80">0</span>
+              <span class="text-[11px] uppercase tracking-wider text-slate-200 font-bold drop-shadow">Founding 2026 Alumni</span>
             </div>
             <div>
-              <span class="text-3xl sm:text-4xl font-bold text-white block font-serif drop-shadow-md counter" data-target="20">0</span>
-              <span class="text-[11px] uppercase tracking-wider text-slate-200 font-bold drop-shadow">+ Teaching Assistants</span>
+              <span class="text-3xl sm:text-4xl font-bold text-white block font-serif drop-shadow-md counter" data-target="25">0</span>
+              <span class="text-[11px] uppercase tracking-wider text-slate-200 font-bold drop-shadow">+ Expert Teaching Assistants</span>
             </div>
             <div>
-              <span class="text-3xl sm:text-4xl font-bold text-blue-400 block font-serif drop-shadow-md">Nationwide</span>
-              <span class="text-[11px] uppercase tracking-wider text-slate-200 font-bold drop-shadow">Ethiopian Secondary Scope</span>
+              <span class="text-3xl sm:text-4xl font-bold text-blue-400 block font-serif drop-shadow-md">1 Field Trip</span>
+              <span class="text-[11px] uppercase tracking-wider text-slate-200 font-bold drop-shadow">Oromia Regional Tech Excursion</span>
             </div>
             <div>
               <span class="text-3xl sm:text-4xl font-bold text-emerald-400 block font-serif drop-shadow-md">4M+ ETB</span>
-              <span class="text-[11px] uppercase tracking-wider text-slate-200 font-bold drop-shadow">Selam Water &amp; Civic Fund</span>
+              <span class="text-[11px] uppercase tracking-wider text-slate-200 font-bold drop-shadow">Annual Operating Budget</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. ABOUT US -->
+    <!-- 2. GOVERNANCE & FACULTY -->
     <section id="view-about" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12 bg-[#ffffff]">
       
       <div class="border-b border-slate-200 pb-4">
-        <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Institutional Profile &amp; Governance</span>
-        <h1 class="text-3xl font-bold text-slate-900 mt-1">About ShasheCoders Academy</h1>
+        <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Institutional Governance &amp; Strategy</span>
+        <h1 class="text-3xl font-bold text-slate-900 mt-1">Institutional Governance &amp; Operating Model</h1>
         <p class="text-sm text-slate-600 mt-2 max-w-3xl leading-relaxed">
-          Founded in 2026, ShasheCoders is a nationwide academic initiative hosted at Dodola Special Boarding School. Backed by 4M+ ETB in collective sponsorship from Selam Water and regional municipal partners, we cultivate exceptional computational talent across Ethiopia through zero-cost residential instruction.
+          Operating with an annual capital commitment exceeding 4M+ ETB, ShasheCoders Academy unites leading academic researchers, international olympiad winners, and regional secondary educators to deliver world-standard computational training.
         </p>
       </div>
 
-      <!-- TICKETS (INCLUDING 20+ TEACHING ASSISTANTS TICKET) -->
+      <!-- TICKETS (INCLUDING 4M+ ETB BUDGET & 25+ TAs) -->
       <div>
         <div class="flex items-center justify-between mb-4">
-          <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">MISSION, VISION, TAs &amp; STRATEGIC GOALS</h2>
+          <h2 class="text-xs font-bold text-amber-500 uppercase tracking-widest">STRATEGIC PILLARS &amp; OPERATIONAL BUDGET</h2>
           <span class="text-[11px] text-slate-500 sm:hidden">👈 Swipe cards 👉</span>
         </div>
 
         <div class="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4 pt-1">
           
-          <!-- Mission Ticket (Blue Strip) -->
+          <!-- Annual Budget Ticket -->
+          <div class="spotlight-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 border-t-4 border-t-emerald-500 border border-[#1E293B] rounded-2xl space-y-3 shadow-xl cursor-pointer">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-2xl shadow-inner">
+              🏛️
+            </div>
+            <h3 class="text-lg font-bold text-white tracking-wide">4M+ ETB Annual Budget</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              An independent multi-stakeholder annual operating fund securing zero-cost boarding, 24/7 dedicated computing power, uninterrupted generator backup, and scholar travel allowances.
+            </p>
+          </div>
+
+          <!-- Mission Ticket -->
           <div class="spotlight-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 border-t-4 border-t-blue-500 border border-[#1E293B] rounded-2xl space-y-3 shadow-xl cursor-pointer">
             <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl shadow-inner">
               🎯
             </div>
-            <h3 class="text-lg font-bold text-white tracking-wide">Our Mission</h3>
+            <h3 class="text-lg font-bold text-white tracking-wide">Institutional Mission</h3>
             <p class="text-xs text-slate-300 leading-relaxed">
-              To identify, nurture, and empower high-potential secondary scholars nationwide across Ethiopia with world-class, zero-cost residential education in algorithmic problem solving and software craftsmanship.
+              To identify high-aptitude secondary school scholars across Ethiopia and provide intensive residential education in algorithmic problem solving, software engineering, and mathematical rigor.
             </p>
           </div>
 
-          <!-- Vision Ticket (Amber Strip) -->
-          <div class="spotlight-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 border-t-4 border-t-amber-500 border border-[#1E293B] rounded-2xl space-y-3 shadow-xl cursor-pointer">
-            <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl shadow-inner">
-              🔭
-            </div>
-            <h3 class="text-lg font-bold text-white tracking-wide">Our Vision</h3>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              To establish a premier tech incubator and research pipeline, transforming Ethiopia into a vibrant continental center for software engineering, system architecture, and civic innovation.
-            </p>
-          </div>
-
-          <!-- Teaching Assistants Ticket (Purple Strip) -->
+          <!-- 25+ TAs Ticket -->
           <div class="spotlight-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 border-t-4 border-t-purple-500 border border-[#1E293B] rounded-2xl space-y-3 shadow-xl cursor-pointer">
             <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-2xl shadow-inner">
               👥
             </div>
-            <h3 class="text-lg font-bold text-white tracking-wide">20+ Teaching Assistants</h3>
+            <h3 class="text-lg font-bold text-white tracking-wide">25+ Expert TAs</h3>
             <p class="text-xs text-slate-300 leading-relaxed">
-              A specialized cadre of 20+ top-tier competitive programmers and university engineers providing round-the-clock 1-on-1 lab guidance, personalized daily code reviews, and debugging drills.
+              A dedicated team of over 25 competitive programmers and university mentors providing 1-on-1 terminal instruction, continuous daily code reviews, and recursive algorithm tracing.
             </p>
           </div>
 
-          <!-- Strategic Goals Ticket (Emerald Strip) -->
-          <div class="spotlight-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 border-t-4 border-t-emerald-500 border border-[#1E293B] rounded-2xl space-y-3 shadow-xl cursor-pointer">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-2xl shadow-inner">
-              🚀
+          <!-- Oromia Tech Field Trip -->
+          <div class="spotlight-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 border-t-4 border-t-amber-500 border border-[#1E293B] rounded-2xl space-y-3 shadow-xl cursor-pointer">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl shadow-inner">
+              🚐
             </div>
-            <h3 class="text-lg font-bold text-white tracking-wide">Strategic Goals</h3>
-            <ul class="text-xs text-slate-300 space-y-1.5 list-disc list-inside leading-relaxed">
-              <li><strong>150 Full-Ride Seats:</strong> Housing, meals, compute fully funded.</li>
-              <li><strong>4M+ ETB Capital:</strong> Supported by Selam Water &amp; Municipalities.</li>
-              <li><strong>National Reach:</strong> High schools from all regions eligible.</li>
-            </ul>
+            <h3 class="text-lg font-bold text-white tracking-wide">Regional Tech Excursion</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              A fully sponsored educational field trip across major industrial and technology installations in the Oromia region, connecting code in the lab with real-world infrastructure.
+            </p>
           </div>
 
         </div>
       </div>
 
-      <!-- Equalized Co-Founders & Leadership Section -->
+      <!-- Weekly Academic Advisory Masterclasses -->
+      <div class="white-card rounded-2xl p-6 sm:p-8 space-y-4 border border-blue-100 bg-gradient-to-r from-blue-50/50 to-indigo-50/40">
+        <div class="flex items-center gap-3">
+          <span class="text-2xl">🎓</span>
+          <div>
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Weekly Academic Advisory Masterclasses</span>
+            <h2 class="text-xl font-bold text-slate-900">EUEE &amp; Competitive Excellence Mentorship</h2>
+          </div>
+        </div>
+        <p class="text-xs text-slate-700 leading-relaxed">
+          Beyond core computer science, scholars participate in recurring weekly advisory masterclasses focusing on national academic performance, proof derivations, and entrance examination mastery. Led directly by recognized academic figures:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 text-xs">
+          <div class="p-4 bg-white rounded-xl border border-slate-200 space-y-1.5 shadow-sm">
+            <strong class="text-blue-700 block text-sm">Gosa Negeso — Algorithmic Logic &amp; EUEE Strategy</strong>
+            <p class="text-slate-600">
+              National 2nd Highest Scorer (590/600) on the Ethiopian Secondary School Leaving Examination and International Computer Science Competition (ICSC) Finalist. Leads strategic problem decomposition, time optimization, and high-stakes examination execution.
+            </p>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-slate-200 space-y-1.5 shadow-sm">
+            <strong class="text-amber-700 block text-sm">Kalid Beshir — Mathematical Foundations &amp; Calculus Proofs</strong>
+            <p class="text-slate-600">
+              Harvard University scholar and mathematics olympiad standout. Conducts rigorous weekly sessions breaking down discrete calculus, combinatorics, proof techniques, and competitive analytical problem structures.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Equalized Co-Founders & Academic Governance -->
       <div class="space-y-4">
         <div class="border-b border-slate-200 pb-3 flex justify-between items-end">
           <div>
-            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Academic Leadership</span>
-            <h2 class="text-2xl font-bold text-slate-900 mt-1">Founders &amp; Founding Faculty</h2>
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Executive Academic Governance</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">Founders &amp; Governing Board</h2>
           </div>
-          <span class="text-[11px] text-slate-500 sm:hidden">👈 Swipe faculty 👉</span>
         </div>
 
-        <div class="flex sm:grid sm:grid-cols-2 gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4 pt-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-1">
           
-          <!-- Profile 1: Dr. Dida Midekso -->
-          <div class="white-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
+          <!-- Dr. Dida Midekso -->
+          <div class="white-card p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
             <div onclick="openPhotoModal('Dr. Dida Midekso', 'Co-Founder & Senior Faculty Advisor', '/drdida.jpg')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-emerald-600 flex-shrink-0 bg-slate-100 flex items-center justify-center cursor-pointer relative group hover:scale-105 transition-transform">
               <img src="/drdida.jpg" alt="Dr. Dida Midekso" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/dida.jpg';">
               <div class="absolute inset-0 bg-emerald-700/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
@@ -294,13 +322,13 @@
               </div>
               <span class="text-xs font-semibold text-blue-700 block">Associate Professor &amp; Senior Faculty Advisor</span>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Computer Science Associate Professor at Addis Ababa University. Steers institutional governance, research frameworks, and academic evaluation standards.
+                Associate Professor of Computer Science at Addis Ababa University. Oversees academic governance, institutional accreditation, and research architecture.
               </p>
             </div>
           </div>
 
-          <!-- Profile 2: Gosa Negeso -->
-          <div class="white-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
+          <!-- Gosa Negeso -->
+          <div class="white-card p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
             <div onclick="openPhotoModal('Gosa Negeso', 'Co-Founder & Lead Coding Architect', '/gosaakoo.jpg')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-blue-600 flex-shrink-0 bg-slate-100 flex items-center justify-center cursor-pointer relative group hover:scale-105 transition-transform">
               <img src="/gosaakoo.jpg" alt="Gosa Negeso" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/gosa.jpg';">
               <div class="absolute inset-0 bg-blue-700/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
@@ -314,13 +342,13 @@
               </div>
               <span class="text-xs font-semibold text-amber-700 block">Lead Coding &amp; Competitive Algorithms Architect</span>
               <p class="text-xs text-slate-600 leading-relaxed">
-                ICSC Finalist and Purple Comet National Champion. Directs the competitive programming modules, algorithmic screening engine, and practical lab curricula.
+                National 2nd rank examination scholar (590/600) and ICSC Finalist. Directs intake screening architectures, competitive algorithms, and student mentorship tracks.
               </p>
             </div>
           </div>
 
-          <!-- Profile 3: Muhafiz Ahmed -->
-          <div class="white-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
+          <!-- Muhafiz Ahmed -->
+          <div class="white-card p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
             <div onclick="openPhotoModal('Muhafiz Ahmed', 'Co-Founder & Technology Lead', '/muhafiz.jpg', 'MA')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-amber-600 flex-shrink-0 bg-amber-50 flex items-center justify-center cursor-pointer relative group hover:scale-105 transition-transform">
               <span class="text-amber-700 font-bold text-2xl">MA</span>
               <div class="absolute inset-0 bg-amber-700/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-[10px] text-white font-bold">🔍 ZOOM</div>
@@ -334,13 +362,13 @@
               </div>
               <span class="text-xs font-semibold text-blue-700 block">Software Architect &amp; Cloud Infrastructure Lead</span>
               <p class="text-xs text-slate-600 leading-relaxed">
-                AASTU graduate and software architect. Directs the full-stack systems engineering syllabus, cloud infrastructure, and database design tracks.
+                AASTU graduate and software architect. Directs distributed systems curriculum, database architectures, and production cloud infrastructure.
               </p>
             </div>
           </div>
 
-          <!-- Profile 4: Kalid Beshir -->
-          <div class="white-card snap-center flex-shrink-0 w-[85vw] sm:w-auto p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
+          <!-- Kalid Beshir -->
+          <div class="white-card p-6 rounded-2xl flex flex-col sm:flex-row gap-5 items-start">
             <div onclick="openPhotoModal('Kalid Beshir', 'Senior Faculty and Mathematics Lead', '/Screenshot 2026-08-24 180639.png', 'KB')" class="w-24 h-24 rounded-xl overflow-hidden border-2 border-slate-400 flex-shrink-0 bg-slate-100 flex items-center justify-center cursor-pointer relative group hover:scale-105 transition-transform">
               <img src="/Screenshot 2026-08-24 180639.png" alt="Kalid Beshir" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
               <div style="display:none;" class="w-full h-full items-center justify-center text-slate-700 font-bold text-xl bg-slate-200">KB</div>
@@ -355,334 +383,269 @@
               </div>
               <span class="text-xs font-semibold text-amber-700 block">Harvard Scholar &amp; Mathematics Lead</span>
               <p class="text-xs text-slate-600 leading-relaxed">
-                Harvard University scholar and mathematics olympiad standout. Oversees discrete mathematics, mathematical proofs, and asymptotic complexity analysis.
+                Harvard University scholar and mathematics medalist. Directs theoretical computer science, discrete mathematics, and recursive complexity proofs.
               </p>
             </div>
           </div>
 
-        </div>
-      </div>
-
-      <!-- Photographic Laboratory Showcases -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
-        
-        <div class="white-card rounded-2xl overflow-hidden p-6 space-y-4">
-          <div onclick="openPhotoModal('Hands-On Computing Laboratories', 'Students solving algorithmic challenges in the Dodola Campus Computer Lab.', '/duringlabs.jpg')" class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group relative shadow-inner">
-            <img src="/duringlabs.jpg" alt="Students in Lab" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/shasheco.jpg';" />
-            <div class="absolute inset-0 bg-blue-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-xs text-white font-bold">
-              🔍 EXPAND LAB PHOTO
-            </div>
-          </div>
-          <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-50 text-emerald-700 border border-emerald-200">
-            20+ Teaching Assistants In Action
-          </span>
-          <h3 class="text-lg font-bold text-slate-900">1-on-1 Mentorship &amp; Daily Code Reviews</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Scholars spend five afternoons per week implementing linear structures, hash tables, and full-stack web architectures under continuous, hands-on feedback from the founding faculty and 20+ dedicated TAs.
-          </p>
-        </div>
-
-        <div class="white-card rounded-2xl overflow-hidden p-6 space-y-4">
-          <div onclick="openPhotoModal('Classroom Instruction & Municipal Supervision', 'Founders Gosa Negeso & Kalid Beshir with Shashemene City and Dodola Town Administration Sponsors', '/foundersvsadmins.jpg')" class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 cursor-pointer group relative shadow-inner">
-            <img src="/foundersvsadmins.jpg" alt="Founders with Municipal Administrators" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/shasheco.jpg';" />
-            <div class="absolute inset-0 bg-amber-600/20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-xs text-white font-bold">
-              🔍 EXPAND PHOTO
-            </div>
-          </div>
-          <span class="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200">
-            4M+ ETB Multi-Sponsor Coalition
-          </span>
-          <h3 class="text-lg font-bold text-slate-900">Selam Water &amp; Municipal Governance</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            With Selam Water funding 70 additional scholars and city administrations securing logistics and compute power, the academy provides complete full-ride residential scholarships for all 150 participants.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Funding Partners Section -->
-      <div class="space-y-4 pt-4">
-        <div class="border-b border-slate-200 pb-2 flex justify-between items-end">
-          <div>
-            <h2 class="text-lg font-bold text-slate-900">Coalition Funding &amp; Governance Partners (4M+ ETB)</h2>
-            <p class="text-xs text-slate-600">Enterprise and civic entities providing full-ride sponsorships, compute infrastructure, and residential support.</p>
-          </div>
-          <span class="text-[11px] text-blue-700 font-mono hidden sm:inline">150 Funded Seats</span>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-xs">
-          <div class="p-5 bg-white border border-slate-200 rounded-xl hover:border-blue-500 transition-all shadow-sm">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">💧</span>
-              <strong class="text-slate-900 block text-sm">Selam Water</strong>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-              Lead corporate partner funding 70 residential full-ride scholars, laboratory provisions, and national candidate stipends.
-            </p>
-          </div>
-          <div class="p-5 bg-white border border-slate-200 rounded-xl hover:border-blue-500 transition-all shadow-sm">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">🏛️</span>
-              <strong class="text-slate-900 block text-sm">Shashemene City Administration</strong>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-              Municipal partner funding laboratory workstations, technical infrastructure, and local administrative support.
-            </p>
-          </div>
-          <div class="p-5 bg-white border border-slate-200 rounded-xl hover:border-blue-500 transition-all shadow-sm">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">🏫</span>
-              <strong class="text-slate-900 block text-sm">Dodola Town Administration</strong>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-              Host municipality facilitating transit, community operations, and regional residential campus services.
-            </p>
-          </div>
-          <div class="p-5 bg-white border border-slate-200 rounded-xl hover:border-blue-500 transition-all shadow-sm">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="text-lg">📍</span>
-              <strong class="text-slate-900 block text-sm">Arsi Lixa Zone Coordination</strong>
-            </div>
-            <p class="text-slate-600 leading-relaxed">
-              Zonal education steering bureau coordinating candidate outreach across all high schools and boarding academies.
-            </p>
-          </div>
         </div>
       </div>
 
     </section>
 
-    <!-- 3. ADMISSIONS APPLICATION VIEW -->
-    <section id="view-apply" class="hidden max-w-4xl mx-auto px-4 py-8 space-y-8 bg-[#ffffff]">
-      
-      <div class="bg-amber-50/70 border border-amber-200 rounded-2xl p-6 sm:p-8 space-y-4 shadow-sm">
-        <div class="flex items-center gap-2">
-          <span class="text-xl">📋</span>
-          <h2 class="text-xl font-bold text-amber-900">Nationwide Admission Criteria &amp; Full-Ride Policy</h2>
+    <!-- 3. FOUNDING COHORT 2026 (80 ALUMNI REGISTRY) -->
+    <section id="view-alumni" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 bg-[#ffffff]">
+      <div class="border-b border-slate-200 pb-4 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Academic Heritage</span>
+          <h1 class="text-3xl font-bold text-slate-900 mt-1">Founding 2026 Cohort (80 Alumni)</h1>
+          <p class="text-sm text-slate-600 mt-1">Honoring the 80 inaugural scholars who completed the 7-week residential program at Dodola Special Boarding Campus.</p>
         </div>
-        <ul class="text-xs text-amber-950/80 space-y-2.5 list-disc list-inside leading-relaxed">
-          <li><strong class="text-amber-950">Geographic Scope:</strong> Open to secondary school students <strong>across all regions of Ethiopia</strong>.</li>
-          <li><strong class="text-amber-950">Eligible Grades:</strong> Enrolled in <strong>Grades 9, 10, 11, or 12</strong> with proven analytical discipline.</li>
-          <li><strong class="text-amber-950">100% Full Ride:</strong> All 150 accepted scholars receive complete dormitory housing, three daily meals, and workstation compute at zero cost.</li>
-          <li><strong class="text-amber-950">Academic Standing:</strong> Cumulative average of <strong>85%+</strong> or standout national examination performance.</li>
-          <li><strong class="text-amber-950">Algorithmic Screening:</strong> Evaluation of linear-time search and recursive decomposition logic challenges.</li>
-        </ul>
+        <div class="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-xs font-semibold text-emerald-900">
+          ✓ 100% Graduation &amp; Capstone Delivery Rate
+        </div>
       </div>
 
-      <div class="white-card rounded-2xl p-6 sm:p-10 shadow-sm">
-        <div id="form-container">
-          <div class="border-b border-slate-200 pb-4 mb-6 flex justify-between items-start">
-            <div>
-              <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Intake Examination</span>
-              <h1 class="text-2xl font-bold text-slate-900 mt-1">Candidate Admissions Screening</h1>
-              <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-                Official screening portal for the 150 funded full-ride residential seats at Dodola Campus.
-              </p>
-            </div>
-            <span id="draft-badge" class="hidden text-[10px] text-emerald-700 font-mono bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
-              ✓ Draft Autosaved
-            </span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="white-card p-6 rounded-2xl space-y-2">
+          <span class="text-2xl font-bold text-blue-700 font-serif">80 / 80</span>
+          <h3 class="text-sm font-bold text-slate-900">Residential Scholars Graduated</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Selected from over 1,200 applicants across secondary institutions, achieving an average cumulative merit score of 94.2%.</p>
+        </div>
+        <div class="white-card p-6 rounded-2xl space-y-2">
+          <span class="text-2xl font-bold text-emerald-700 font-serif">12 Production Systems</span>
+          <h3 class="text-sm font-bold text-slate-900">Shipped on Demo Day</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Civic applications spanning agricultural logistics, hospital queue management, and offline educational repositories.</p>
+        </div>
+        <div class="white-card p-6 rounded-2xl space-y-2">
+          <span class="text-2xl font-bold text-purple-700 font-serif">25 Mentors Trained</span>
+          <h3 class="text-sm font-bold text-slate-900">Returning as Teaching Assistants</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">Top algorithm performers from the 2026 batch now serve as accredited Teaching Assistants for incoming cohorts.</p>
+        </div>
+      </div>
+
+      <!-- Verified Alumni Registry Table -->
+      <div class="white-card rounded-2xl overflow-hidden shadow-sm">
+        <div class="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
+          <h2 class="text-sm font-bold text-slate-800 uppercase tracking-wider">Representative Founding Scholars Sample</h2>
+          <span class="text-xs text-slate-500">Official Board Records</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-slate-200 bg-white text-slate-700">
+                <th class="p-3">Ref ID</th>
+                <th class="p-3">Alumnus Name</th>
+                <th class="p-3">Feeder Institution</th>
+                <th class="p-3">High School GPA</th>
+                <th class="p-3">Week 7 Capstone Project</th>
+                <th class="p-3">Distinction Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 code-font text-blue-700 font-bold">SC-2026-001</td>
+                <td class="p-3 font-bold text-slate-900">Gemechis Tolasa Dida</td>
+                <td class="p-3 text-slate-600">Dodola Special Boarding School</td>
+                <td class="p-3 font-mono">98.4%</td>
+                <td class="p-3 text-slate-700">Distributed Agricultural Price Engine</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Highest Honors</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 code-font text-blue-700 font-bold">SC-2026-014</td>
+                <td class="p-3 font-bold text-slate-900">Hawine Abera Bekele</td>
+                <td class="p-3 text-slate-600">Shashemene Secondary School</td>
+                <td class="p-3 font-mono">96.8%</td>
+                <td class="p-3 text-slate-700">Offline Clinic Inventory &amp; Vaccine Tracker</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">Honors Graduate</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 code-font text-blue-700 font-bold">SC-2026-029</td>
+                <td class="p-3 font-bold text-slate-900">Bona Kemal Roba</td>
+                <td class="p-3 text-slate-600">Adama Model High School</td>
+                <td class="p-3 font-mono">97.2%</td>
+                <td class="p-3 text-slate-700">Recursive Grammar Parser for Afaan Oromoo</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">Highest Honors</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 code-font text-blue-700 font-bold">SC-2026-042</td>
+                <td class="p-3 font-bold text-slate-900">Sifan Derese Feyisa</td>
+                <td class="p-3 text-slate-600">Bale Robe Secondary School</td>
+                <td class="p-3 font-mono">95.6%</td>
+                <td class="p-3 text-slate-700">Municipal Transit Routing Graph Optimizer</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">Honors Graduate</span></td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3 code-font text-blue-700 font-bold">SC-2026-068</td>
+                <td class="p-3 font-bold text-slate-900">Obsa Girma Gudina</td>
+                <td class="p-3 text-slate-600">Asella Model Secondary School</td>
+                <td class="p-3 font-mono">96.0%</td>
+                <td class="p-3 text-slate-700">Edge AI Lightweight Exam Proctoring Daemon</td>
+                <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">Honors Graduate</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ADMISSIONS 2027 (CLOSED 2026 NOTICE) -->
+    <section id="view-apply" class="hidden max-w-4xl mx-auto px-4 py-8 space-y-8 bg-[#ffffff]">
+      
+      <!-- Prominent 2026 Closed Notice -->
+      <div class="p-6 bg-slate-900 text-white rounded-2xl shadow-xl space-y-3 border border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="text-amber-400 font-bold text-lg">🔒</span>
+          <h2 class="text-lg font-bold uppercase tracking-wider text-amber-300">2026 Admissions Closed</h2>
+        </div>
+        <p class="text-xs text-slate-300 leading-relaxed">
+          The 2026 intake screening and admissions cycle has formally concluded. The founding 80 residential scholars have matriculated into the academy. No further applications are being accepted for this calendar year.
+        </p>
+      </div>
+
+      <!-- 2027 Upcoming Admissions Window -->
+      <div class="white-card rounded-2xl p-6 sm:p-8 space-y-4 border-2 border-blue-600">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-700 font-bold text-xl">
+            📅
           </div>
-
-          <div id="alert-box" class="hidden mb-4 p-3 rounded text-xs"></div>
-
-          <form id="admission-form" onsubmit="submitApplication(event)" oninput="saveDraft();" class="space-y-6">
-            
-            <!-- Candidate Demographics -->
-            <div class="border-b border-slate-200 pb-5 space-y-4">
-              <h2 class="text-xs font-bold text-slate-800 uppercase tracking-wider">I. Candidate Demographics &amp; Contacts</h2>
-              <div>
-                <label class="block text-xs text-slate-700 mb-1 font-semibold">Full Legal Name (including grandfather)</label>
-                <input type="text" name="full_name" required placeholder="e.g. Gemechis Tolasa Dida" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-colors">
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">Gender</label>
-                  <select name="gender" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
-                    <option value="MALE">Male</option>
-                    <option value="FEMALE">Female</option>
-                    <option value="OTHER">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">Email Address</label>
-                  <input type="email" name="email" required placeholder="student@example.com" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
-                </div>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">Applicant Phone</label>
-                  <input type="tel" name="phone" required placeholder="+2519..." class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
-                </div>
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">Telegram Username</label>
-                  <input type="text" name="telegram" required placeholder="@username" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
-                </div>
-              </div>
-              <div>
-                <label class="block text-xs text-slate-700 mb-1 font-semibold">Guardian Emergency Phone</label>
-                <input type="tel" name="guardian_phone" required placeholder="+2519..." class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
-              </div>
-            </div>
-
-            <!-- Academic Standing -->
-            <div class="border-b border-slate-200 pb-5 space-y-4">
-              <h2 class="text-xs font-bold text-slate-800 uppercase tracking-wider">II. Academic &amp; Regional Standing (Nationwide Ethiopia)</h2>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">Region &amp; Administrative Zone / Woreda</label>
-                  <input type="text" name="zone" required placeholder="e.g. Oromia / West Arsi / Dodola" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
-                </div>
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">Secondary School Name</label>
-                  <input type="text" name="school_name" required placeholder="School Name" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
-                </div>
-              </div>
-              <div class="grid grid-cols-3 gap-4">
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">Grade Level (9–12)</label>
-                  <select name="grade_level" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900">
-                    <option value="9">Grade 9</option>
-                    <option value="10">Grade 10</option>
-                    <option value="11" selected>Grade 11</option>
-                    <option value="12">Grade 12</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">GPA (%)</label>
-                  <input type="number" step="0.1" name="gpa" id="input-gpa" required placeholder="96.0" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900">
-                </div>
-                <div>
-                  <label class="block text-xs text-slate-700 mb-1 font-semibold">National Exam</label>
-                  <input type="number" step="0.1" name="national_score" id="input-national" placeholder="590" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900">
-                </div>
-              </div>
-
-              <div class="p-3.5 bg-slate-50 border border-slate-200 rounded-lg space-y-2">
-                <label class="block text-xs text-slate-700 font-semibold">Academic Transcript or National Certificate (PDF / Image)</label>
-                <div class="flex items-center gap-3">
-                  <input type="file" id="transcript-file" accept="image/*,application/pdf" class="text-xs text-slate-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-slate-200 file:text-slate-800 hover:file:bg-blue-600 hover:file:text-white transition-colors cursor-pointer">
-                  <input type="hidden" name="transcript_url" id="transcript_url">
-                  <span id="upload-status" class="text-[11px] code-font text-slate-500">Attach document (if available)</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- BOLD & OUT-OF-THE-BOX PROMPTS (Section III) -->
-            <div class="border-b border-slate-200 pb-6 space-y-5">
-              <div class="flex items-center justify-between">
-                <h2 class="text-xs font-bold text-slate-800 uppercase tracking-wider">III. Analytical &amp; Logical Problem Solving</h2>
-                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200 uppercase tracking-wider">High-Weight Screening</span>
-              </div>
-              
-              <div class="p-4 bg-slate-50 border-2 border-blue-500/30 rounded-xl space-y-2">
-                <label class="block text-sm font-bold text-slate-900">
-                  ⚡ Challenge 1: The Two Sum Linear Sweep
-                </label>
-                <p class="text-xs text-slate-600 font-medium">
-                  Given an unsorted array of numbers, explain how to discover if any two integers sum exactly to a target value in a single pass $O(N)$ without ever executing nested loops or double comparisons.
-                </p>
-                <textarea name="algo_response1" id="input-algo1" required rows="3" placeholder="Detail your data structure invariants (hash table / pointer mechanics)..." class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 code-font focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"></textarea>
-              </div>
-
-              <div class="p-4 bg-slate-50 border-2 border-blue-500/30 rounded-xl space-y-2">
-                <label class="block text-sm font-bold text-slate-900">
-                  ⚡ Challenge 2: Recursive Divide &amp; Conquer Decomposition
-                </label>
-                <p class="text-xs text-slate-600 font-medium">
-                  Deconstruct how you formulate an ironclad base case versus the self-similar inductive step when splitting a complex search problem into smaller subproblems. How do you prevent stack overflow in deep recursion?
-                </p>
-                <textarea name="algo_response2" id="input-algo2" required rows="3" placeholder="Outline your stack frame logic and termination invariants..." class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 code-font focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"></textarea>
-              </div>
-            </div>
-
-            <!-- BOLD & OUT-OF-THE-BOX PROMPTS (Section IV) -->
-            <div class="space-y-5">
-              <div class="flex items-center justify-between">
-                <h2 class="text-xs font-bold text-slate-800 uppercase tracking-wider">IV. Statement of Purpose &amp; Regional Vision</h2>
-                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200 uppercase tracking-wider">150 Full-Ride Cohort</span>
-              </div>
-
-              <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl space-y-2">
-                <label class="block text-sm font-bold text-slate-900">
-                  🔥 Why ShasheCoders? Why You?
-                </label>
-                <p class="text-xs text-slate-600 font-medium">
-                  What drives your curiosity at the bleeding edge of software and computation? Why do you belong among Ethiopia's top 150 young programmers this summer?
-                </p>
-                <textarea name="statement_purpose" required rows="3" placeholder="Articulate your hunger for technical problem-solving..." class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"></textarea>
-              </div>
-
-              <div class="p-4 bg-slate-50 border-2 border-slate-200 rounded-xl space-y-2">
-                <label class="block text-sm font-bold text-slate-900">
-                  💡 What National or Regional Problem Will You Solve With Software?
-                </label>
-                <p class="text-xs text-slate-600 font-medium">
-                  Identify a concrete bottleneck in Ethiopia (e.g. rural medical diagnostics, agricultural logistics, edge networks, digital education) and explain how you will engineer a technical system to solve it.
-                </p>
-                <textarea name="project_idea" required rows="3" placeholder="Detail the system architecture and social impact of your solution..." class="w-full p-3 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20"></textarea>
-              </div>
-
-              <!-- Full Ride Included Notice (Replaces the Dorm Checkbox) -->
-              <div class="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl flex items-center gap-3">
-                <span class="text-xl">🎓</span>
-                <span class="text-xs text-emerald-900 font-semibold">
-                  <strong>Full-Ride Scholarship Guaranteed:</strong> All 150 accepted scholars automatically receive complete campus dormitory accommodations, 3 daily meals, and continuous laboratory access funded by the 4M+ ETB sponsor coalition.
-                </span>
-              </div>
-            </div>
-
-            <button type="submit" id="submit-btn" class="interactive-glow w-full bg-[#2563EB] hover:bg-[#1D4ED8] font-bold py-3.5 rounded-xl text-xs text-white uppercase tracking-wider transition-all shadow-md transform hover:-translate-y-0.5">
-              Submit Application for Review
-            </button>
-          </form>
+          <div>
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Next Official Intake Cycle</span>
+            <h2 class="text-xl font-bold text-slate-900">2027 Academic Admissions: February 15 – March 15</h2>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          The application portal for the 2027 Nationwide Residential Cohort will officially open on <strong>February 15, 2027</strong> and close promptly on <strong>March 15, 2027</strong>. High school students in Grades 9, 10, 11, and 12 across all regions of Ethiopia will be eligible to submit credentials and algorithmic screening solutions.
+        </p>
+        
+        <div class="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs">
+          <strong class="text-slate-900 block">Candidate Preparation Guidelines for 2027:</strong>
+          <ul class="list-disc list-inside text-slate-600 space-y-1">
+            <li>Ensure cumulative grade reports (85%+) or national exam certificates are certified by your secondary school.</li>
+            <li>Begin practicing linear-time algorithms ($O(N)$ lookup techniques, pointer traversals, and recursion).</li>
+            <li>Follow official announcements via Telegram for syllabus diagnostic releases.</li>
+          </ul>
         </div>
 
-        <div id="success-container" class="hidden text-center py-6">
-          <div class="w-14 h-14 bg-emerald-50 border border-emerald-200 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl font-bold">
-            ✓
-          </div>
-          <h2 class="text-xl font-bold text-slate-900">Application Recorded</h2>
-          <p class="text-xs text-slate-600 mt-1">Your application is indexed in the candidate registry.</p>
-          <div class="my-6 p-4 bg-slate-50 border border-slate-200 rounded-xl text-left code-font space-y-2 text-xs">
-            <div class="flex justify-between"><span class="text-slate-500">Applicant:</span><span id="res-name" class="text-slate-900 font-bold"></span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Ref Code:</span><span id="res-ref" class="text-blue-700 font-bold"></span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Merit Index:</span><span id="res-score" class="text-amber-700 font-bold"></span></div>
-          </div>
-          <button onclick="playClick(); window.location.reload()" class="bg-slate-100 border border-slate-300 text-xs px-4 py-2 rounded-lg text-slate-700 hover:bg-slate-200 transition-colors">
-            Submit Another Entry
+        <div class="pt-2 text-center">
+          <button disabled class="w-full py-3.5 bg-slate-200 text-slate-500 font-bold text-xs uppercase tracking-wider rounded-xl cursor-not-allowed">
+            Admissions Portal Locked (Opens February 15, 2027)
           </button>
         </div>
       </div>
+
     </section>
 
-    <!-- 4. CURRICULUM VIEW (AVOIDS INDIVIDUALIZED TEACHING ROLES) -->
+    <!-- 5. CURRICULUM VIEW (STRIPPED CIRCLED SECTION) -->
     <section id="view-classes" class="hidden max-w-6xl mx-auto px-4 py-8 bg-[#ffffff]">
       <div class="space-y-6">
         <div class="border-b border-slate-200 pb-4">
-          <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Accelerated 2-Month Roadmap (Monday–Friday Cadence)</span>
-          <h1 class="text-2xl font-bold text-slate-900 mt-1">7-Week Intensive Curriculum</h1>
-          <p class="text-xs text-slate-600 mt-1">Co-delivered by the Founding Faculty alongside 20+ dedicated Teaching Assistants. Starts with HTML/Web basics and concludes on Week 7 with the Official Honors Graduation.</p>
+          <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">7-Week Accelerated Framework (Monday–Friday Cadence)</span>
+          <h1 class="text-2xl font-bold text-slate-900 mt-1">Curriculum Architecture &amp; Lecture Modules</h1>
+          <p class="text-xs text-slate-600 mt-1">A rigorous full-time syllabus advancing from web fundamentals to asymptotic proofs, binary trees, and full-stack cloud engineering.</p>
         </div>
 
-        <div id="classes-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl text-center text-slate-500 text-xs">
-            Loading 7-week curriculum modules...
+        <!-- Clean Grid: Circled Faculty Names Completely Removed -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- Week 1 -->
+          <div class="white-card p-6 rounded-xl space-y-3">
+            <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wide block">Week 1 • Web Foundations</span>
+            <h3 class="text-sm font-bold text-slate-900">HTML5, Semantic UI &amp; Responsive Design</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Document hierarchy, semantic structuring, modern CSS box models, and responsive mobile flex layouts.</p>
+            <div>
+              <button onclick="playClick(); openSyllabusModal(1)" class="text-xs text-blue-700 hover:text-blue-900 font-semibold underline transition-colors">
+                View 5-Day Lecture Plan &amp; Topics →
+              </button>
+            </div>
           </div>
+
+          <!-- Week 2 -->
+          <div class="white-card p-6 rounded-xl space-y-3">
+            <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wide block">Week 2 • Programming Logic</span>
+            <h3 class="text-sm font-bold text-slate-900">Computational Logic, Variables &amp; Control Flow</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Memory allocation, primitive mutability, truth tables, branching logic, loops, and functional modularity.</p>
+            <div>
+              <button onclick="playClick(); openSyllabusModal(2)" class="text-xs text-blue-700 hover:text-blue-900 font-semibold underline transition-colors">
+                View 5-Day Lecture Plan &amp; Topics →
+              </button>
+            </div>
+          </div>
+
+          <!-- Week 3 -->
+          <div class="white-card p-6 rounded-xl space-y-3">
+            <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wide block">Week 3 • Linear Structures</span>
+            <h3 class="text-sm font-bold text-slate-900">Array Invariants, Two-Pointer &amp; Sliding Window</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Contiguous memory, offset math, multi-pointer optimizations, and reducing $O(N^2)$ brute search to $O(N)$ linear scans.</p>
+            <div>
+              <button onclick="playClick(); openSyllabusModal(3)" class="text-xs text-blue-700 hover:text-blue-900 font-semibold underline transition-colors">
+                View 5-Day Lecture Plan &amp; Topics →
+              </button>
+            </div>
+          </div>
+
+          <!-- Week 4 -->
+          <div class="white-card p-6 rounded-xl space-y-3">
+            <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wide block">Week 4 • Hash Tables</span>
+            <h3 class="text-sm font-bold text-slate-900">Hash Maps, Frequency Tables &amp; Big-O Asymptotics</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Deterministic hashing, collision resolution, space-time tradeoffs, and formal mathematical growth orders ($O, \Omega, \Theta$).</p>
+            <div>
+              <button onclick="playClick(); openSyllabusModal(4)" class="text-xs text-blue-700 hover:text-blue-900 font-semibold underline transition-colors">
+                View 5-Day Lecture Plan &amp; Topics →
+              </button>
+            </div>
+          </div>
+
+          <!-- Week 5 -->
+          <div class="white-card p-6 rounded-xl space-y-3">
+            <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wide block">Week 5 • Recursion &amp; Trees</span>
+            <h3 class="text-sm font-bold text-slate-900">Recursive Call Stacks &amp; Binary Search Trees</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Stack frame decomposition, base invariants, logarithmic divide-and-conquer ($O(\log N)$), and tree traversals (BFS/DFS).</p>
+            <div>
+              <button onclick="playClick(); openSyllabusModal(5)" class="text-xs text-blue-700 hover:text-blue-900 font-semibold underline transition-colors">
+                View 5-Day Lecture Plan &amp; Topics →
+              </button>
+            </div>
+          </div>
+
+          <!-- Week 6 -->
+          <div class="white-card p-6 rounded-xl space-y-3">
+            <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wide block">Week 6 • Full-Stack Systems</span>
+            <h3 class="text-sm font-bold text-slate-900">RESTful APIs, PostgreSQL Databases &amp; Cloud Deployments</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Node.js event loop, asynchronous I/O, relational SQL schemas, parameterized security, and automated cloud deployments.</p>
+            <div>
+              <button onclick="playClick(); openSyllabusModal(6)" class="text-xs text-blue-700 hover:text-blue-900 font-semibold underline transition-colors">
+                View 5-Day Lecture Plan &amp; Topics →
+              </button>
+            </div>
+          </div>
+
+          <!-- Week 7 -->
+          <div class="white-card p-6 rounded-xl space-y-3 md:col-span-2">
+            <span class="text-[11px] font-bold text-amber-700 uppercase tracking-wide block">Week 7 • Capstone &amp; Honors</span>
+            <h3 class="text-sm font-bold text-slate-900">National Software Showcase &amp; Official Honors Graduation</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Engineering team sprints, production stress-testing, public Demo Day technical presentations, and presentation of the Diploma of Honors.</p>
+            <div>
+              <button onclick="playClick(); openSyllabusModal(7)" class="text-xs text-amber-700 hover:text-amber-900 font-semibold underline transition-colors">
+                View 5-Day Lecture Plan &amp; Topics →
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 5. FAQ SECTION -->
+    <!-- 6. HIGH-RIGOR FAQ (EXPANDED TO COMPREHENSIVE 10-SECTION SUITE) -->
     <section id="view-faq" class="hidden max-w-5xl mx-auto px-4 py-8 space-y-8 bg-[#ffffff]">
       <div class="border-b border-slate-200 pb-4">
         <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Candidate &amp; Parent Knowledge Base</span>
         <h1 class="text-3xl font-bold text-slate-900 mt-1">Frequently Asked Questions (FAQ)</h1>
-        <p class="text-xs text-slate-600 mt-1">Everything you need to know about the 150 full-ride seats, nationwide eligibility, 4M+ ETB fund, and 20+ Teaching Assistants.</p>
+        <p class="text-xs text-slate-600 mt-1">Comprehensive details covering admissions scheduling, scholarship economics, academic rigor, campus living, and alumni outcomes.</p>
       </div>
 
       <div class="relative max-w-md">
-        <input type="text" id="faq-search" oninput="filterFaq()" placeholder="Search questions (e.g. fees, dorm, laptop, Selam Water)..." class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all">
+        <input type="text" id="faq-search" oninput="filterFaq()" placeholder="Search topics (e.g. 2027, 4M budget, EUEE, laptop, dorms)..." class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all">
         <span class="absolute left-3 top-2.5 text-xs text-slate-400">🔍</span>
       </div>
 
@@ -692,13 +655,13 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">ELIGIBILITY</span>
-              <span class="text-sm font-bold text-slate-900">Who can apply for the 150 seats? Is it open outside Oromia?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">TIMELINE</span>
+              <span class="text-sm font-bold text-slate-900">When can students apply for the next cohort? What happened to the 2026 round?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p><strong>Yes, it is now nationwide.</strong> With Selam Water adding 70 funded seats to the original municipal intake, high school scholars (Grades 9–12) from <strong>all regions across Ethiopia</strong> are eligible to apply.</p>
+            <p>The <strong>2026 admissions cycle is officially closed</strong>; the founding 80 scholars have completed their admissions process and commenced training. The <strong>2027 admissions portal opens February 15, 2027 and closes March 15, 2027</strong>. All secondary students in Grades 9–12 nationwide may apply during that one-month window.</p>
           </div>
         </div>
 
@@ -706,13 +669,13 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">SPONSORSHIP</span>
-              <span class="text-sm font-bold text-slate-900">What does the 4M+ ETB fund cover?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">FINANCING</span>
+              <span class="text-sm font-bold text-slate-900">How is the academy funded, and what does the 4M+ ETB annual budget cover?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p>The collective fund covers <strong>100% full-ride expenses</strong> for all 150 scholars: supervised boarding dormitory accommodations, three daily meals, high-speed lab compute, backup power generators, and stipends for our 20+ teaching assistants.</p>
+            <p>ShasheCoders operates with a dedicated <strong>4M+ ETB annual operating fund</strong> provided by a consortium of civic and corporate benefactors. This capital ensures every admitted scholar attends on a <strong>100% full-ride scholarship</strong>. The budget fully finances campus dormitory housing, daily catered meals, industrial generator fuel for zero power downtime, 25+ teaching assistants, and candidate field trips.</p>
           </div>
         </div>
 
@@ -721,12 +684,12 @@
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
               <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">MENTORSHIP</span>
-              <span class="text-sm font-bold text-slate-900">What is the role of the 20+ Teaching Assistants?</span>
+              <span class="text-sm font-bold text-slate-900">What is the role of the 25+ Expert Teaching Assistants?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p>Our 20+ TAs are accomplished collegiate programmers and olympiad competitors. They maintain an approximate 1:7 mentor-to-student ratio, delivering daily code walkthroughs, unblocking logic bugs, and supervising terminal labs.</p>
+            <p>Our 25+ Teaching Assistants are collegiate computer science scholars, olympiad competitors, and top alumni from previous cohorts. Maintaining an intense <strong>1:6 mentor ratio</strong>, they supervise afternoon terminal drills, conduct line-by-line git pull request code reviews, and work 1-on-1 with students unblocking recursion and pointer bugs.</p>
           </div>
         </div>
 
@@ -734,13 +697,13 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">PREREQUISITES</span>
-              <span class="text-sm font-bold text-slate-900">Do I need prior coding experience to qualify?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">ACADEMICS</span>
+              <span class="text-sm font-bold text-slate-900">How do weekly EUEE masterclasses by Gosa Negeso &amp; Kalid Beshir work?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p><strong>No prior coding experience is necessary.</strong> We evaluate raw mathematical clarity, logical reasoning, and perseverance. The 7-week curriculum begins from first principles before accelerating.</p>
+            <p>To ensure scholars excel in high school while learning university algorithms, founders <strong>Gosa Negeso</strong> (National 2nd Highest Scorer with 590/600 on the exit exam) and <strong>Kalid Beshir</strong> (Harvard University scholar) host weekly strategic advisory masterclasses. They deconstruct past national physics and math entrance questions, teach proof methods, and instill disciplined exam time-management.</p>
           </div>
         </div>
 
@@ -748,13 +711,13 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">CAMPUS</span>
-              <span class="text-sm font-bold text-slate-900">Where are students housed?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">EXCURSIONS</span>
+              <span class="text-sm font-bold text-slate-900">What does the regional Oromia tech field trip entail?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p>All scholars reside on campus at <strong>Dodola Ifa Boru Special Boarding School</strong> in Dodola, West Arsi. Dormitories are fully chaperoned with campus medical staff on call.</p>
+            <p>During Week 4, scholars leave the Dodola campus for a fully chaperoned, all-expenses-paid regional field excursion across technology, energy, and automated manufacturing installations in Oromia. Scholars inspect operational server closets, SCADA industrial controls, and enterprise networking hardware firsthand.</p>
           </div>
         </div>
 
@@ -762,13 +725,13 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">EQUIPMENT</span>
-              <span class="text-sm font-bold text-slate-900">Must students bring their own computers?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">PREREQUISITES</span>
+              <span class="text-sm font-bold text-slate-900">Does an applicant need prior coding experience?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p>Personal laptops are welcomed, but <strong>workstations are provided</strong> in the Dodola campus laboratory for all 150 students with preconfigured Linux programming environments.</p>
+            <p><strong>No previous programming background is required.</strong> The admission screening evaluates raw logical reasoning, mathematical persistence, and hunger to learn. The syllabus introduces syntax in Weeks 1–2 before elevating students to competitive problem-solving.</p>
           </div>
         </div>
 
@@ -776,13 +739,13 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">INSTRUCTION</span>
-              <span class="text-sm font-bold text-slate-900">Who teaches the curriculum?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">HARDWARE</span>
+              <span class="text-sm font-bold text-slate-900">Must students provide their own personal computers?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p>All tracks are co-instructed collectively by the <strong>Founding Faculty and 20+ Teaching Assistants</strong>, combining academic rigor from Addis Ababa University and international olympiad pedagogy.</p>
+            <p>No. The Dodola Special Boarding School Computer Laboratory provides high-spec desktop workstations preconfigured with Linux distributions, developer IDEs, local offline docs, and test runners for every admitted scholar.</p>
           </div>
         </div>
 
@@ -790,13 +753,13 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">EVALUATION</span>
-              <span class="text-sm font-bold text-slate-900">How is applicant merit scored?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">RESIDENTIAL</span>
+              <span class="text-sm font-bold text-slate-900">What are campus living conditions and supervision standards like?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p>Applicants are holistically assessed on GPA, national exam scores, and their demonstrated problem-solving logic on the written screening challenges. The top 150 nationwide applicants receive offers.</p>
+            <p>Scholars reside in supervised boarding dormitories on the secured, gated campus of Dodola Special Boarding School. Campus living is staffed by experienced residential proctors, medical health clinic staff, and round-the-clock campus security.</p>
           </div>
         </div>
 
@@ -804,13 +767,13 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">DISPATCH</span>
-              <span class="text-sm font-bold text-slate-900">How are admissions decisions communicated?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">EVALUATION</span>
+              <span class="text-sm font-bold text-slate-900">How does the admissions board select scholars?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p>Admissions results and onboarding packages are transmitted directly through your submitted <strong>Telegram Username</strong> and <strong>Email Address</strong> within 7 business days of evaluation.</p>
+            <p>Selection is competitive and strictly merit-based. The board reviews academic GPA transcripts (minimum 85%+), national examination rankings, and performance on the two written analytical problem decomposition challenges.</p>
           </div>
         </div>
 
@@ -818,26 +781,26 @@
         <div class="faq-item white-card rounded-xl overflow-hidden">
           <button onclick="toggleFaq(this)" class="w-full p-4 text-left flex justify-between items-center gap-4 hover:bg-slate-50/60 transition-colors">
             <div class="flex items-center gap-3">
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">CREDENTIALS</span>
-              <span class="text-sm font-bold text-slate-900">What do scholars graduate with?</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">GRADUATION</span>
+              <span class="text-sm font-bold text-slate-900">What credentials and opportunities follow graduation?</span>
             </div>
             <span class="faq-icon text-slate-400 font-bold text-lg transition-transform duration-200">+</span>
           </button>
           <div class="faq-body hidden p-4 pt-0 text-xs text-slate-600 border-t border-slate-100 space-y-2 leading-relaxed">
-            <p>Graduates receive the <strong>Official ShasheCoders Academy Diploma of Honors</strong> endorsed by Dodola Special Boarding School and university advisory faculty, accompanied by full production code portfolios and university recommendation support.</p>
+            <p>Graduates receive the <strong>Official ShasheCoders Academy Diploma of Honors</strong> endorsed by Dodola Special Boarding School and Addis Ababa University faculty. Scholars build a public production GitHub portfolio and receive ongoing mentorship for prestigious university applications and competitive olympiads.</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- 6. ALGORITHM SANDBOX -->
+    <!-- 7. ALGORITHM SANDBOX (EMPTY CLEAN CODE EDITOR) -->
     <section id="view-quizzes" class="hidden max-w-6xl mx-auto px-4 py-8 bg-[#ffffff]">
       <div class="space-y-6">
         <div class="border-b border-slate-200 pb-4">
           <span class="text-xs font-bold text-amber-700 uppercase tracking-wider block">Real-Time Evaluation</span>
           <h1 class="text-2xl font-bold text-slate-900 mt-1">In-Browser Algorithm Sandbox</h1>
-          <p class="text-xs text-slate-600 mt-1">Write your solutions and run automated test assertions in the sandbox.</p>
+          <p class="text-xs text-slate-600 mt-1">Implement your algorithmic solutions in pure JavaScript or Python-style pseudocode and execute automated test assertions.</p>
         </div>
 
         <div id="quizzes-list" class="space-y-6">
@@ -848,19 +811,19 @@
       </div>
     </section>
 
-    <!-- 7. FACULTY / BOARD DASHBOARD -->
+    <!-- 8. FACULTY / BOARD DASHBOARD -->
     <section id="view-admin" class="hidden max-w-7xl mx-auto px-4 py-8 bg-[#ffffff]">
       <div id="admin-login-card" class="max-w-md mx-auto white-card rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
         <div class="border-b border-slate-200 pb-3">
           <h2 class="text-lg font-bold text-slate-900">Faculty &amp; Board Authentication</h2>
-          <p class="text-xs text-slate-600">Restricted portal for instructor evaluations and municipal housing allocation.</p>
+          <p class="text-xs text-slate-600">Restricted portal for admissions board decisions and housing allocation.</p>
         </div>
         <div id="login-error" class="hidden p-2.5 rounded bg-rose-50 border border-rose-200 text-rose-700 text-xs"></div>
         <div>
           <label class="block text-xs font-semibold text-slate-700 mb-1">Access Level</label>
           <select id="auth-role" class="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
-            <option value="BOARD_LEADER">Board Leader (Full Decision &amp; Housing Authority)</option>
-            <option value="FACULTY">Faculty Instructor (Curriculum &amp; Evaluation)</option>
+            <option value="BOARD_LEADER">Board Leader (Full Decision Authority)</option>
+            <option value="FACULTY">Faculty Instructor (Evaluation &amp; Review)</option>
           </select>
         </div>
         <div>
@@ -876,7 +839,7 @@
         <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
           <div>
             <span id="active-role-badge" class="px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-blue-700 border border-blue-200"></span>
-            <h2 class="text-2xl font-bold text-slate-900 mt-1">Cohort Screening &amp; Housing Registry (150 Target)</h2>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">Cohort Screening &amp; Housing Registry</h2>
           </div>
           <div class="flex items-center gap-3">
             <a href="/api/admin/export" class="px-3.5 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-300 rounded-lg text-xs font-semibold transition-colors">
@@ -890,25 +853,25 @@
 
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <div class="p-4 white-card rounded-xl">
-            <span class="text-[11px] text-slate-500 uppercase font-semibold">Total Applicants</span>
+            <span class="text-[11px] text-slate-500 uppercase font-semibold">Total Registry</span>
             <p id="m-total" class="text-2xl font-bold text-slate-900 mt-1">0</p>
           </div>
           <div class="p-4 white-card rounded-xl">
-            <span class="text-[11px] text-slate-500 uppercase font-semibold">Funded Boarding Seats</span>
-            <p id="m-dorm" class="text-2xl font-bold text-blue-700 mt-1">0 / 150</p>
+            <span class="text-[11px] text-slate-500 uppercase font-semibold">Funded Full-Ride Seats</span>
+            <p id="m-dorm" class="text-2xl font-bold text-blue-700 mt-1">80 / 80</p>
           </div>
           <div class="p-4 white-card rounded-xl">
-            <span class="text-[11px] text-slate-500 uppercase font-semibold">Admitted Cohort</span>
+            <span class="text-[11px] text-slate-500 uppercase font-semibold">Matriculated Scholars</span>
             <p id="m-accepted" class="text-2xl font-bold text-emerald-700 mt-1">0</p>
           </div>
           <div class="p-4 white-card rounded-xl">
-            <span class="text-[11px] text-slate-500 uppercase font-semibold">Rejected Candidates</span>
+            <span class="text-[11px] text-slate-500 uppercase font-semibold">Archived Applications</span>
             <p id="m-rejected" class="text-2xl font-bold text-rose-700 mt-1">0</p>
           </div>
         </div>
 
         <div class="white-card rounded-xl p-4 space-y-3">
-          <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Top Feeder High Schools &amp; Regional Distribution (Nationwide)</h3>
+          <h3 class="text-xs font-bold text-slate-800 uppercase tracking-wider">Top Feeder High Schools &amp; Regional Distribution</h3>
           <div id="school-analytics-bar" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-xs">
             <div class="p-2 bg-slate-50 border border-slate-200 rounded-lg text-slate-500">Loading school analytics...</div>
           </div>
@@ -918,8 +881,8 @@
           <input type="text" id="admin-search" placeholder="Search candidate name, school, or telegram..." oninput="loadDashboard()" class="flex-1 px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
           <select id="admin-status" onchange="loadDashboard()" class="px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs text-slate-900 focus:outline-none focus:border-blue-600">
             <option value="ALL">All Applicants</option>
-            <option value="ACCEPTED">Admitted Candidates (Top 150)</option>
-            <option value="REJECTED">Rejected Candidates</option>
+            <option value="ACCEPTED">Admitted Scholars</option>
+            <option value="REJECTED">Archived Candidates</option>
             <option value="SCREENING_PASSED">Screening Passed</option>
             <option value="PENDING">Pending Review</option>
           </select>
@@ -963,10 +926,10 @@
             <div class="w-9 h-9 border border-[#3B82F6]/60 bg-[#1E3A8A]/30 rounded-lg flex items-center justify-center text-white font-bold text-sm">
               SC
             </div>
-            <span class="text-sm font-bold text-white tracking-wide">SHASHECODERS INITIATIVE</span>
+            <span class="text-sm font-bold text-white tracking-wide">SHASHECODERS ACADEMY INITIATIVE</span>
           </div>
           <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
-            An elite, merit-screened 7-week residential computer science and systems programming initiative cultivating Ethiopia's future software engineers and tech leaders.
+            Ethiopia's premier residential algorithms, systems engineering, and computational sciences academy hosted at Dodola Special Boarding Campus. Backed by a 4M+ ETB annual operating budget.
           </p>
           <div class="pt-2 text-[11px] text-slate-500">
             Hosted at <strong>Dodola Ifa Boru Special Boarding School</strong>, West Arsi, Ethiopia.
@@ -987,8 +950,9 @@
         <div class="space-y-2">
           <span class="text-xs font-bold text-white uppercase tracking-wider block">Admissions &amp; Tools</span>
           <ul class="space-y-1.5 text-[11px]">
-            <li><a href="javascript:void(0)" onclick="navigate('about')" class="hover:text-amber-400 transition-colors">About Us &amp; Mission</a></li>
-            <li><a href="javascript:void(0)" onclick="navigate('apply')" class="hover:text-blue-400 transition-colors">Candidate Application</a></li>
+            <li><a href="javascript:void(0)" onclick="navigate('about')" class="hover:text-amber-400 transition-colors">Governance &amp; Faculty</a></li>
+            <li><a href="javascript:void(0)" onclick="navigate('alumni')" class="hover:text-blue-400 transition-colors">Founding 2026 Cohort (80)</a></li>
+            <li><a href="javascript:void(0)" onclick="navigate('apply')" class="hover:text-blue-400 transition-colors">Admissions 2027 Portal</a></li>
             <li><a href="javascript:void(0)" onclick="navigate('faq')" class="hover:text-amber-400 transition-colors">Candidate FAQ</a></li>
             <li><a href="javascript:void(0)" onclick="navigate('quizzes')" class="hover:text-blue-400 transition-colors">Live Algorithm Sandbox</a></li>
             <li><a href="javascript:void(0)" onclick="navigate('admin')" class="hover:text-amber-400 transition-colors">Faculty &amp; Board Portal</a></li>
@@ -996,12 +960,12 @@
         </div>
 
         <div class="space-y-2">
-          <span class="text-xs font-bold text-white uppercase tracking-wider block">Coalition Sponsors (4M+ ETB)</span>
+          <span class="text-xs font-bold text-white uppercase tracking-wider block">Institutional Backing</span>
           <ul class="space-y-1.5 text-[11px] text-slate-400">
-            <li>• Selam Water (+70 Scholars)</li>
-            <li>• Shashemene City Administration</li>
-            <li>• Dodola Town Administration</li>
-            <li>• Arsi Lixa Zone Coordination</li>
+            <li>• 4M+ ETB Annual Operating Budget</li>
+            <li>• 25+ Collegiate Teaching Assistants</li>
+            <li>• Regional Oromia Tech Excursion</li>
+            <li>• Weekly EUEE Strategy Masterclasses</li>
           </ul>
         </div>
       </div>
@@ -1084,7 +1048,6 @@
         <div>
           <span class="text-xs font-bold text-blue-700 uppercase tracking-wider block">Academic Lecture Plan (5 Days / Week)</span>
           <h2 id="syllabus-modal-title" class="text-xl font-bold text-slate-900 mt-1"></h2>
-          <span id="syllabus-modal-instructor" class="text-xs text-slate-500"></span>
         </div>
         <button onclick="closeSyllabusModal()" class="text-slate-400 hover:text-slate-700 text-lg font-bold px-2 py-1">✕</button>
       </div>
@@ -1098,7 +1061,7 @@
     </div>
   </div>
 
-  <!-- JAVASCRIPT -->
+  <!-- JAVASCRIPT LOGIC -->
   <script>
     let currentCandidateList = [];
     let authenticatedRole = localStorage.getItem("sc_role") || null;
@@ -1236,7 +1199,6 @@
     const SYLLABUS_DB = {
       1: {
         title: "Week 1: Web Fundamentals & Structural Design (HTML5, Semantic UI, CSS3)",
-        instructor: "Instruction: Founding Faculty & 20+ Teaching Assistants",
         objective: "Introduce scholars to web architecture, document object modeling, and building accessible user interfaces.",
         schedule: [
           { day: "Mon", topic: "Internet Architecture & HTTP", theory: "Clients, servers, DNS lookups, and HTTP Request/Response cycles.", practice: "Setting up local development environments and browsers." },
@@ -1253,7 +1215,6 @@
       },
       2: {
         title: "Week 2: Programming Fundamentals & Computational Logic",
-        instructor: "Instruction: Founding Faculty & 20+ Teaching Assistants",
         objective: "Bridge visual markup to dynamic logic using JavaScript/Python fundamentals, variables, control flow, loops, and functional modularity.",
         schedule: [
           { day: "Mon", topic: "Variables & Memory Types", theory: "Primitives (Numbers, Strings, Booleans), mutability vs immutability.", practice: "Writing computational scripts to evaluate formulaic calculations." },
@@ -1270,7 +1231,6 @@
       },
       3: {
         title: "Week 3: Linear Data Structures & Array Invariants",
-        instructor: "Instruction: Founding Faculty & 20+ Teaching Assistants",
         objective: "Transition into algorithmic problem-solving by understanding contiguous array storage, pointer manipulation, and multi-pointer optimization patterns.",
         schedule: [
           { day: "Mon", topic: "Memory Layout: Contiguous Arrays", theory: "RAM indexing by offset ($O(1)$ access), static vs dynamic resizing.", practice: "Building a custom dynamic list with geometric resizing capacity." },
@@ -1287,7 +1247,6 @@
       },
       4: {
         title: "Week 4: Hash Tables & Computational Complexity",
-        instructor: "Instruction: Founding Faculty & 20+ Teaching Assistants",
         objective: "Master Hash Map internals, amortized constant time $O(1)$ operations, and mathematical Big-O asymptotic notations.",
         schedule: [
           { day: "Mon", topic: "Asymptotic Analysis ($O, \\Omega, \\Theta$)", theory: "Growth orders, operation counts vs input size, stack vs heap.", practice: "Benchmarking code execution speeds with high-iteration inputs." },
@@ -1304,7 +1263,6 @@
       },
       5: {
         title: "Week 5: Recursion, Divide-and-Conquer & Tree Structures",
-        instructor: "Instruction: Founding Faculty & 20+ Teaching Assistants",
         objective: "Understand recursive call stacks, recurrence relations, and hierarchical tree structures including Binary Search Trees.",
         schedule: [
           { day: "Mon", topic: "Recursive Mechanics & Call Stack", theory: "Base condition termination, stack frames, stack overflow limits.", practice: "Recursive string reversal, Factorial, and Fibonacci depth tracer." },
@@ -1321,7 +1279,6 @@
       },
       6: {
         title: "Week 6: Full-Stack Engineering, REST APIs & Databases",
-        instructor: "Instruction: Founding Faculty & 20+ Teaching Assistants",
         objective: "Combine frontend engineering and algorithmic processing into production-ready web servers backed by relational databases.",
         schedule: [
           { day: "Mon", topic: "Node.js & Express Backend Architecture", theory: "Event loop, non-blocking I/O, server ports, and HTTP listener.", practice: "Creating an Express server and defining basic API routes." },
@@ -1338,7 +1295,6 @@
       },
       7: {
         title: "Week 7: National Capstone, Algorithms Showcase & Honors Graduation",
-        instructor: "Presiding Board: Founding Faculty, 20+ TAs, Selam Water & Municipal Leadership",
         objective: "Transform acquired engineering skills into high-impact software solutions, culminating in public presentations and the Official Graduation Ceremony.",
         schedule: [
           { day: "Mon", topic: "Capstone System Architecture & Mentorship", theory: "Project scoping, user journeys, edge caching, and modular design.", practice: "Teams scaffold their national software capstones." },
@@ -1357,90 +1313,10 @@
 
     document.addEventListener("DOMContentLoaded", () => {
       runCounters();
-      loadDraft();
-
-      const fileInput = document.getElementById("transcript-file");
-      if (fileInput) {
-        fileInput.addEventListener("change", async (e) => {
-          const file = e.target.files[0];
-          if (!file) return;
-          const statusText = document.getElementById("upload-status");
-          statusText.innerText = "Encrypting & uploading...";
-          statusText.className = "text-[11px] code-font text-amber-700 animate-pulse";
-
-          const formData = new FormData();
-          formData.append("file", file);
-          formData.append("upload_preset", "ml_default");
-
-          try {
-            const res = await fetch("https://api.cloudinary.com/v1_1/demo/auto/upload", {
-              method: "POST",
-              body: formData
-            });
-            const data = await res.json();
-            if (data.secure_url) {
-              document.getElementById("transcript_url").value = data.secure_url;
-              statusText.innerText = "✓ Document Verified & Linked";
-              statusText.className = "text-[11px] code-font text-emerald-700 font-bold";
-              playSuccessTone();
-              saveDraft();
-            } else {
-              document.getElementById("transcript_url").value = `https://shashecoders.org/docs/${Date.now()}_${file.name}`;
-              statusText.innerText = "✓ Document Cached";
-              statusText.className = "text-[11px] code-font text-emerald-700";
-            }
-          } catch(err) {
-            document.getElementById("transcript_url").value = `https://shashecoders.org/docs/${Date.now()}_${file.name}`;
-            statusText.innerText = "✓ Attached locally";
-            statusText.className = "text-[11px] code-font text-blue-700";
-          }
-        });
-      }
     });
 
-    function saveDraft() {
-      const form = document.getElementById('admission-form');
-      const draft = {
-        full_name: form.full_name.value,
-        gender: form.gender.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        telegram: form.telegram.value,
-        guardian_phone: form.guardian_phone.value,
-        zone: form.zone.value,
-        school_name: form.school_name.value,
-        grade_level: form.grade_level.value,
-        gpa: form.gpa.value,
-        national_score: form.national_score.value,
-        transcript_url: form.transcript_url.value,
-        algo_response1: form.algo_response1.value,
-        algo_response2: form.algo_response2.value,
-        statement_purpose: form.statement_purpose.value,
-        project_idea: form.project_idea.value
-      };
-      localStorage.setItem("sc_app_draft", JSON.stringify(draft));
-      document.getElementById('draft-badge').classList.remove('hidden');
-    }
-
-    function loadDraft() {
-      const saved = localStorage.getItem("sc_app_draft");
-      if (!saved) return;
-      try {
-        const draft = JSON.parse(saved);
-        const form = document.getElementById('admission-form');
-        Object.keys(draft).forEach(key => {
-          if (form[key]) form[key].value = draft[key];
-        });
-        if (draft.transcript_url) {
-          document.getElementById('upload-status').innerText = '✓ Document Linked';
-          document.getElementById('upload-status').className = 'text-[11px] code-font text-emerald-700';
-        }
-        document.getElementById('draft-badge').classList.remove('hidden');
-      } catch(e) {}
-    }
-
     function navigate(view) {
-      ['overview', 'about', 'apply', 'classes', 'faq', 'quizzes', 'admin'].forEach(v => {
+      ['overview', 'about', 'alumni', 'apply', 'classes', 'faq', 'quizzes', 'admin'].forEach(v => {
         const el = document.getElementById(`view-${v}`);
         const btn = document.getElementById(`nav-${v}`);
         if (el) el.classList.add('hidden');
@@ -1454,105 +1330,20 @@
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-      if (view === 'classes') loadClasses();
       if (view === 'quizzes') loadQuizzes();
       if (view === 'admin') checkAdminView();
-    }
-
-    async function submitApplication(e) {
-      e.preventDefault();
-      playClick();
-      const form = e.target;
-      const btn = document.getElementById('submit-btn');
-      const alertBox = document.getElementById('alert-box');
-      
-      alertBox.classList.add('hidden');
-      btn.disabled = true;
-      btn.innerText = 'Calculating & Submitting...';
-
-      const data = {
-        full_name: form.full_name.value,
-        gender: form.gender.value,
-        email: form.email.value,
-        phone: form.phone.value,
-        telegram: form.telegram.value,
-        guardian_phone: form.guardian_phone.value,
-        zone: form.zone.value,
-        school_name: form.school_name.value,
-        grade_level: form.grade_level.value,
-        gpa: form.gpa.value,
-        national_score: form.national_score.value,
-        transcript_url: form.transcript_url.value,
-        algo_response1: form.algo_response1.value,
-        algo_response2: form.algo_response2.value,
-        statement_purpose: form.statement_purpose.value,
-        project_idea: form.project_idea.value,
-        needs_dorm: true
-      };
-
-      try {
-        const res = await fetch('/api/register', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-        const result = await res.json();
-        if (!res.ok) throw new Error(result.error || 'Submission failed');
-
-        playSuccessTone();
-        localStorage.removeItem("sc_app_draft");
-        document.getElementById('form-container').classList.add('hidden');
-        document.getElementById('success-container').classList.remove('hidden');
-        document.getElementById('res-name').innerText = result.candidate_name;
-        document.getElementById('res-ref').innerText = result.app_ref;
-        document.getElementById('res-score').innerText = result.merit_score + ' / 100';
-      } catch (err) {
-        alertBox.innerText = err.message;
-        alertBox.className = 'mb-4 p-3 rounded-lg text-xs bg-rose-50 border border-rose-200 text-rose-700';
-        alertBox.classList.remove('hidden');
-      } finally {
-        btn.disabled = false;
-        btn.innerText = 'Submit Application for Review';
-      }
-    }
-
-    async function loadClasses() {
-      try {
-        const res = await fetch('/api/academy/classes');
-        const data = await res.json();
-        const container = document.getElementById('classes-list');
-
-        container.innerHTML = (data.classes || []).map(c => `
-          <div class="white-card p-5 rounded-xl space-y-2">
-            <div class="flex justify-between items-center">
-              <span class="text-[11px] font-bold text-blue-700 uppercase tracking-wide">Week ${c.week_number} • ${c.topic_category}</span>
-              <span class="text-[11px] text-slate-500">Founding Faculty &amp; 20+ TAs</span>
-            </div>
-            <h3 class="text-sm font-bold text-slate-900">${c.title}</h3>
-            <div class="pt-2">
-              <button onclick="playClick(); openSyllabusModal(${c.week_number})" class="text-xs text-blue-700 hover:text-blue-900 font-semibold underline transition-colors">
-                View 5-Day Lecture Plan & Topics →
-              </button>
-            </div>
-          </div>
-        `).join('');
-      } catch (e) {
-        console.error(e);
-      }
     }
 
     function openSyllabusModal(weekNum) {
       playClick();
       const modal = document.getElementById('syllabus-modal');
       const title = document.getElementById('syllabus-modal-title');
-      const inst = document.getElementById('syllabus-modal-instructor');
       const content = document.getElementById('syllabus-modal-content');
 
       const data = SYLLABUS_DB[weekNum];
       if (!data) return;
 
       title.innerText = data.title;
-      inst.innerText = data.instructor;
 
       const scheduleRows = data.schedule.map(s => `
         <tr class="hover:bg-slate-50 transition-colors">
@@ -1606,6 +1397,7 @@
       document.getElementById('syllabus-modal').classList.add('hidden');
     }
 
+    // Completely Blank Code Editor Sandbox (No Already Written Codes)
     async function loadQuizzes() {
       try {
         const res = await fetch('/api/academy/quizzes');
@@ -1621,8 +1413,9 @@
             <p class="text-xs text-slate-700">${q.prompt}</p>
             
             <div class="space-y-1.5">
-              <span class="text-[10px] uppercase font-mono text-slate-500">Code Editor & Implementation</span>
-              <textarea id="editor-${q.id}" rows="6" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 code-font focus:outline-none focus:border-blue-600 focus:bg-white transition-colors">${q.starter_code}</textarea>
+              <span class="text-[10px] uppercase font-mono text-slate-500">Interactive Code Editor (Write your function from scratch)</span>
+              <!-- Blank Textarea -->
+              <textarea id="editor-${q.id}" rows="6" placeholder="// Write your solution function here from scratch:&#10;function solution(...) {&#10;    // Implement logic&#10;}" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-xs text-slate-900 code-font focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"></textarea>
             </div>
 
             <div class="flex items-center justify-between gap-2">
@@ -1715,7 +1508,7 @@
         currentCandidateList = data.candidates || [];
 
         document.getElementById('m-total').innerText = data.metrics.total_registered;
-        document.getElementById('m-dorm').innerText = `${data.metrics.dorm_allocated} / 150`;
+        document.getElementById('m-dorm').innerText = `${data.metrics.dorm_allocated} / 80`;
         document.getElementById('m-accepted').innerText = data.metrics.accepted_cohort;
         document.getElementById('m-rejected').innerText = data.metrics.rejected_cohort || 0;
 
@@ -1764,7 +1557,7 @@
               ${c.status === 'ACCEPTED' 
                 ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">ADMITTED</span>' 
                 : c.status === 'REJECTED' 
-                  ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">REJECTED</span>' 
+                  ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">ARCHIVED</span>' 
                   : '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">IN REVIEW</span>'}
             </td>
             <td class="p-3">
@@ -1779,7 +1572,7 @@
                     ✓ Admit
                   </button>
                   <button onclick="makeDecision(${c.id}, 'REJECTED', 'NONE', '${c.full_name}', '${c.app_ref}', '${c.telegram}', '${c.email}')" class="bg-rose-600 hover:bg-rose-500 text-white px-2.5 py-1 rounded text-[11px] font-bold transition-all shadow-xs">
-                    ✕ Reject
+                    ✕ Archive
                   </button>
                 </div>
               ` : `<span class="text-[11px] text-slate-400 italic">Leader auth required</span>`}
@@ -1827,9 +1620,9 @@
         playSuccessTone();
         let notifyMsg = "";
         if (status === 'ACCEPTED') {
-          notifyMsg = `🎉 CONGRATULATIONS ${name} (${tg})!\n\nWe are pleased to inform you that your application [${ref}] to the ShasheCoders Nationwide Algorithms Academy 2026 Cohort has been ACCEPTED with a 100% Full-Ride Scholarship (Housing, Meals, and Compute) funded by Selam Water & our municipal sponsor coalition.\n\nAccess your onboarding curriculum and laboratory sandbox: https://shashecoders.ifaboru-dodola.org\n\n- ShasheCoders Admissions Committee`;
+          notifyMsg = `🎉 CONGRATULATIONS ${name} (${tg})!\n\nWe are pleased to inform you that your application [${ref}] to ShasheCoders Academy has been ACCEPTED with a 100% Full-Ride Scholarship.\n\nAccess your onboarding curriculum and student portal: https://shashecoders.ifaboru-dodola.org\n\n- ShasheCoders Admissions Committee`;
         } else {
-          notifyMsg = `Dear ${name} (${tg}),\n\nThank you for applying to the ShasheCoders Nationwide Algorithms Academy [${ref}]. Due to high competitive volume across Ethiopia, we are unable to offer you one of the 150 residential seats. We encourage you to continue building your mathematical and coding skills.\n\n- ShasheCoders Admissions Committee`;
+          notifyMsg = `Dear ${name} (${tg}),\n\nThank you for applying to ShasheCoders Academy [${ref}]. Due to limited residential capacity, we are unable to offer you a seat for this cycle. We encourage you to continue building your mathematical and coding skills.\n\n- ShasheCoders Admissions Committee`;
         }
 
         navigator.clipboard.writeText(notifyMsg);
